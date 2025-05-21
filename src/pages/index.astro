@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Elecciones Bolivia 2025 - Partidos Políticos y Candidatos">
+	<!-- Header con el título principal -->
+	<header class="header">
+		<div class="logo-container">
+			<h1 class="title">Elecciones Bolivia 2025</h1>
+			<p class="subtitle">Conoce a los partidos políticos y sus candidatos</p>
+		</div>
+	</header>
+
+	<!-- Contenedor principal con la imagen de fondo y los logos flotantes -->
+	<main class="main-container">
+		<!-- Logos flotantes de partidos políticos -->
+		<div class="logos-flotantes">
+			<!-- MAS - Logo principal -->
+			<div class="logo-partido animate-float" style="--delay: 0ms; --x: 15%; --y: 20%; --rotation: -10deg;">
+				<img src="/PartidosP/MAS.svg" alt="MAS" />
+			</div>
+			
+			<!-- Otros logos (placeholders) -->
+			<div class="logo-partido animate-float" style="--delay: 200ms; --x: 35%; --y: 15%; --rotation: 5deg;">
+				<div class="logo-placeholder">CC</div>
+			</div>
+			
+			<div class="logo-partido animate-float" style="--delay: 400ms; --x: 65%; --y: 25%; --rotation: -5deg;">
+				<div class="logo-placeholder">UN</div>
+			</div>
+			
+			<div class="logo-partido animate-float" style="--delay: 600ms; --x: 80%; --y: 35%; --rotation: 8deg;">
+				<div class="logo-placeholder">MTS</div>
+			</div>
+			
+			<div class="logo-partido animate-float" style="--delay: 800ms; --x: 25%; --y: 45%; --rotation: -8deg;">
+				<div class="logo-placeholder">PDC</div>
+			</div>
+			
+			<div class="logo-partido animate-float" style="--delay: 1000ms; --x: 50%; --y: 20%; --rotation: 12deg;">
+				<div class="logo-placeholder">FPV</div>
+			</div>
+			
+			<div class="logo-partido animate-float" style="--delay: 1200ms; --x: 70%; --y: 10%; --rotation: -15deg;">
+				<div class="logo-placeholder">SOL</div>
+			</div>
+		</div>
+		
+		<!-- Candidatos destacados (sombreados) sobre las siluetas como en la imagen de referencia -->
+		<div class="candidatos-destacados">
+			<!-- MAS -->
+			<div class="partido-destacado">
+				<!-- Etiqueta del partido -->
+				<div class="partido-etiqueta">
+					<img src="/PartidosP/MAS.svg" alt="MAS" />
+					<span>MAS</span>
+				</div>
+				
+				<!-- Candidatos lado a lado -->
+				<div class="candidatos-grupo">
+					<!-- Presidente -->
+					<div class="candidato-imagen presidente-container">
+						<img src="/Politicos/BernaMAS.png" alt="Luis Arce Catacora" class="presidente-img" />
+						<div class="candidato-nombre">Berna</div>
+					</div>
+					
+					<!-- Vicepresidente - ajustado para verse claramente -->
+					<div class="candidato-imagen vicepresidente-container">
+						<img src="/Politicos/CastilloMAS.png" alt="David Choquehuanca" class="vicepresidente-img" />
+						<div class="candidato-nombre">Castillo</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Espacio para los candidatos sin siluetas -->
+		
+		<!-- Atribución de la imagen -->
+		<div class="atribucion">
+			<a href="https://www.bolivia.gob.bo" target="_blank">guik.pe</a>
+		</div>
+	</main>
+
+	<!-- Footer con fecha de las elecciones -->
+	<footer class="footer">
+		<div class="fecha-container">
+			<p class="fecha-title">FECHA DE ELECCIONES</p>
+			<p class="fecha">20 DE JULIO DE 2025</p>
+		</div>
+		<p class="disclaimer">Sitio informativo no oficial</p>
+	</footer>
+</Layout>
+
+<style>
+	/* Estilos globales */
+	:global(body) {
+		font-family: 'Arial', sans-serif;
+		overflow-x: hidden;
+	}
+
+	/* Estilos del header */
+	.header {
+		position: relative;
+		z-index: 10;
+		padding: 1rem;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.logo-container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+		color: white;
+		text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+	}
+
+	.subtitle {
+		font-size: 1.2rem;
+		margin-top: 0;
+		color: #e0e0e0;
+		text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+	}
+
+	/* Contenedor principal */
+	.main-container {
+		position: relative;
+		height: calc(100vh - 170px); /* Ajusta la altura para dejar espacio para header y footer */
+		min-height: 500px;
+		overflow: hidden;
+	}
+
+	/* Logos flotantes de partidos */
+	.logos-flotantes {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 70%;
+		z-index: 2;
+	}
+
+	.logo-partido {
+		position: absolute;
+		top: var(--y);
+		left: var(--x);
+		transform: rotate(var(--rotation));
+		animation: float 3s ease-in-out infinite;
+		animation-delay: var(--delay);
+		z-index: 3;
+		transition: transform 0.3s ease;
+	}
+
+	.logo-partido:hover {
+		transform: rotate(var(--rotation)) scale(1.1);
+		z-index: 10;
+	}
+
+	.logo-partido img {
+		width: 85px;
+		height: 85px;
+		object-fit: contain;
+		filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+	}
+
+	.logo-placeholder {
+		width: 85px;
+		height: 85px;
+		border-radius: 12px; /* Haciéndolo más cuadrado como en la imagen */
+		background-color: #f44336; /* Color rojo como base, se puede variar */
+		border: 3px solid white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: white;
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+	}
+
+	/* Cada logo con un color diferente para que resalten */
+	.logo-partido:nth-child(2) .logo-placeholder { background-color: #2196f3; } /* Azul */
+	.logo-partido:nth-child(3) .logo-placeholder { background-color: #ff9800; } /* Naranja */
+	.logo-partido:nth-child(4) .logo-placeholder { background-color: #4caf50; } /* Verde */
+	.logo-partido:nth-child(5) .logo-placeholder { background-color: #9c27b0; } /* Púrpura */
+	.logo-partido:nth-child(6) .logo-placeholder { background-color: #f44336; } /* Rojo */
+	.logo-partido:nth-child(7) .logo-placeholder { background-color: #607d8b; } /* Gris azulado */
+
+	/* Candidatos destacados */
+	.candidatos-destacados {
+		position: absolute;
+		bottom: 110px; /* Ajustado para estar justo encima de las siluetas */
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		z-index: 3;
+	}
+
+	.partido-destacado {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 400px; /* Aumentado para acomodar a ambos candidatos */
+	}
+
+	.candidatos-grupo {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: 10px;
+		opacity: 0.7; /* Sombreados por defecto */
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+
+	/* Cuando se pasa el cursor por encima, ambos se iluminan */
+	.candidatos-grupo:hover {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+
+	.candidato-imagen {
+		position: relative;
+		height: auto;
+	}
+
+	.presidente-container {
+		width: 90px; /* Tamaño reducido a mediano */
+		z-index: 3;
+	}
+
+	.presidente-img {
+		width: 100%;
+		height: auto;
+		max-height: 150px;
+		object-fit: contain;
+		filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+	}
+
+	.vicepresidente-container {
+		width: 120px; /* Mismo tamaño que el presidente */
+		z-index: 2;
+		margin-bottom: 15px; /* Para alinear los candidatos visualmente */
+	}
+
+	.vicepresidente-img {
+		width: 100%;
+		height: auto;
+		max-height: 150px;
+		object-fit: contain;
+		filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+	}
+
+	.partido-etiqueta {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+		padding: 5px 10px;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-weight: bold;
+		font-size: 0.9rem;
+		z-index: 4;
+	}
+
+	.partido-etiqueta img {
+		width: 20px;
+		height: 20px;
+		object-fit: contain;
+	}
+
+	/* Se eliminaron los estilos de las siluetas inferiores */
+
+	/* Atribución */
+	.atribucion {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		z-index: 4;
+		background-color: rgba(0, 0, 0, 0.5);
+		padding: 3px 8px;
+		border-radius: 4px;
+	}
+
+	.atribucion a {
+		color: white;
+		text-decoration: none;
+		font-size: 0.75rem;
+	}
+
+	/* Footer */
+	.footer {
+		background-color: rgba(0, 0, 0, 0.8);
+		color: white;
+		text-align: center;
+		padding: 1rem;
+	}
+
+	.fecha-container {
+		margin-bottom: 0.5rem;
+	}
+
+	.fecha-title {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #bdbdbd;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.fecha {
+		margin: 0.25rem 0;
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #f9a825;
+		text-shadow: 0 0 8px rgba(249, 168, 37, 0.5);
+	}
+
+	.disclaimer {
+		font-size: 0.8rem;
+		margin: 0;
+		color: #757575;
+	}
+
+	/* Animaciones */
+	@keyframes float {
+		0% { transform: rotate(var(--rotation)) translate(0, 0); }
+		50% { transform: rotate(var(--rotation)) translate(0, -10px); }
+		100% { transform: rotate(var(--rotation)) translate(0, 0); }
+	}
+
+	.animate-float {
+		animation: float 3s ease-in-out infinite;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.title {
+			font-size: 1.8rem;
+		}
+
+		.subtitle {
+			font-size: 1rem;
+		}
+
+		.logo-partido img,
+		.logo-placeholder {
+			width: 60px;
+			height: 60px;
+		}
+	}
+</style>
