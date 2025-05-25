@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados adicionales */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    @apply overflow-x-hidden;
+    position: relative;
+  }
+  
+  #app, .container, main {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(0, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

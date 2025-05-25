@@ -5,19 +5,33 @@ interface Props {
 }
 
 const { title = "Elecciones Bolivia 2025" } = Astro.props;
+
+// Importar estilos globales
+import '../styles/global.css';
+import '../styles/animations.css';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" style="width: 100%; height: 100%; overflow-x: hidden; margin: 0; padding: 0;">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/fix-overflow.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<style is:global>
+			body, html {
+				width: 100% !important;
+				max-width: 100vw !important;
+				overflow-x: hidden !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+		</style>
 	</head>
-	<body>
-		<div class="container">
+	<body style="width: 100%; height: 100%; overflow-x: hidden; margin: 0; padding: 0; max-width: 100vw;">
+		<div class="container" style="width: 100%; min-height: 100vh; overflow-x: hidden; margin: 0; padding: 0; max-width: 100vw;">
 			<slot />
 		</div>
 	</body>
@@ -28,24 +42,32 @@ const { title = "Elecciones Bolivia 2025" } = Astro.props;
 	body {
 		margin: 0;
 		padding: 0;
-		width: 100%;
+		width: 100vw;
 		height: 100%;
 		font-family: 'Arial', sans-serif;
 		overflow-x: hidden;
+		max-width: 100%;
 	}
 
 	.container {
-		background-image: url('/Fondos/Palacio.png');
-		background-size: cover;
+		background-image: url('/Fondos/wmremove-transformed.jpg');
+		background-size: 100vw auto;
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
+		background-color: #1a3c7a; /* Color azul que complementa el cielo boliviano */
 		min-height: 100vh;
 		width: 100%;
+		max-width: 100%;
 		position: relative;
 		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		left: 0;
+		right: 0;
 	}
 
 	/* Overlay para mejorar la legibilidad del contenido */

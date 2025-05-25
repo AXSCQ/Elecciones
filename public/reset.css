@@ -1,0 +1,38 @@
+/* Reset CSS para eliminar espacios en blanco */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.container, main, div {
+  max-width: 100%;
+}
+
+/* Eliminar cualquier margen horizontal */
+* {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+/* Forzar que el contenido no cause scroll horizontal */
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: transparent;
+}
