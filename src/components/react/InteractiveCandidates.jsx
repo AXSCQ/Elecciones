@@ -7,11 +7,11 @@ const InteractiveCandidates = () => {
   // Definición de los candidatos con sus coordenadas y datos precisos
   const candidates = [
     // Fila superior (de izquierda a derecha)
-    { id: 1, name: "Candidata 1", image: "/Fondos/Candidatos1x1/image (2).png", coords: { top: '5%', left: '15%', width: '18%', height: '30%' } },  // Mujer con lentes
-    { id: 2, name: "Candidato 2", image: "/Fondos/Candidatos1x1/image (3).png", coords: { top: '5%', left: '33%', width: '18%', height: '30%' } },  // Hombre con barba
-    { id: 3, name: "Candidato 3", image: "/Fondos/Candidatos1x1/image (4).png", coords: { top: '5%', left: '51%', width: '18%', height: '30%' } },  // Hombre con lentes
-    { id: 4, name: "Candidato 4", image: "/Fondos/Candidatos1x1/image (5).png", coords: { top: '5%', left: '69%', width: '18%', height: '30%' } },  // Joven sonriente
-    { id: 5, name: "Candidato 5", image: "/Fondos/Candidatos1x1/image (6).png", coords: { top: '5%', left: '87%', width: '18%', height: '30%' } },  // Hombre con barba clara
+    { id: 1, name: "Candidata 1", image: "/Fondos/Candidatos1x1/Evacopa.png", coords: { top: '5%', left: '4%', width: '18%', height: '70%' } },  // Mujer con lentes
+    { id: 2, name: "Candidato 2", image: "/Fondos/Candidatos1x1/Castillo.png", coords: { top: '5%', left: '25%', width: '18%', height: '70%' } },  // Hombre con barba
+    { id: 3, name: "Candidato 3", image: "/Fondos/Candidatos1x1/Jaime.png", coords: { top: '5%', left: '43%', width: '29%', height: '70%' } },  // Hombre con lentes
+    { id: 4, name: "Candidato 4", image: "/Fondos/Candidatos1x1/image (5).png", coords: { top: '5%', left: '69%', width: '18%', height: '70%' } },  // Joven sonriente
+    { id: 5, name: "Candidato 5", image: "/Fondos/Candidatos1x1/image (6).png", coords: { top: '5%', left: '87%', width: '18%', height: '70%' } },  // Hombre con barba clara
     
     // Fila inferior (de izquierda a derecha)
     { id: 6, name: "Candidato 6", image: "/Fondos/Candidatos1x1/image (7).png", coords: { top: '50%', left: '15%', width: '18%', height: '30%' } },  // Hombre serio
