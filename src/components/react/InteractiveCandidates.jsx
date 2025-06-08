@@ -1,101 +1,165 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import CandidateCard from './CandidateCard';
+import { candidates } from '../../data/candidates.js';
 
-const InteractiveCandidates = () => {
-  // Estado para rastrear sobre qué candidato está el mouse
-  const [hoveredCandidate, setHoveredCandidate] = useState(null);
-
-  // Definición de los candidatos con sus coordenadas y datos precisos
-  const candidates = [
-    // Fila superior (de izquierda a derecha)
-    { id: 1, name: "Candidata 1", image: "/Fondos/Candidatos1x1/Evacopa.png", coords: { top: '5%', left: '4%', width: '18%', height: '70%' } },  // Mujer con lentes
-    { id: 2, name: "Candidato 2", image: "/Fondos/Candidatos1x1/Castillo.png", coords: { top: '5%', left: '25%', width: '18%', height: '70%' } },  // Hombre con barba
-    { id: 3, name: "Candidato 3", image: "/Fondos/Candidatos1x1/Jaime.png", coords: { top: '5%', left: '43%', width: '29%', height: '70%' } },  // Hombre con lentes
-    { id: 4, name: "Candidato 4", image: "/Fondos/Candidatos1x1/image (5).png", coords: { top: '5%', left: '69%', width: '18%', height: '70%' } },  // Joven sonriente
-    { id: 5, name: "Candidato 5", image: "/Fondos/Candidatos1x1/image (6).png", coords: { top: '5%', left: '87%', width: '18%', height: '70%' } },  // Hombre con barba clara
+const InteractiveCandidates = ({ selectedParty }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const carouselRef = useRef(null);
+  
+  // Detectar si es un dispositivo móvil
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
     
-    // Fila inferior (de izquierda a derecha)
-    { id: 6, name: "Candidato 6", image: "/Fondos/Candidatos1x1/image (7).png", coords: { top: '50%', left: '15%', width: '18%', height: '30%' } },  // Hombre serio
-    { id: 7, name: "Candidato 7", image: "/Fondos/Candidatos1x1/image (8).png", coords: { top: '50%', left: '33%', width: '18%', height: '30%' } },  // Hombre sonriente
-    { id: 8, name: "Candidato 8", image: "/Fondos/Candidatos1x1/image (9).png", coords: { top: '50%', left: '51%', width: '18%', height: '30%' } },  // Hombre serio con traje
-    { id: 9, name: "Candidato 9", image: "/Fondos/Candidatos1x1/image (10).png", coords: { top: '50%', left: '69%', width: '18%', height: '30%' } }, // Hombre con bigote
-    { id: 10, name: "Candidato 10", image: "/Fondos/Candidatos1x1/image (11).png", coords: { top: '50%', left: '87%', width: '18%', height: '30%' } }, // Hombre mayor
-  ];
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
-  return (
-    <div className="relative w-full h-full">
-      {/* Imagen principal de todos los candidatos - se oscurece cuando hay hover */}
-      <div 
-        className="relative w-full h-full overflow-hidden" 
-        style={{
-          background: 'rgba(0,0,0,0.85)',
-          border: '5px solid rgba(0,0,0,0.95)',
-          padding: '0px',
-          boxShadow: '0 5px 15px rgba(0,0,0,0.7)',
-        }}
-      >
-        <img 
-          src="/Fondos/Candidatos.png" 
-          alt="Candidatos Elecciones Bolivia 2025" 
-          className="w-full object-contain" 
+  // Usamos los candidatos importados desde data/candidates.js
+  // Si no hay candidatos en el archivo importado, usamos un array vacío
+  const candidatesData = candidates || [];
+
+  // Función para navegar a la página del candidato
+  const handleCandidateClick = (candidateId) => {
+    // Navegamos a la página del candidato usando su ID
+    window.location.href = `/candidato/${candidateId}`;
+  };
+
+  // Función para navegar al siguiente candidato
+  const nextCandidate = () => {
+    setActiveIndex((prevIndex) => 
+      prevIndex === candidatesData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Función para navegar al candidato anterior
+  const prevCandidate = () => {
+    setActiveIndex((prevIndex) => 
+      prevIndex === 0 ? candidatesData.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Efecto para seleccionar el candidato correspondiente cuando cambia el partido seleccionado
+  useEffect(() => {
+    if (selectedParty) {
+      const candidateIndex = candidatesData.findIndex(c => c.partyShort === selectedParty);
+      if (candidateIndex !== -1) {
+        setActiveIndex(candidateIndex);
+      }
+    }
+  }, [selectedParty]);
+
+  // Renderizar las tarjetas de los candidatos
+  const renderCandidateCards = () => {
+    const totalVisible = isMobile ? 3 : 5;
+    const cards = [];
+    
+    // Calculamos qué candidatos serán visibles en el carrusel arqueado
+    for (let i = -Math.floor(totalVisible/2); i <= Math.floor(totalVisible/2); i++) {
+      // Calcular el índice real con wrapping
+      let idx = (activeIndex + i + candidates.length) % candidates.length;
+      const candidate = candidates[idx];
+      const isActive = i === 0;
+      
+      // Calcular posición arqueada:
+      // - Escala: central más grande, laterales más pequeños
+      // - Posición Y: central arriba, laterales más abajo en un arco
+      // - Posición Z: central al frente, laterales atrás
+      // - Opacidad: central 100%, laterales menos opacas
+      const scale = isActive ? 1 : Math.max(0.55, 1 - Math.abs(i) * 0.25);
+      
+      // Efecto arco: tarjetas laterales más abajo siguiendo una curva
+      const xOffset = i * (isMobile ? 80 : 150); // Espaciado horizontal
+      const yOffset = Math.abs(i) * (isMobile ? 20 : 40); // Efecto arco: más lejos = más abajo
+      const zIndex = 100 - Math.abs(i) * 10; // Central al frente, laterales atrás
+      
+      cards.push(
+        <div
+          key={candidate.id}
+          className="absolute transition-all duration-300"
           style={{
-            maxHeight: '42vh',
-            display: 'block',
-            filter: hoveredCandidate ? 'brightness(0.4)' : 'brightness(1)',
-            transition: 'filter 0.3s ease',
+            transform: `translateX(${xOffset}px) translateY(${yOffset}px) scale(${scale})`,
+            zIndex,
+            opacity: 1 - Math.abs(i) * 0.15, // Más alejado = más transparente
           }}
-        />
+        >
+          <CandidateCard 
+            candidate={candidate} 
+            isActive={isActive} 
+            onClick={() => setActiveIndex(idx)}
+          />
+        </div>
+      );
+    }
 
-        {/* Áreas sensibles al hover para cada candidato */}
-        {candidates.map((candidate) => (
-          <div
-            key={candidate.id}
-            className="absolute cursor-pointer"
-            style={{
-              top: candidate.coords.top,
-              left: candidate.coords.left,
-              width: candidate.coords.width,
-              height: candidate.coords.height,
-              zIndex: 20,
-            }}
-            onMouseEnter={() => setHoveredCandidate(candidate.id)}
-            onMouseLeave={() => setHoveredCandidate(null)}
-          >
-            {/* Este div es invisible, solo para detectar el hover */}
+    return cards;
+  };
+  
+  return (
+    <div className="w-full h-full overflow-hidden">
+      {/* Contenido principal - sin superponer al fondo */}
+      <div className="relative w-full h-full flex flex-col items-center justify-center py-10 px-4">
+        {/* Contenedor semitransparente para el título */}
+        <div 
+          className="relative z-10 text-center mb-8 py-3 px-6 rounded-lg" 
+          style={{ 
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backdropFilter: 'blur(5px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            maxWidth: '90%',
+            width: 'auto',
+            display: 'inline-block'
+          }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Candidatos Presidenciales 2025</h2>
+          <p className="text-gray-300 mt-1 text-sm md:text-base">Conoce a los aspirantes a la presidencia de Bolivia</p>
+        </div>
+        
+        {/* Carrusel arqueado de candidatos */}
+        <div ref={carouselRef} className="relative z-10 w-full flex justify-center items-center mx-auto">
+          <div className="flex justify-center items-center" style={{ height: isMobile ? '400px' : '500px', width: '100%', maxWidth: '800px' }}>
+            {renderCandidateCards()}
           </div>
-        ))}
-
-        {/* Imágenes individuales de candidatos que aparecen en hover */}
-        {candidates.map((candidate) => (
-          hoveredCandidate === candidate.id && (
-            <div
-              key={`highlight-${candidate.id}`}
-              className="absolute transition-all duration-300"
-              style={{
-                top: candidate.coords.top,
-                left: candidate.coords.left,
-                width: candidate.coords.width,
-                height: candidate.coords.height,
-                zIndex: 10,
-                transform: 'scale(1.15)',
-                filter: 'brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.5))',
-                animation: 'pulse 1.5s infinite',
-              }}
+          
+          {/* Controles de navegación */}
+          <div className="flex justify-center mt-8 gap-4">
+            <button 
+              onClick={prevCandidate}
+              className="p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors border border-white/20"
+              aria-label="Candidato anterior"
             >
-              <img 
-                src={candidate.image} 
-                alt={candidate.name} 
-                className="w-full h-full object-contain"
-              />
-              {/* Nombre del candidato que aparece al hacer hover */}
-              <div 
-                className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white text-center py-1 px-2 text-sm"
-                style={{ transform: 'translateY(100%)', opacity: 0.9 }}
-              >
-                {candidate.name}
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            {/* Indicadores de posición */}
+            <div className="flex items-center gap-2">
+              {candidatesData.map((_, idx) => (
+                <button 
+                  key={idx} 
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${activeIndex === idx ? 'bg-white scale-125' : 'bg-white/30'}`}
+                  onClick={() => setActiveIndex(idx)}
+                  aria-label={`Ver candidato ${idx + 1}`}
+                />
+              ))}
             </div>
-          )
-        ))}
+            
+            <button 
+              onClick={nextCandidate}
+              className="p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors border border-white/20"
+              aria-label="Siguiente candidato"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

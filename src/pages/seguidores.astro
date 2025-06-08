@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/react/Header.jsx';
+// Aquí podrías importar tus datos reales cuando estén listos
+// import { seguidores } from '../data/seguidores.js';
+---
+
+<Layout title="Seguidores y Opinión Pública | Elecciones Bolivia 2025">
+  <Header />
+  <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 py-16 px-4">
+    <div class="container mx-auto">
+      <div class="bg-black/40 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-xl mb-8 p-8">
+        <h1 class="text-4xl font-bold text-white mb-2 text-center">Seguidores y Opinión Pública</h1>
+        <p class="text-xl text-center text-gray-300 mb-10">Estadísticas y análisis de la base social de los candidatos y partidos</p>
+        
+        <!-- Estadísticas clave -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="bg-gradient-to-br from-blue-800/50 to-purple-800/50 rounded-xl p-6 shadow-lg border border-white/10 text-center">
+            <div class="text-3xl font-bold text-yellow-400 mb-2">120,000</div>
+            <div class="text-gray-200">Seguidores totales</div>
+          </div>
+          <div class="bg-gradient-to-br from-blue-800/50 to-purple-800/50 rounded-xl p-6 shadow-lg border border-white/10 text-center">
+            <div class="text-3xl font-bold text-green-400 mb-2">54%</div>
+            <div class="text-gray-200">Mujeres</div>
+          </div>
+          <div class="bg-gradient-to-br from-blue-800/50 to-purple-800/50 rounded-xl p-6 shadow-lg border border-white/10 text-center">
+            <div class="text-3xl font-bold text-blue-400 mb-2">46%</div>
+            <div class="text-gray-200">Hombres</div>
+          </div>
+        </div>
+        
+        <!-- Gráficos de ejemplo (puedes reemplazar por componentes React de gráficos reales) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <div class="bg-black/60 rounded-xl p-6">
+            <h2 class="text-xl font-bold text-white mb-4">Distribución por edad</h2>
+            <img src="/ejemplo-grafico-edad.png" alt="Gráfico de edades" class="w-full h-48 object-contain opacity-70" />
+            <!-- Reemplaza el <img> por un componente de gráfico real -->
+          </div>
+          <div class="bg-black/60 rounded-xl p-6">
+            <h2 class="text-xl font-bold text-white mb-4">Distribución geográfica</h2>
+            <img src="/ejemplo-mapa.png" alt="Mapa de seguidores" class="w-full h-48 object-contain opacity-70" />
+            <!-- Reemplaza el <img> por un componente de mapa real -->
+          </div>
+        </div>
+
+        <!-- Testimonios y opiniones -->
+        <div class="bg-gradient-to-br from-blue-800/40 to-purple-800/40 rounded-xl p-8 shadow-lg border border-white/10">
+          <h2 class="text-2xl font-bold text-white mb-6 text-center">Testimonios destacados</h2>
+          <div class="space-y-6">
+            <blockquote class="border-l-4 border-yellow-400 pl-4 italic text-yellow-200">
+              “Creo que estas elecciones serán históricas para Bolivia.”
+              <span class="block text-gray-400 text-sm mt-2">— Seguidor de La Paz</span>
+            </blockquote>
+            <blockquote class="border-l-4 border-green-400 pl-4 italic text-green-200">
+              “Es importante informarse, no solo votar.”
+              <span class="block text-gray-400 text-sm mt-2">— Seguidora de Cochabamba</span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

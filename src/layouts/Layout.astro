@@ -17,7 +17,7 @@ import '../styles/animations.css';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="/fix-overflow.css" />
+		{/* <link rel="stylesheet" href="/fix-overflow.css" /> */}
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<style is:global>
@@ -51,18 +51,16 @@ import '../styles/animations.css';
 
 	.container {
 		background-image: url('/Fondos/wmremove-transformed.jpg');
-		background-size: 100vw auto;
-		background-position: center top;
+		background-size: cover;
+		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		background-color: #1a3c7a; /* Color azul que complementa el cielo boliviano */
+		background-color: #1a3c7a;
 		min-height: 100vh;
 		width: 100%;
 		max-width: 100%;
 		position: relative;
 		overflow-x: hidden;
-		display: flex;
-		flex-direction: column;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
@@ -84,7 +82,7 @@ import '../styles/animations.css';
 
 	/* Asegurarnos de que el contenido esté por encima del overlay */
 	.container > * {
-		position: relative;
-		z-index: 1;
+		/* position: relative; */
+		/* z-index: 1; */
 	}
 </style>

@@ -1,0 +1,152 @@
+---
+import { parties, getPartyById } from '../../data/parties.js';
+import { candidates } from '../../data/candidates.js';
+import Layout from '../../layouts/Layout.astro';
+import Timeline from '../../components/react/Timeline';
+import Header from '../../components/react/Header.jsx';
+
+const { id } = Astro.params;
+const party = getPartyById(id);
+
+if (!party) {
+  return Astro.redirect('/404');
+}
+
+// Obtener los candidatos de este partido
+const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
+---
+
+<Layout title={`${party.name} - Partido Político | Elecciones Bolivia 2025`}>
+  <Header />
+  <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 py-16 px-4">
+    <div class="container mx-auto">
+      <div class="bg-black/40 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-xl mb-8">
+        <!-- Hero section con logo y datos básicos -->
+        <div class="md:flex p-6">
+          <div class="md:w-1/4 flex justify-center">
+            <div 
+              class="w-48 h-48 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-lg"
+              style={`background-color: ${party.color}`}
+            >
+              {party.logo ? (
+                <img src={party.logo} alt={party.name} class="w-full h-full object-contain p-4" />
+              ) : (
+                party.shortName
+              )}
+            </div>
+          </div>
+          
+          <div class="md:w-3/4 mt-6 md:mt-0 md:pl-6 text-white">
+            <h1 class="text-4xl font-bold mb-2">{party.name}</h1>
+            <p class="text-xl text-gray-300 mb-6">{party.founded && `Fundado en ${party.founded}`}</p>
+            
+            <div class="prose prose-invert max-w-none mb-6">
+              <p class="text-gray-200">{party.description}</p>
+            </div>
+            
+            <!-- Ideología -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              {party.ideology && party.ideology.map(item => (
+                <span 
+                  class="px-3 py-1 text-white text-sm rounded-full"
+                  style={`background-color: ${party.color}99`}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Historia del partido con Timeline -->
+      <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-white">Historia del partido</h2>
+        {party.history && party.history.length > 0 ? (
+          <Timeline events={party.history} client:load />
+        ) : (
+          <p class="text-gray-300">No hay información histórica disponible.</p>
+        )}
+      </div>
+      
+      <!-- Figuras destacadas -->
+      <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-white">Figuras destacadas</h2>
+        
+        {party.keyFigures && party.keyFigures.length > 0 ? (
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {party.keyFigures.map(figure => (
+              <div 
+                class="p-4 rounded-lg transition-all duration-300 hover:scale-105"
+                style={`background-color: ${party.color}20; border-left: 4px solid ${party.color}`}
+              >
+                <h4 class="font-bold text-white text-lg">{figure.name}</h4>
+                <p class="text-gray-300">{figure.role}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p class="text-gray-300">No hay figuras destacadas disponibles.</p>
+        )}
+      </div>
+      
+      <!-- Candidatos actuales -->
+      {partyMembers && partyMembers.length > 0 && (
+        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-white">Candidatos {party.shortName} 2025</h2>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {partyMembers.map(candidate => (
+              <a 
+                href={`/candidato/${candidate.id}`}
+                class="bg-black/50 p-4 rounded-lg flex items-center gap-4 hover:bg-black/70 transition-colors"
+              >
+                <img 
+                  src={candidate.image} 
+                  alt={candidate.name} 
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 class="font-bold text-white">{candidate.name}</h4>
+                  <p class="text-gray-300 text-sm">{candidate.profession}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <!-- Alianzas -->
+      {party.alliances && party.alliances.length > 0 && (
+        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-white">Alianzas y pactos</h2>
+          
+          <div class="flex flex-wrap gap-3">
+            {party.alliances.map(alliance => (
+              <div 
+                class="px-4 py-2 rounded-lg"
+                style={`background-color: ${party.color}30; border: 1px solid ${party.color}`}
+              >
+                <span class="text-white">{alliance}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      <!-- Botones de navegación -->
+      <div class="flex justify-between items-center mt-8">
+        <a href="/partidos" class="px-6 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+          ← Volver a partidos
+        </a>
+        <a 
+          href="/candidatos" 
+          class="px-6 py-3 text-white rounded-md transition-colors"
+          style={`background-color: ${party.color}`}
+        >
+          Ver todos los candidatos →
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

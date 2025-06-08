@@ -40,7 +40,6 @@ body::after {
 /* Regla específica para el contenedor principal */
 .container {
   width: 100vw !important;
-  position: absolute !important;
   left: 0 !important;
   right: 0 !important;
 }

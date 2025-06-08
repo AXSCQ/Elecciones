@@ -1,15 +1,88 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/react/Header';
-import ElectionApp from '../components/react/ElectionApp';
-import Footer from '../components/react/Footer';
-import FullWidthContainer from '../components/react/FullWidthContainer';
+import Header from '../components/react/Header.jsx';
+import { candidates } from '../data/candidates.js';
+import Carousel from '../components/react/Carousel.jsx';
 ---
 
-<Layout title="Elecciones Bolivia 2025 - Partidos Políticos y Candidatos">
-	<FullWidthContainer client:load>
-		<Header client:load />
-		<ElectionApp client:load />
-		{/* Footer removido temporalmente */}
-	</FullWidthContainer>
+<Layout title="Elecciones Bolivia 2025 - Inicio">
+  <Header client:load />
+  <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 flex flex-col items-center justify-center py-16 px-4">
+    <div class="container mx-auto">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-10 drop-shadow-lg">Candidatos Presidenciales 2025</h1>
+      <div class="w-full max-w-2xl mx-auto flex flex-col items-center justify-center">
+      <Carousel>
+
+        {candidates.map(candidate => (
+          <div class="group relative flex-shrink-0 w-72 h-96 bg-black/30 rounded-2xl shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:z-20 cursor-pointer">
+            <div class="absolute inset-0 z-0 pointer-events-none flex items-end justify-center">
+              <img src={candidate.image} alt={candidate.name}
+                class="transition-all duration-500 ease-out object-cover object-center object-top w-[110%] h-[105%] rounded-2xl opacity-80 blur-[1px] group-hover:blur-none group-hover:opacity-100 group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:drop-shadow-2xl group-hover:border-4 group-hover:border-white group-hover:shadow-[0_0_32px_8px_rgba(255,255,255,0.5)] group-hover:brightness-110"
+                style="will-change: transform, box-shadow, filter; top: -32px;"
+                loading="lazy"
+              />
+            </div>
+            <div class="relative z-10 flex flex-col h-full justify-end p-6 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <h2 class="text-2xl font-bold text-white mb-2 drop-shadow">{candidate.name}</h2>
+              <p class="text-lg text-blue-200 font-semibold mb-4 drop-shadow">{candidate.party}</p>
+              <div class="flex gap-2 mb-2">
+                <a href={`/candidato/${candidate.id}`} class="px-4 py-2 bg-blue-600 text-white rounded-md font-bold shadow-md hover:bg-blue-700 transition-colors">Ver perfil</a>
+                <a href={`/historia#${candidate.id}`} class="px-4 py-2 bg-green-600 text-white rounded-md font-bold shadow-md hover:bg-green-700 transition-colors">Ver historia</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
+          <p class="text-gray-300 mb-4 text-center">Conoce los perfiles, trayectorias y propuestas de los aspirantes a la presidencia.</p>
+          <div class="h-40 w-full bg-black/20 rounded-lg mb-4 flex items-center justify-center text-gray-500">[Grid de candidatos aquí]</div>
+          <a href="/candidatos" class="mt-auto px-5 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors font-medium">Ver todos</a>
+        </div>
+        <!-- Partidos -->
+        <div class="bg-gradient-to-br from-purple-800/50 to-blue-800/50 rounded-xl p-8 shadow-lg border border-white/10 flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-white mb-2">Partidos Políticos</h2>
+          <p class="text-gray-300 mb-4 text-center">Descubre la historia, ideología y alianzas de los partidos.</p>
+          <div class="h-40 w-full bg-black/20 rounded-lg mb-4 flex items-center justify-center text-gray-500">[Grid de partidos aquí]</div>
+          <a href="/partidos" class="mt-auto px-5 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-800 transition-colors font-medium">Ver todos</a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Historia -->
+        <div class="bg-gradient-to-br from-green-800/50 to-blue-800/50 rounded-xl p-8 shadow-lg border border-white/10 flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-white mb-2">Historia Electoral</h2>
+          <p class="text-gray-300 mb-4 text-center">Explora los hitos y eventos clave de la democracia boliviana.</p>
+          <div class="h-32 w-full bg-black/20 rounded-lg mb-4 flex items-center justify-center text-gray-500">[Línea de tiempo aquí]</div>
+          <a href="/historia" class="mt-auto px-5 py-2 bg-green-700 text-white rounded-md hover:bg-green-800 transition-colors font-medium">Ver más</a>
+        </div>
+        <!-- Sabías que -->
+        <div class="bg-gradient-to-br from-yellow-500/40 to-purple-800/30 rounded-xl p-8 shadow-lg border border-white/10 flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-white mb-2">¿Sabías que?</h2>
+          <p class="text-gray-300 mb-4 text-center">Descubre datos curiosos y sorprendentes sobre la política boliviana.</p>
+          <div class="h-32 w-full bg-black/20 rounded-lg mb-4 flex items-center justify-center text-gray-500">[Tarjetas de curiosidades aquí]</div>
+          <a href="/sabiasque" class="mt-auto px-5 py-2 bg-yellow-500 text-black rounded-md hover:bg-yellow-400 transition-colors font-medium">Ver más</a>
+        </div>
+        <!-- Seguidores -->
+        <div class="bg-gradient-to-br from-pink-800/50 to-blue-800/50 rounded-xl p-8 shadow-lg border border-white/10 flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-white mb-2">Seguidores</h2>
+          <p class="text-gray-300 mb-4 text-center">Analiza la base social, opiniones y estadísticas de seguidores.</p>
+          <div class="h-32 w-full bg-black/20 rounded-lg mb-4 flex items-center justify-center text-gray-500">[Estadísticas y gráficos aquí]</div>
+          <a href="/seguidores" class="mt-auto px-5 py-2 bg-pink-700 text-white rounded-md hover:bg-pink-800 transition-colors font-medium">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>
+
+<style is:global>
+/* Scrollbar estilizado para el carrusel */
+::-webkit-scrollbar {
+  height: 10px;
+  background: #223366;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3045b5;
+  border-radius: 6px;
+}
+</style>
