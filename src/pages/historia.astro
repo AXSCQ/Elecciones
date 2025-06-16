@@ -1,34 +1,81 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Header from '../components/react/Header.jsx';
 ---
-<Header />
-<main class="max-w-4xl mx-auto px-4 py-10">
-  <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Historia Política de Bolivia</h2>
-  <section class="bg-black/70 rounded-2xl shadow-xl p-8 mb-8">
-    <h3 class="text-xl font-bold text-white mb-4">Línea de tiempo democrática</h3>
-    <div class="border-l-4 border-blue-400 pl-6">
-      <div class="mb-8">
-        <div class="font-bold text-blue-300">1952</div>
-        <div class="text-white">Revolución Nacional: voto universal y reforma agraria.</div>
-      </div>
-      <div class="mb-8">
-        <div class="font-bold text-blue-300">1982</div>
-        <div class="text-white">Retorno a la democracia tras dictaduras militares.</div>
-      </div>
-      <div class="mb-8">
-        <div class="font-bold text-blue-300">2006</div>
-        <div class="text-white">Evo Morales asume la presidencia, inicio del Estado Plurinacional.</div>
-      </div>
-      <div class="mb-8">
-        <div class="font-bold text-blue-300">2019</div>
-        <div class="text-white">Crisis electoral y transición política.</div>
-      </div>
-      <!-- Más eventos -->
+
+<Layout title="Historia Electoral - Elecciones Bolivia 2025">
+  <Header client:load />
+  <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
+    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
+      <main class="max-w-5xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-10 drop-shadow-lg">Historia Política de Bolivia</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Línea de tiempo -->  
+          <section class="bg-black/70 rounded-2xl shadow-xl p-8 mb-8 border border-blue-500/30 transform transition-all hover:scale-[1.02] hover:shadow-blue-500/20 hover:shadow-2xl">
+            <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Línea de tiempo democrática
+            </h2>
+            <div class="border-l-4 border-blue-400 pl-6 space-y-10">
+              <div class="relative">
+                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+                <div class="font-bold text-2xl text-blue-300 mb-2">1952</div>
+                <div class="text-white text-lg">Revolución Nacional: voto universal y reforma agraria.</div>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+                <div class="font-bold text-2xl text-blue-300 mb-2">1982</div>
+                <div class="text-white text-lg">Retorno a la democracia tras dictaduras militares.</div>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+                <div class="font-bold text-2xl text-blue-300 mb-2">2006</div>
+                <div class="text-white text-lg">Evo Morales asume la presidencia, inicio del Estado Plurinacional.</div>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+                <div class="font-bold text-2xl text-blue-300 mb-2">2019</div>
+                <div class="text-white text-lg">Crisis electoral y transición política.</div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Citas y curiosidades -->
+          <div class="space-y-8">
+            <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-yellow-500/30 transform transition-all hover:scale-[1.02] hover:shadow-yellow-500/20 hover:shadow-2xl">
+              <h2 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Citas y curiosidades
+              </h2>
+              <blockquote class="border-l-4 border-yellow-400 pl-4 italic text-yellow-200 mb-6 text-lg">"La democracia es el mejor camino para la paz."</blockquote>
+              <blockquote class="border-l-4 border-green-400 pl-4 italic text-green-200 text-lg">"Bolivia es un país de encuentros y desencuentros políticos."</blockquote>
+            </section>
+            
+            <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-green-500/30 transform transition-all hover:scale-[1.02] hover:shadow-green-500/20 hover:shadow-2xl">
+              <h2 class="text-2xl font-bold text-green-400 mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Datos importantes
+              </h2>
+              <ul class="text-white space-y-4 list-disc pl-5">
+                <li>Bolivia ha tenido más de 80 presidentes desde su independencia en 1825.</li>
+                <li>El sistema electoral boliviano actual se estableció con la Constitución de 2009.</li>
+                <li>Las elecciones presidenciales se realizan cada 5 años.</li>
+                <li>El voto es obligatorio para todos los ciudadanos mayores de 18 años.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </main>
     </div>
-  </section>
-  <section class="bg-black/60 rounded-2xl shadow-xl p-8">
-    <h3 class="text-xl font-bold text-white mb-4">Citas y curiosidades</h3>
-    <blockquote class="border-l-4 border-yellow-400 pl-4 italic text-yellow-200 mb-4">“La democracia es el mejor camino para la paz.”</blockquote>
-    <blockquote class="border-l-4 border-green-400 pl-4 italic text-green-200">“Bolivia es un país de encuentros y desencuentros políticos.”</blockquote>
-  </section>
-</main>
+  </div>
+</Layout>

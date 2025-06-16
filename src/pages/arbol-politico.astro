@@ -1,0 +1,358 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/react/Header.jsx';
+
+// Datos de ejemplo para el árbol político
+export const politicalTree = {
+  president: {
+    id: '1',
+    name: 'Candidato a Presidente',
+    role: 'Presidente',
+    party: 'Partido Ejemplo',
+    image: '/Fondos/Candidatos1x1/Copa.png',
+    bio: 'Información sobre el candidato a presidente.',
+    vicepresident: {
+      id: '2',
+      name: 'Candidato a Vicepresidente',
+      role: 'Vicepresidente',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/Castillo.png',
+      bio: 'Información sobre el candidato a vicepresidente.',
+    },
+    deputies: [
+      {
+        id: '3',
+        name: 'Diputado 1',
+        role: 'Candidato a Diputado',
+        party: 'Partido Ejemplo',
+        image: '/Fondos/Candidatos1x1/TUTO-Photoroom.png',
+        bio: 'Información sobre el primer candidato a diputado.',
+      },
+      {
+        id: '4',
+        name: 'Diputado 2',
+        role: 'Candidato a Diputado',
+        party: 'Partido Ejemplo',
+        image: '/Fondos/Candidatos1x1/Samuel.png',
+        bio: 'Información sobre el segundo candidato a diputado.',
+      },
+      {
+        id: '5',
+        name: 'Diputado 3',
+        role: 'Candidato a Diputado',
+        party: 'Partido Ejemplo',
+        image: '/Fondos/Candidatos1x1/Rodrigo.png',
+        bio: 'Información sobre el tercer candidato a diputado.',
+      }
+    ]
+  }
+};
+---
+
+<Layout title="Árbol Político - Elecciones Bolivia 2025">
+  <Header client:load />
+  <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
+    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
+      <main class="max-w-6xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-10 drop-shadow-lg">Árbol Político 2025</h1>
+        <p class="text-white text-center text-lg mb-8">Explora la estructura jerárquica de los candidatos políticos para las elecciones de Bolivia 2025.</p>
+        
+        <div class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl mb-8">
+          <div class="flex justify-center mb-6">
+            <h2 class="text-2xl font-bold text-blue-400 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              ¿Cómo funciona este árbol político?
+            </h2>
+          </div>
+          <div class="flex justify-center">
+            <p class="text-gray-300 text-center max-w-3xl mb-6">Haz clic en cualquier candidato para ver información detallada. Navega por el árbol para explorar las relaciones jerárquicas entre los diferentes cargos políticos. Este diagrama es completamente interactivo y escalable, lo que significa que puedes hacer zoom y moverte por el árbol para ver todos los detalles.</p>
+          </div>
+          <div class="flex justify-center">
+            <div class="bg-blue-800/50 rounded-full px-4 py-2 inline-flex items-center gap-2 border border-blue-400/30">
+              <div class="w-3 h-3 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+              <div class="text-blue-200 text-sm">Utiliza la rueda del ratón o los gestos para hacer zoom y desplazarte.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
+          <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h8.5a3.5 3.5 0 017 0H21v3h-2.354a3.501 3.501 0 01-6.792 0H11.5a3.5 3.5 0 01-7 0H3v-3z" />
+            </svg>
+            Estructura Política
+          </h2>
+          
+          <!-- Árbol genealógico político -->
+          <div class="relative overflow-auto min-h-[600px] bg-black/50 rounded-xl border border-blue-700/30 p-4" id="political-tree-container">
+            <div class="absolute top-4 right-4 flex gap-2">
+              <button class="bg-black/80 hover:bg-blue-700/50 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center border border-blue-500/30 shadow shadow-blue-500/20" onclick="zoomIn()" title="Acercar">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+              </button>
+              <button class="bg-black/80 hover:bg-blue-700/50 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center border border-blue-500/30 shadow shadow-blue-500/20" onclick="zoomOut()" title="Alejar">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                </svg>
+              </button>
+              <button class="bg-black/80 hover:bg-blue-700/50 text-blue-300 rounded-full w-8 h-8 flex items-center justify-center border border-blue-500/30 shadow shadow-blue-500/20" onclick="resetZoom()" title="Restablecer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
+            </div>
+            
+            <div id="political-tree" class="transition-transform duration-300 relative w-full h-full" style="transform-origin: top center;">
+              <!-- Presidente -->
+              <div class="absolute top-8 left-1/2 -translate-x-1/2 w-64 bg-gradient-to-b from-blue-900 to-blue-950 rounded-2xl shadow-xl border border-blue-400/50 p-4 text-center transform transition-all hover:scale-105 hover:shadow-blue-400/30 hover:shadow-2xl hover:-translate-y-1 hover:z-10" style="min-width: 220px; max-width: 300px;" data-id="{politicalTree.president.id}" onclick="showCandidateInfo(event, '{politicalTree.president.id}')">
+                <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-blue-400/70 shadow-lg shadow-blue-400/30 mb-3 bg-blue-800/50 relative">
+                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 text-xl font-bold opacity-0 hover:opacity-100 transition-opacity bg-black/70">{politicalTree.president.role}</div>
+                  <img src="{politicalTree.president.image}" alt="{politicalTree.president.name}" class="object-cover w-full h-full transition-transform hover:scale-110" loading="lazy" />
+                </div>
+                <h3 class="text-lg font-bold text-blue-300 mb-1 px-2 py-1 rounded-xl bg-blue-800/30 inline-block mx-auto border border-blue-600/30 shadow shadow-blue-500/20">{politicalTree.president.name}</h3>
+                <p class="text-blue-200 text-sm font-medium mb-2">{politicalTree.president.party}</p>
+                <button class="text-xs text-blue-100 bg-blue-700/50 hover:bg-blue-700/70 rounded-full px-3 py-1 transition-colors border border-blue-500/30 shadow shadow-blue-500/20 mt-2">Ver Detalles</button>
+              </div>
+              
+              <!-- Línea al Vicepresidente -->
+              <div class="absolute top-36 left-1/2 -translate-x-1/2 w-0.5 h-16 bg-blue-400/50 mx-auto"></div>
+              
+              <!-- Vicepresidente -->
+              <div class="absolute top-60 left-1/2 -translate-x-1/2 w-56 bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl shadow-xl border border-blue-400/40 p-4 text-center transform transition-all hover:scale-105 hover:shadow-blue-400/30 hover:shadow-2xl hover:-translate-y-1 hover:z-10" style="min-width: 200px; max-width: 280px;" data-id="{politicalTree.president.vicepresident.id}" onclick="showCandidateInfo(event, '{politicalTree.president.vicepresident.id}')">
+                <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-blue-400/60 shadow-lg shadow-blue-400/30 mb-3 bg-blue-800/50 relative">
+                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 text-lg font-bold opacity-0 hover:opacity-100 transition-opacity bg-black/70">{politicalTree.president.vicepresident.role}</div>
+                  <img src="{politicalTree.president.vicepresident.image}" alt="{politicalTree.president.vicepresident.name}" class="object-cover w-full h-full transition-transform hover:scale-110" loading="lazy" />
+                </div>
+                <h3 class="text-md font-bold text-blue-300 mb-1 px-2 py-1 rounded-xl bg-blue-800/30 inline-block mx-auto border border-blue-600/30 shadow shadow-blue-500/20">{politicalTree.president.vicepresident.name}</h3>
+                <p class="text-blue-200 text-sm font-medium mb-2">{politicalTree.president.vicepresident.party}</p>
+                <button class="text-xs text-blue-100 bg-blue-700/50 hover:bg-blue-700/70 rounded-full px-3 py-1 transition-colors border border-blue-500/30 shadow shadow-blue-500/20 mt-2">Ver Detalles</button>
+              </div>
+              
+              <!-- Líneas a Diputados -->
+              <div class="absolute top-80 left-1/2 -translate-x-1/2 w-0.5 h-20 bg-blue-400/50 mx-auto"></div>
+              <div class="absolute top-96 left-1/4 w-0.5 h-16 bg-blue-400/50 mx-auto"></div>
+              <div class="absolute top-96 left-1/2 w-0.5 h-16 bg-blue-400/50 mx-auto"></div>
+              <div class="absolute top-96 left-3/4 w-0.5 h-16 bg-blue-400/50 mx-auto"></div>
+              <div class="absolute top-96 left-1/4 -translate-x-1/2 w-3/4 h-0.5 bg-blue-400/50 mx-auto"></div>
+              
+              <!-- Diputados -->
+              {politicalTree.president.deputies.map((deputy, index) => (
+                <div class="absolute top-112 w-52 bg-gradient-to-b from-blue-700 to-blue-800 rounded-2xl shadow-xl border border-blue-400/30 p-3 text-center transform transition-all hover:scale-105 hover:shadow-blue-400/30 hover:shadow-2xl hover:-translate-y-1 hover:z-10" style={`left: calc(50% + ${(index - Math.floor(politicalTree.president.deputies.length/2)) * 280}px); min-width: 180px; max-width: 260px;`} data-id="{deputy.id}" onclick="showCandidateInfo(event, '{deputy.id}')">
+                  <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-3 border-blue-400/50 shadow-lg shadow-blue-400/30 mb-2 bg-blue-800/50 relative">
+                    <div class="absolute inset-0 flex items-center justify-center text-blue-300 text-sm font-bold opacity-0 hover:opacity-100 transition-opacity bg-black/70">{deputy.role}</div>
+                    <img src="{deputy.image}" alt="{deputy.name}" class="object-cover w-full h-full transition-transform hover:scale-110" loading="lazy" />
+                  </div>
+                  <h3 class="text-sm font-bold text-blue-300 mb-1 px-2 py-0.5 rounded-xl bg-blue-800/30 inline-block mx-auto border border-blue-600/30 shadow shadow-blue-500/20">{deputy.name}</h3>
+                  <p class="text-blue-200 text-xs font-medium mb-2">{deputy.party}</p>
+                  <button class="text-xs text-blue-100 bg-blue-700/50 hover:bg-blue-700/70 rounded-full px-2 py-0.5 transition-colors border border-blue-500/30 shadow shadow-blue-500/20 mt-1">Ver Detalles</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <!-- Modal para información detallada -->
+  <div id="candidate-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" onclick="closeModal(event)">
+    <div class="bg-gradient-to-b from-blue-900 to-blue-950 rounded-2xl shadow-2xl border border-blue-400/50 p-6 w-full max-w-lg transform transition-all animate-fade-in-up relative" id="candidate-modal-inner" onclick="event.stopPropagation();">
+      <button class="absolute top-4 right-4 text-blue-300 hover:text-white transition-colors p-1" id="close-modal-btn" onclick="closeModal()" title="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div id="candidate-info-content"> <!-- Contenido dinámico se insertará aquí --> </div>
+      <div class="flex justify-center mt-6">
+        <button class="bg-blue-700 hover:bg-blue-800 text-white rounded-md px-4 py-2 transition-colors font-medium border border-blue-500/50 shadow shadow-blue-500/30" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Datos completos para el modal (en un entorno real, esto podría venir de una API)
+  const candidatesData = {
+    '1': {
+      name: 'Candidato a Presidente',
+      role: 'Presidente',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/Copa.png',
+      bio: 'Información detallada sobre el candidato a presidente. Aquí puedes incluir datos sobre su trayectoria política, logros, propuestas y más información relevante para los votantes.',
+      history: 'Historia política del candidato a presidente, incluyendo cargos anteriores y eventos importantes en su carrera.'
+    },
+    '2': {
+      name: 'Candidato a Vicepresidente',
+      role: 'Vicepresidente',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/Castillo.png',
+      bio: 'Información detallada sobre el candidato a vicepresidente. Aquí puedes incluir datos sobre su trayectoria política, logros, propuestas y más información relevante para los votantes.',
+      history: 'Historia política del candidato a vicepresidente, incluyendo cargos anteriores y eventos importantes en su carrera.'
+    },
+    '3': {
+      name: 'Diputado 1',
+      role: 'Candidato a Diputado',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/TUTO-Photoroom.png',
+      bio: 'Información detallada sobre el primer candidato a diputado. Aquí puedes incluir datos sobre su trayectoria política, logros, propuestas y más información relevante para los votantes.',
+      history: 'Historia política del primer candidato a diputado, incluyendo cargos anteriores y eventos importantes en su carrera.'
+    },
+    '4': {
+      name: 'Diputado 2',
+      role: 'Candidato a Diputado',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/Samuel.png',
+      bio: 'Información detallada sobre el segundo candidato a diputado. Aquí puedes incluir datos sobre su trayectoria política, logros, propuestas y más información relevante para los votantes.',
+      history: 'Historia política del segundo candidato a diputado, incluyendo cargos anteriores y eventos importantes en su carrera.'
+    },
+    '5': {
+      name: 'Diputado 3',
+      role: 'Candidato a Diputado',
+      party: 'Partido Ejemplo',
+      image: '/Fondos/Candidatos1x1/Rodrigo.png',
+      bio: 'Información detallada sobre el tercer candidato a diputado. Aquí puedes incluir datos sobre su trayectoria política, logros, propuestas y más información relevante para los votantes.',
+      history: 'Historia política del tercer candidato a diputado, incluyendo cargos anteriores y eventos importantes en su carrera.'
+    }
+  };
+  
+  // Funciones para el modal
+  function showCandidateInfo(event, candidateId) {
+    const candidate = candidatesData[candidateId];
+    if (!candidate) return;
+    
+    // Detener propagación para evitar que se cierre inmediatamente
+    event.stopPropagation();
+    
+    // Crear el contenido del modal
+    const content = `
+      <h2 class="text-2xl font-bold text-blue-300 mb-2">${candidate.name}</h2>
+      <p class="text-blue-200 font-medium mb-4">${candidate.role} - ${candidate.party}</p>
+      <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-blue-400/60 shadow-lg shadow-blue-400/30 mb-4 bg-blue-800/50 relative">
+        <img src="${candidate.image}" alt="${candidate.name}" class="object-cover w-full h-full" loading="lazy" />
+      </div>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-bold text-blue-400 mb-1">Biografía</h3>
+          <p class="text-white">${candidate.bio}</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-blue-400 mb-1">Historia Política</h3>
+          <p class="text-white">${candidate.history}</p>
+        </div>
+      </div>
+    `;
+    
+    // Insertar contenido y mostrar modal
+    document.getElementById('candidate-info-content').innerHTML = content;
+    document.getElementById('candidate-modal').classList.remove('hidden');
+    
+    // Bloquear scroll del cuerpo
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal(event) {
+    if (event) {
+      event.stopPropagation();
+    }
+    document.getElementById('candidate-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Cerrar modal con tecla Esc
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+  
+  // Funciones de zoom para el árbol
+  let currentScale = 1;
+  const treeContainer = document.getElementById('political-tree');
+  const treeWrapper = document.getElementById('political-tree-container');
+  
+  function zoomIn() {
+    currentScale = Math.min(currentScale + 0.1, 2);
+    updateZoom();
+  }
+  
+  function zoomOut() {
+    currentScale = Math.max(currentScale - 0.1, 0.5);
+    updateZoom();
+  }
+  
+  function resetZoom() {
+    currentScale = 1;
+    updateZoom();
+  }
+  
+  function updateZoom() {
+    if (treeContainer) {
+      treeContainer.style.transform = `scale(${currentScale})`;
+    }
+  }
+  
+  // Manejar zoom con la rueda del ratón
+  if (treeWrapper) {
+    treeWrapper.addEventListener('wheel', function(event) {
+      if (event.deltaY < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+      event.preventDefault();
+    }, { passive: false });
+  }
+  
+  // Agregar esta línea para asignar las funciones al ámbito global y que los botones HTML puedan usarlas
+  window.zoomIn = zoomIn;
+  window.zoomOut = zoomOut;
+  window.resetZoom = resetZoom;
+  window.showCandidateInfo = showCandidateInfo;
+  window.closeModal = closeModal;
+</script>
+
+<style>
+  /* Estilos para el modal */
+  #candidate-modal {
+    overflow-y: auto;
+  }
+  
+  #candidate-modal-inner {
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(30, 64, 175, 0.5) transparent;
+  }
+  
+  #candidate-modal-inner::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #candidate-modal-inner::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  #candidate-modal-inner::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 64, 175, 0.5);
+    border-radius: 20px;
+  }
+  
+  /* Animación para el modal */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.3s ease-out;
+  }
+</style>

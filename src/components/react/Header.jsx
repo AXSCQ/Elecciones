@@ -3,11 +3,12 @@ import React from 'react';
 import { useState } from 'react';
 
 const navLinks = [
-  { name: 'Inicio', href: '#inicio' },
-  { name: 'Candidatos', href: '#candidatos' },
-  { name: 'Partidos', href: '#partidos' },
-  { name: 'Historia', href: '#historia' },
-  { name: 'Sabías que...', href: '#sabiasque' },
+  { name: 'Inicio', href: '/' },
+  { name: 'Candidatos', href: '/candidatos' },
+  { name: 'Partidos', href: '/partidos' },
+  { name: 'Historia', href: '/historia' },
+  { name: 'Sabías que...', href: '/sabiasque' },
+  { name: 'Árbol Político', href: '/arbol-politico' },
 ];
 
 const Header = () => {
