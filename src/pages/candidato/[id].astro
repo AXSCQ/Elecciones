@@ -4,19 +4,59 @@ import { parties, getPartyByShortName } from '../../data/parties.js';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/react/Header.jsx';
 import Timeline from '../../components/react/Timeline';
+import MediaPlayer from '../../components/react/MediaPlayer.jsx';
 
-// Obtener el ID del candidato de los parámetros de la URL
-const { id } = Astro.params;
-
-// Buscar el candidato correspondiente
-const candidate = candidates.find(c => c.id === id);
-
-if (!candidate) {
-  return Astro.redirect('/404');
+// Función requerida para rutas dinámicas en Astro
+export function getStaticPaths() {
+  return candidates.map(candidate => ({
+    params: { id: candidate.id },
+    props: { candidate }
+  }));
 }
+
+// Recibir el candidato como prop
+const { candidate } = Astro.props;
 
 // Obtener el partido del candidato
 const party = getPartyByShortName(candidate.partyShort);
+
+// Ejemplo de contenido multimedia para el candidato
+const mediaContent = {
+  videos: [
+    {
+      title: 'Discurso Principal',
+      url: '/videos/discurso-principal.mp4',
+      duration: 123,
+      description: 'Discurso principal del candidato durante el lanzamiento de campaña'
+    },
+    {
+      title: 'Entrevista Reciente',
+      url: '/videos/entrevista-recent.mp4',
+      duration: 165,
+      description: 'Entrevista exclusiva en el programa de noticias'
+    },
+    {
+      title: 'Propuestas Clave',
+      url: '/videos/propuestas.mp4',
+      duration: 190,
+      description: 'Presentación detallada de las propuestas de campaña'
+    }
+  ],
+  audio: [
+    {
+      title: 'Historia Política',
+      url: '/audio/historia-politica.mp3',
+      duration: 245,
+      description: 'Recorrido narrado por la trayectoria política'
+    },
+    {
+      title: 'Declaraciones',
+      url: '/audio/declaraciones.mp3',
+      duration: 180,
+      description: 'Compilación de declaraciones importantes'
+    }
+  ]
+};
 ---
 
 <Layout title={`Perfil de ${candidate.name} - Elecciones Bolivia 2025`}>

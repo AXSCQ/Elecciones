@@ -1,27 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CandidateGrid from '../components/react/CandidateGrid';
 import Header from '../components/react/Header.jsx';
+import ElectoralBallot from '../components/react/ElectoralBallot.jsx';
 ---
 
-<Layout title="Candidatos - Elecciones Bolivia 2025">
-  <Header />
-  <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 py-16 px-4">
-    <div class="container mx-auto">
-      <h1 class="text-4xl font-bold text-white text-center mb-2">Candidatos Presidenciales</h1>
-      <p class="text-gray-300 text-center mb-8 max-w-2xl mx-auto">Conoce a los aspirantes a la presidencia de Bolivia para las elecciones de 2025. Explora sus perfiles, propuestas y trayectorias políticas.</p>
-      <!-- Placeholder de filtros de búsqueda -->
-      <div class="flex flex-wrap gap-4 justify-center mb-8">
-        <div class="bg-black/30 px-4 py-2 rounded-lg text-gray-300">[Filtro por partido]</div>
-        <div class="bg-black/30 px-4 py-2 rounded-lg text-gray-300">[Filtro por región]</div>
-        <div class="bg-black/30 px-4 py-2 rounded-lg text-gray-300">[Buscador de candidatos]</div>
-      </div>
-      <!-- Grid de candidatos -->
-      <div class="bg-black/30 backdrop-blur-md p-6 rounded-xl border border-white/10 mb-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CandidateGrid client:load />
+<Layout title="Candidatos Presidenciales - Elecciones Bolivia 2025">
+  <Header client:load />
+  <main class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
+    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
+      <div class="container mx-auto">
+        <!-- Encabezado de la página -->
+        <div class="text-center mb-12">
+          <h1 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Candidatos Presidenciales</h1>
+          <div class="h-1 w-32 bg-blue-500 mx-auto mb-6"></div>
+          <p class="text-white text-lg mb-8 max-w-3xl mx-auto">
+            Conoce las opciones electorales y propuestas de los candidatos a la presidencia.
+          </p>
         </div>
-      </div>
+        
+        <!-- Boleta electoral -->
+        <div class="bg-black/40 backdrop-blur-md p-8 rounded-xl border border-blue-500/20 shadow-xl mb-12">
+          <ElectoralBallot client:load />
+        </div>
       <div class="text-center mt-12">
         <h2 class="text-2xl font-bold text-white mb-4">¿Quieres conocer más?</h2>
         <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Visita nuestra sección de partidos políticos para conocer las alianzas y propuestas de cada organización.</p>
