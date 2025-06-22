@@ -74,8 +74,9 @@ const mediaContent = {
               <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2 drop-shadow-lg">{candidate.name}</h1>
               <p class="text-xl text-blue-300 font-semibold mb-2">{candidate.party}</p>
               <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
-                <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Edad: {candidate.age}</div>
-                <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Educación: {candidate.education}</div>
+                <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Edad: {candidate.age} años</div>
+                <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Nacimiento: {candidate.birthDate || 'No disponible'}</div>
+                <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Origen: {candidate.birthPlace || 'No disponible'}</div>
                 <div class="text-blue-200 bg-blue-800/50 px-3 py-1 rounded-lg text-sm border border-blue-600/30 shadow shadow-blue-500/20 w-full md:w-auto truncate">Profesión: {candidate.profession}</div>
               </div>
             </div>
@@ -94,8 +95,92 @@ const mediaContent = {
                 </svg>
                 Biografía
               </h2>
-              <p class="text-white leading-relaxed">{candidate.bio}</p>
+              <div class="text-white leading-relaxed space-y-4">
+                <p>{candidate.bio}</p>
+                
+                {candidate.maritalStatus && (
+                  <div class="mt-4 pt-4 border-t border-blue-800/30">
+                    <h3 class="text-lg font-semibold text-blue-300 mb-2">Información Personal</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-200">
+                      {candidate.maritalStatus && <li><span class="text-blue-200 font-medium">Estado Civil:</span> {candidate.maritalStatus}</li>}
+                      {candidate.children !== undefined && <li><span class="text-blue-200 font-medium">Hijos:</span> {candidate.children}</li>}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </section>
+
+            <!-- Educación y Formación -->
+            {candidate.education && typeof candidate.education === 'object' && (
+              <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                  </svg>
+                  Educación y Formación
+                </h2>
+                <div class="space-y-4 text-white">
+                  {candidate.education.university && (
+                    <div class="mb-4">
+                      <h3 class="text-lg font-semibold text-blue-300 mb-2">Formación Universitaria</h3>
+                      <p class="text-lg">{candidate.education.university}</p>
+                      {candidate.education.degrees && candidate.education.degrees.length > 0 && (
+                        <ul class="list-disc list-inside space-y-1 mt-2 text-gray-200">
+                          {candidate.education.degrees.map(degree => (
+                            <li>{degree}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                  
+                  {candidate.education.specializations && candidate.education.specializations.length > 0 && (
+                    <div class="mb-4">
+                      <h3 class="text-lg font-semibold text-blue-300 mb-2">Especializaciones</h3>
+                      <ul class="list-disc list-inside space-y-1 text-gray-200">
+                        {candidate.education.specializations.map(spec => (
+                          <li>{spec}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {(candidate.education.primary || candidate.education.secondary) && (
+                    <div>
+                      <h3 class="text-lg font-semibold text-blue-300 mb-2">Educación Básica</h3>
+                      <ul class="list-disc list-inside space-y-1 text-gray-200">
+                        {candidate.education.secondary && <li><span class="text-blue-200 font-medium">Secundaria:</span> {candidate.education.secondary}</li>}
+                        {candidate.education.primary && <li><span class="text-blue-200 font-medium">Primaria:</span> {candidate.education.primary}</li>}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
+            <!-- Experiencia Profesional -->
+            {candidate.professionalExperience && candidate.professionalExperience.length > 0 && (
+              <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Experiencia Profesional
+                </h2>
+                <ul class="space-y-3">
+                  {candidate.professionalExperience.map(experience => (
+                    <li class="flex items-start gap-3 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                      <span>{experience}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             <!-- Línea de tiempo -->
             <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
@@ -124,16 +209,23 @@ const mediaContent = {
                 </svg>
                 Propuestas de Campaña
               </h2>
-              <ul class="space-y-3">
-                {candidate.proposals.map(proposal => (
-                  <li class="flex items-start gap-3 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{proposal}</span>
-                  </li>
-                ))}
-              </ul>
+              
+              <div class="space-y-6">
+                {/* Agrupamos las propuestas en categorías temáticas para mejor organización */}
+                <div class="mb-4">
+                  <h3 class="text-lg font-semibold text-blue-300 mb-3 border-b border-blue-500/30 pb-2">Propuestas Principales</h3>
+                  <ul class="space-y-3">
+                    {candidate.proposals && candidate.proposals.map((proposal: string) => (
+                      <li class="flex items-start gap-3 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{proposal}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </section>
 
             <!-- Videos -->
@@ -217,22 +309,87 @@ const mediaContent = {
 
           <!-- Columna derecha (1/3) -->
           <div class="space-y-8">
+            <!-- Vicepresidente -->
+            {candidate.vicepresident && (
+              <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Binomio Vicepresidencial
+                </h2>
+                <div class="flex flex-col items-center md:flex-row md:items-start gap-4">
+                  {candidate.vicepresident.image && (
+                    <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-blue-400/60 shadow-lg shadow-blue-400/30 bg-blue-800/50 relative shrink-0">
+                      <img src={candidate.vicepresident.image} alt={candidate.vicepresident.name} class="object-cover w-full h-full transition-transform hover:scale-110" loading="lazy" />
+                    </div>
+                  )}
+                  <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-2">{candidate.vicepresident.name}</h3>
+                    {candidate.vicepresident.age && <p class="text-blue-300 mb-1">Edad: {candidate.vicepresident.age} años</p>}
+                    {candidate.vicepresident.profession && <p class="text-blue-300 mb-2">Profesión: {candidate.vicepresident.profession}</p>}
+                    {candidate.vicepresident.bio && <p class="text-white text-sm mt-2">{candidate.vicepresident.bio}</p>}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            <!-- Partido Político -->
+            {party && (
+              <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                  </svg>
+                  Partido Político
+                </h2>
+                <div class="text-center mb-4">
+                  {party.logo && <img src={party.logo} alt={party.name} class="h-24 mx-auto mb-4" />}
+                  <h3 class="text-xl font-bold text-white">{party.name}</h3>
+                  <p class="text-blue-300 text-sm">{party.shortName}</p>
+                </div>
+                <div class="space-y-3 text-white">
+                  {party.ideology && <p><span class="text-blue-300 font-medium">Ideología:</span> {Array.isArray(party.ideology) ? party.ideology.join(', ') : party.ideology}</p>}
+                  {party.founded && <p><span class="text-blue-300 font-medium">Fundación:</span> {party.founded}</p>}
+                  {party.color && <p><span class="text-blue-300 font-medium">Color principal:</span> {party.color}</p>}
+                  {party.keyFigures && party.keyFigures.length > 0 && (
+                    <div>
+                      <p class="text-blue-300 font-medium mb-1">Figuras clave:</p>
+                      <ul class="list-disc list-inside pl-2">
+                        {party.keyFigures.map(figure => (
+                          <li>{figure.name} - {figure.role}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
             <!-- Logros -->
             <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-green-500/30 transform transition-all hover:shadow-green-500/20 hover:shadow-2xl">
               <h2 class="text-2xl font-bold text-green-400 mb-6 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
                 Logros Destacados
               </h2>
-              <ul class="space-y-4 text-white list-disc pl-5">
-                <li>Logro 1: Descripción de un logro importante en la carrera del candidato.</li>
-                <li>Logro 2: Descripción de otro logro relevante para destacar.</li>
-                <li>Logro 3: Otro ejemplo de logro o contribución significativa.</li>
+              <ul class="space-y-3">
+                {candidate.achievements && candidate.achievements.map((achievement: string) => (
+                  <li class="flex items-start gap-3 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+                {!candidate.achievements || candidate.achievements.length === 0 && (
+                  <li class="text-gray-400 italic">No hay logros registrados</li>
+                )}
               </ul>
             </section>
 
-            <!-- Escándalos/Controversias -->
+            <!-- Controversias -->
             <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-red-500/30 transform transition-all hover:shadow-red-500/20 hover:shadow-2xl">
               <h2 class="text-2xl font-bold text-red-400 mb-6 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -240,9 +397,18 @@ const mediaContent = {
                 </svg>
                 Controversias
               </h2>
-              <ul class="space-y-4 text-white list-disc pl-5">
-                <li>Controversia 1: Breve descripción de una controversia o escándalo relacionado con el candidato.</li>
-                <li>Controversia 2: Otra situación controversial que haya enfrentado el candidato.</li>
+              <ul class="space-y-3">
+                {candidate.controversies && candidate.controversies.map((controversy: string) => (
+                  <li class="flex items-start gap-3 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span>{controversy}</span>
+                  </li>
+                ))}
+                {!candidate.controversies || candidate.controversies.length === 0 && (
+                  <li class="text-gray-400 italic">No hay controversias registradas</li>
+                )}
               </ul>
               <p class="text-gray-400 text-sm mt-4">Nota: Esta sección presenta información verificada sobre controversias públicas. Se actualiza conforme evoluciona la campaña.</p>
             </section>

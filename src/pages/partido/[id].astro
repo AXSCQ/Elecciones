@@ -5,12 +5,16 @@ import Layout from '../../layouts/Layout.astro';
 import Timeline from '../../components/react/Timeline';
 import Header from '../../components/react/Header.jsx';
 
-const { id } = Astro.params;
-const party = getPartyById(id);
-
-if (!party) {
-  return Astro.redirect('/404');
+// Esta función es requerida para rutas dinámicas en Astro
+export async function getStaticPaths() {
+  return parties.map(party => ({
+    params: { id: party.id.toString() },
+    props: { party }
+  }));
 }
+
+const { id } = Astro.params;
+const { party } = Astro.props;
 
 // Obtener los candidatos de este partido
 const partyMembers = candidates.filter(c => c.partyShort === party.shortName);

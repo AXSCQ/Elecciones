@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[dev]
+  command = "npm run dev"
+  port = 4321
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirecciones específicas para rutas dinámicas
+[[redirects]]
+  from = "/candidato/*"
+  to = "/candidato/[id].html"
+  status = 200
+
+[[redirects]]
+  from = "/partido/*"
+  to = "/partido/[id].html"
+  status = 200
