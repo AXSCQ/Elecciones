@@ -1,80 +1,92 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/react/Header.jsx';
+import HistoryTimeline from '../components/react/HistoryTimeline.jsx';
 ---
 
-<Layout title="Historia Electoral - Elecciones Bolivia 2025">
+<Layout title="Historia Política - Elecciones Bolivia 2025">
   <Header client:load />
   <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
-    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
-      <main class="max-w-5xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-10 drop-shadow-lg">Historia Política de Bolivia</h1>
+    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm">
+      <main class="py-16 px-4">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-4 drop-shadow-lg">
+          Historia Política de Bolivia
+        </h1>
+        <p class="text-xl text-blue-200 text-center mb-12 max-w-3xl mx-auto">
+          Un recorrido por la democracia boliviana desde 1982 hasta nuestros días
+        </p>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Línea de tiempo -->  
-          <section class="bg-black/70 rounded-2xl shadow-xl p-8 mb-8 border border-blue-500/30 transform transition-all hover:scale-[1.02] hover:shadow-blue-500/20 hover:shadow-2xl">
-            <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Línea de tiempo democrática
-            </h2>
-            <div class="border-l-4 border-blue-400 pl-6 space-y-10">
-              <div class="relative">
-                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
-                <div class="font-bold text-2xl text-blue-300 mb-2">1952</div>
-                <div class="text-white text-lg">Revolución Nacional: voto universal y reforma agraria.</div>
-              </div>
-              
-              <div class="relative">
-                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
-                <div class="font-bold text-2xl text-blue-300 mb-2">1982</div>
-                <div class="text-white text-lg">Retorno a la democracia tras dictaduras militares.</div>
-              </div>
-              
-              <div class="relative">
-                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
-                <div class="font-bold text-2xl text-blue-300 mb-2">2006</div>
-                <div class="text-white text-lg">Evo Morales asume la presidencia, inicio del Estado Plurinacional.</div>
-              </div>
-              
-              <div class="relative">
-                <div class="absolute -left-10 mt-1 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
-                <div class="font-bold text-2xl text-blue-300 mb-2">2019</div>
-                <div class="text-white text-lg">Crisis electoral y transición política.</div>
-              </div>
-            </div>
-          </section>
-          
-          <!-- Citas y curiosidades -->
-          <div class="space-y-8">
-            <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-yellow-500/30 transform transition-all hover:scale-[1.02] hover:shadow-yellow-500/20 hover:shadow-2xl">
-              <h2 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                Citas y curiosidades
-              </h2>
-              <blockquote class="border-l-4 border-yellow-400 pl-4 italic text-yellow-200 mb-6 text-lg">"La democracia es el mejor camino para la paz."</blockquote>
-              <blockquote class="border-l-4 border-green-400 pl-4 italic text-green-200 text-lg">"Bolivia es un país de encuentros y desencuentros políticos."</blockquote>
-            </section>
-            
-            <section class="bg-black/70 rounded-2xl shadow-xl p-8 border border-green-500/30 transform transition-all hover:scale-[1.02] hover:shadow-green-500/20 hover:shadow-2xl">
-              <h2 class="text-2xl font-bold text-green-400 mb-6 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Datos importantes
-              </h2>
-              <ul class="text-white space-y-4 list-disc pl-5">
-                <li>Bolivia ha tenido más de 80 presidentes desde su independencia en 1825.</li>
-                <li>El sistema electoral boliviano actual se estableció con la Constitución de 2009.</li>
-                <li>Las elecciones presidenciales se realizan cada 5 años.</li>
-                <li>El voto es obligatorio para todos los ciudadanos mayores de 18 años.</li>
-              </ul>
-            </section>
+        <!-- Componente de línea temporal interactiva -->
+        <HistoryTimeline client:load />
+        
+        <!-- Sección de estadísticas -->
+        <section class="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-blue-500/30 hover:border-blue-400 transition-all">
+            <div class="text-4xl font-bold text-blue-400 mb-2">43</div>
+            <div class="text-white">Años de Democracia</div>
           </div>
-        </div>
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-purple-500/30 hover:border-purple-400 transition-all">
+            <div class="text-4xl font-bold text-purple-400 mb-2">15</div>
+            <div class="text-white">Presidentes</div>
+          </div>
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-green-500/30 hover:border-green-400 transition-all">
+            <div class="text-4xl font-bold text-green-400 mb-2">12</div>
+            <div class="text-white">Elecciones</div>
+          </div>
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-yellow-500/30 hover:border-yellow-400 transition-all">
+            <div class="text-4xl font-bold text-yellow-400 mb-2">2</div>
+            <div class="text-white">Constituciones</div>
+          </div>
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-red-500/30 hover:border-red-400 transition-all">
+            <div class="text-4xl font-bold text-red-400 mb-2">5</div>
+            <div class="text-white">Conflictos Mayores</div>
+          </div>
+        </section>
+        
+        <!-- Sección de recursos adicionales -->
+        <section class="max-w-4xl mx-auto mt-16">
+          <h2 class="text-3xl font-bold text-white text-center mb-8">Recursos y Documentación</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-black/70 rounded-xl p-6 border border-blue-500/30 hover:border-blue-400 transition-all hover:shadow-xl hover:shadow-blue-500/20">
+              <h3 class="text-xl font-bold text-blue-400 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Biblioteca Digital
+              </h3>
+              <p class="text-gray-300 mb-4">Accede a documentos históricos, constituciones y leyes electorales.</p>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+                Explorar
+              </button>
+            </div>
+            
+            <div class="bg-black/70 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400 transition-all hover:shadow-xl hover:shadow-purple-500/20">
+              <h3 class="text-xl font-bold text-purple-400 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Videoteca
+              </h3>
+              <p class="text-gray-300 mb-4">Videos históricos de momentos clave de la democracia boliviana.</p>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+                Ver Videos
+              </button>
+            </div>
+            
+            <div class="bg-black/70 rounded-xl p-6 border border-green-500/30 hover:border-green-400 transition-all hover:shadow-xl hover:shadow-green-500/20">
+              <h3 class="text-xl font-bold text-green-400 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Estadísticas
+              </h3>
+              <p class="text-gray-300 mb-4">Datos y análisis de todas las elecciones democráticas.</p>
+              <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+                Ver Datos
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </div>
