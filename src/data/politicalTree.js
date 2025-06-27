@@ -3,62 +3,146 @@ export const politicalTree = {
   // Frente de izquierda - MAS
   mas: {
     id: 'mas',
-    name: 'Movimiento al Socialismo',
-    shortName: 'MAS',
-    color: '#3045b5',
+    name: 'Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos',
+    shortName: 'MAS-IPSP',
+    color: '#3045b5', // Azul cobalto
+    foundation: '30 de julio de 1987', // Fecha de reconocimiento legal
+    ideology: 'Plurinacionalismo, populismo de izquierda, antiimperialismo, antineoliberalismo',
+    officialColors: 'Azul cobalto, negro y blanco',
+    historicalLeaders: [
+      {
+        name: 'David Áñez Pedraza',
+        role: 'Presidente vitalicio desde la fundación',
+        image: '/Fondos/Candidatos1x1/DavidAnez.png'
+      },
+      {
+        name: 'Evo Morales',
+        role: 'Presidente del partido de 1997 a 2024',
+        image: '/Fondos/Candidatos1x1/EvoMorales.png'
+      },
+      {
+        name: 'Grover García',
+        role: 'Presidente desde mayo de 2024',
+        image: '/Fondos/Candidatos1x1/GroverGarcia.png'
+      }
+    ],
     candidates: {
       president: {
-        id: '1',
-        name: 'Eva Copa',
-        role: 'Candidata Presidencial',
-        image: '/Fondos/Candidatos1x1/Copa.png',
-        bio: 'Eva Copa es una política boliviana que ganó protagonismo como presidenta del Senado durante la crisis política de 2019.',
+        id: 'pres1',
+        name: 'Eduardo Del Castillo',
+        role: 'Candidato Presidencial',
+        image: '/Fondos/Candidatos1x1/DelCastillo.png',
+        bio: 'Abogado y político, ex Ministro de Gobierno de Bolivia (2020-2025). Fue designado candidato presidencial del MAS por el Pacto de Unidad para las elecciones de 2025.',
         vicepresident: {
-          id: 'vp1',
-          name: 'Santos Ramírez',
+          id: 'vpres1',
+          name: 'Milán Berna',
           role: 'Candidato Vicepresidencial',
-          image: '/Fondos/Candidatos1x1/placeholder-profile.jpg',
-          bio: 'Ex-dirigente del MAS con experiencia en gestión pública y movimientos sociales.'
+          image: '/Fondos/Candidatos1x1/MilanBerna.png',
+          bio: 'Dirigente de la Confederación Sindical Única de Trabajadores Campesinos de Bolivia (CSUTCB). Fue designado candidato a la vicepresidencia por el Pacto de Unidad junto a Eduardo Del Castillo el 16 de mayo de 2025.'
         }
       },
       senators: [
         {
           id: 'sen1',
-          name: 'Andrónico Rodríguez',
+          name: 'Pedro Benjamín Vargas Fernández',
           role: 'Candidato a Senador',
-          region: 'Cochabamba',
-          image: '/Fondos/Candidatos1x1/Rodrigo.png',
-          bio: 'Joven líder sindical cocalero que ganó notoriedad durante la crisis política de 2019.'
+          region: 'Chuquisaca, Potosí',
+          image: '/Fondos/Candidatos1x1/PedroVargas.png',
+          bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante con experiencia en las regiones de Chuquisaca y Potosí.'
         },
         {
           id: 'sen2',
-          name: 'María Arequipa',
-          role: 'Candidata a Senadora',
+          name: 'Felix Ajpi Ajpi',
+          role: 'Candidato a Senador',
           region: 'La Paz',
-          image: '/Fondos/Candidatos1x1/placeholder-profile.jpg',
-          bio: 'Dirigente social con amplia trayectoria en movimientos indígenas.'
+          image: '/Fondos/Candidatos1x1/FelixAjpi.png',
+          bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de La Paz con enfoque en derechos indígenas.'
+        },
+        {
+          id: 'sen3',
+          name: 'Gladys Valentina Alarcón Farfán',
+          role: 'Candidata a Senadora',
+          region: 'Tarija',
+          image: '/Fondos/Candidatos1x1/GladysAlarcon.png',
+          bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Tarija con trayectoria en movimientos sociales.'
+        },
+        {
+          id: 'sen4',
+          name: 'María Patricia Arce Guzmán',
+          role: 'Candidata a Senadora',
+          region: 'Cochabamba',
+          image: '/Fondos/Candidatos1x1/PatriciaArce.png',
+          bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Ex-alcaldesa de Vinto, conocida por su resistencia durante la crisis política de 2019.'
+        },
+        {
+          id: 'sen5',
+          name: 'Ana María Castillo Negrette',
+          role: 'Candidata a Senadora',
+          region: 'Potosí',
+          image: '/Fondos/Candidatos1x1/AnaCastillo.png',
+          bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Potosí con enfoque en desarrollo regional.'
+        },
+        {
+          id: 'sen10',
+          name: 'Leonardo Loza',
+          role: 'Candidato a Senador',
+          region: 'Cochabamba',
+          image: '/Fondos/Candidatos1x1/LeonardoLoza.png',
+          bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Dirigente cocalero del trópico de Cochabamba, cercano a Evo Morales.'
+        },
+        {
+          id: 'sen12',
+          name: 'Andrónico Rodríguez Ledezma',
+          role: 'Candidato a Senador',
+          region: 'Cochabamba',
+          image: '/Fondos/Candidatos1x1/Rodrigo.png',
+          bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Joven líder sindical cocalero que ganó notoriedad durante la crisis política de 2019.'
         }
       ],
       deputies: [
         {
           id: 'dep1',
-          name: 'Carlos Romero',
-          role: 'Candidato a Diputado',
-          region: 'Santa Cruz',
-          image: '/Fondos/Candidatos1x1/placeholder-profile.jpg',
-          bio: 'Ex-ministro de Gobierno con amplia experiencia en gestión pública.'
+          name: 'Omar Al Yabhat Yujra Santos',
+          role: 'Candidato a Diputado - Presidencia de la Cámara',
+          region: 'La Paz',
+          image: '/Fondos/Candidatos1x1/OmarYujra.png',
+          bio: 'Presidente de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP con experiencia legislativa.'
         },
         {
           id: 'dep2',
-          name: 'Juanita Ancieta',
-          role: 'Candidata a Diputada',
+          name: 'Deisy Judith Choque Arnez',
+          role: 'Candidata a Diputada - Primera Vicepresidencia',
           region: 'Cochabamba',
-          image: '/Fondos/Candidatos1x1/placeholder-profile.jpg',
-          bio: 'Dirigente de las Bartolinas con trayectoria en movimientos sociales.'
+          image: '/Fondos/Candidatos1x1/DeisyChoque.png',
+          bio: 'Primera Vicepresidenta de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
+        },
+        {
+          id: 'dep3',
+          name: 'Delfor Germán Burgos Aguirre',
+          role: 'Candidato a Diputado - Primera Secretaría',
+          region: 'Santa Cruz',
+          image: '/Fondos/Candidatos1x1/DelforBurgos.png',
+          bio: 'Primer Secretario de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
+        },
+        {
+          id: 'dep4',
+          name: 'Abad Farfán Mamani',
+          role: 'Candidato a Diputado Uninominal',
+          region: 'Potosí - C-37',
+          image: '/Fondos/Candidatos1x1/AbadFarfan.png',
+          bio: 'Diputado Uninominal del MAS-IPSP en el periodo 2020-2025. Representante de la circunscripción 37 de Potosí.'
+        },
+        {
+          id: 'dep5',
+          name: 'Abelardo Colque Vicente',
+          role: 'Candidato a Diputado Plurinominal',
+          region: 'Potosí',
+          image: '/Fondos/Candidatos1x1/AbelardoColque.png',
+          bio: 'Diputado Plurinominal del MAS-IPSP en el periodo 2020-2025. Representante del bloque renovador.'
         }
       ]
     },
-    allies: ['mas-ipsp', 'mas-evo'],
+    allies: ['renovador', 'radical', 'pacto-unidad'],
     mediaContent: {
       videos: [
         { 
@@ -66,13 +150,36 @@ export const politicalTree = {
           url: '/videos/mas-presentacion.mp4', 
           thumbnail: '/images/thumbnails/mas-video1.jpg',
           duration: 185
+        },
+        { 
+          title: 'Historia del MAS-IPSP', 
+          url: '/videos/mas-historia.mp4', 
+          thumbnail: '/images/thumbnails/mas-video2.jpg',
+          duration: 240
         }
       ],
       audio: [
         { 
-          title: 'Entrevista Radial', 
-          url: '/audio/mas-entrevista.mp3', 
+          title: 'Entrevista a Eduardo Del Castillo', 
+          url: '/audio/mas-entrevista-delcastillo.mp3', 
           duration: 320
+        },
+        { 
+          title: 'Discurso de Milán Berna', 
+          url: '/audio/mas-discurso-berna.mp3', 
+          duration: 180
+        }
+      ],
+      documents: [
+        {
+          title: 'Programa de Gobierno 2025-2030',
+          url: '/documents/mas-programa-gobierno.pdf',
+          pages: 45
+        },
+        {
+          title: 'Historia y Principios del MAS-IPSP',
+          url: '/documents/mas-historia-principios.pdf',
+          pages: 28
         }
       ]
     }
@@ -307,13 +414,15 @@ export const politicalTree = {
 
 // Relaciones entre partidos y alianzas
 export const politicalRelations = [
-  { source: 'mas', target: 'mas-ipsp', type: 'alliance', strength: 'strong' },
-  { source: 'mas', target: 'mas-evo', type: 'alliance', strength: 'moderate' },
+  { source: 'mas', target: 'renovador', type: 'alliance', strength: 'moderate' },
+  { source: 'mas', target: 'radical', type: 'alliance', strength: 'moderate' },
+  { source: 'mas', target: 'pacto-unidad', type: 'alliance', strength: 'strong' },
   { source: 'cc', target: 'creemos', type: 'alliance', strength: 'moderate' },
   { source: 'libre', target: 'un', type: 'alliance', strength: 'strong' },
   { source: 'mas', target: 'cc', type: 'opposition', strength: 'strong' },
   { source: 'mas', target: 'libre', type: 'opposition', strength: 'strong' },
   { source: 'mas', target: 'un', type: 'opposition', strength: 'strong' },
   { source: 'cc', target: 'libre', type: 'cooperation', strength: 'weak' },
-  { source: 'cc', target: 'un', type: 'cooperation', strength: 'weak' }
+  { source: 'cc', target: 'un', type: 'cooperation', strength: 'weak' },
+  { source: 'renovador', target: 'radical', type: 'opposition', strength: 'moderate' }
 ];
