@@ -27,6 +27,81 @@ export default function HistoryTimeline() {
     };
     return colors[type] || 'bg-gray-500';
   };
+   // Componente para el contenido detallado del período 
+  const PeriodDetailContent = ({ period, getEventColor }) => (
+    <>
+      <div className="mb-4">
+        <h3 className="text-xl font-bold text-white mb-2">{period.name}</h3>
+        <p className="text-lg font-semibold" style={{ color: period.color }}>
+          {period.yearStart} - {period.yearEnd}
+        </p>
+      </div>
+      <p className="text-gray-300 mb-4 leading-relaxed text-sm xl:text-base">{period.description}</p>
+      {period.president && (
+        <div className="bg-black/30 p-3 rounded-lg mb-4">
+          <p className="text-blue-300 font-medium text-sm xl:text-base">Presidente: {period.president}</p>
+        </div>
+      )}
+      {period.keyEvents && (
+        <div>
+          <h4 className="text-lg font-bold text-white mb-3 flex items-center">
+            <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: period.color }}></span>
+            Eventos Importantes
+          </h4>
+          <div className="space-y-3 max-h-40 overflow-y-auto">
+            {period.keyEvents.slice(0, 3).map((event, idx) => (
+              <div key={idx} className="bg-black/40 p-3 rounded-lg border-l-4"
+                style={{ borderLeftColor: period.color }}>
+                <div className="flex items-center mb-1">
+                  <span className={`${getEventColor(event.type)} px-2 py-1 rounded text-white text-xs font-semibold mr-2`}>
+                    {event.year}
+                  </span>
+                  <h5 className="font-bold text-white text-sm xl:text-base">{event.title}</h5>
+                </div>
+                <p className="text-gray-300 text-xs xl:text-sm leading-relaxed">{event.description}</p>
+              </div>
+            ))}
+            {period.keyEvents.length > 3 && (
+              <p className="text-gray-400 text-xs text-center italic">
+                +{period.keyEvents.length - 3} eventos más...
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+
+  // Componente para el contenido básico del período 
+  const PeriodBasicContent = ({ period }) => (
+    <>
+      <h3 className="text-white font-bold text-lg lg:text-xl mb-1 lg:mb-2 drop-shadow-lg">{period.name}</h3>
+      <p className="text-base lg:text-lg font-semibold mb-2 lg:mb-3 drop-shadow-md" style={{ color: period.color }}>
+        {period.yearStart} - {period.yearEnd}
+      </p>
+      <p className="text-gray-300 text-sm lg:text-base leading-relaxed drop-shadow-md mb-3">{period.description}</p>
+      {period.president && (
+        <p className="text-blue-300 font-medium text-sm lg:text-base drop-shadow-md">
+          Presidente: {period.president}
+        </p>
+      )}
+    </>
+  );
+
+  // Componente para el círculo animado 
+  const AnimatedCircle = ({ period, className = "" }) => (
+    <div
+      className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full border-4 border-white shadow-lg z-30 
+    cursor-pointer transform transition-all duration-300 ease-in-out
+    group-hover:scale-125 group-hover:shadow-2xl relative ${className}`}
+      style={{ backgroundColor: period.color }}
+    >
+      <div className="w-full h-full rounded-full animate-ping absolute inset-0 opacity-0 group-hover:opacity-30"
+        style={{ backgroundColor: period.color }}
+      ></div>
+    </div>
+  );
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -74,56 +149,7 @@ export default function HistoryTimeline() {
         </button>
       </div>
 
-      {/* Contenido según el tab activo */}
-      {activeTab === 'timeline' && (
-        <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-8">
-            Línea Temporal de la Democracia Boliviana
-          </h2>
-          
-          {/* Timeline visual */}
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 via-purple-400 to-green-400"></div>
-            
-            {boliviaHistory.periods.map((period, index) => (
-              <div 
-                key={period.id}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'justify-start' : 'justify-end'
-                }`}
-              >
-                <div 
-                  className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}
-                  onClick={() => setSelectedPeriod(period)}
-                >
-                  <div 
-                    className="bg-black/80 p-6 rounded-xl border-2 cursor-pointer transform transition-all hover:scale-105 hover:shadow-2xl"
-                    style={{ borderColor: period.color }}
-                  >
-                    <h3 className="text-xl font-bold text-white mb-2">{period.name}</h3>
-                    <p className="text-lg font-semibold mb-2" style={{ color: period.color }}>
-                      {period.yearStart} - {period.yearEnd}
-                    </p>
-                    <p className="text-gray-300 text-sm">{period.description}</p>
-                    {period.president && (
-                      <p className="text-blue-300 mt-2 font-medium">
-                        Presidente: {period.president}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                
-                {/* Círculo central */}
-                <div 
-                  className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-125 transition-transform"
-                  style={{ backgroundColor: period.color }}
-                  onClick={() => setSelectedPeriod(period)}
-                ></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+     
 
       {activeTab === 'powers' && (
         <div className="space-y-8">
@@ -233,100 +259,87 @@ export default function HistoryTimeline() {
         </div>
       )}
 
-      {/* Modal para período seleccionado */}
-      {selectedPeriod && (
-        <div 
-          className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedPeriod(null)}
-        >
-          <div 
-            className="bg-gray-900 rounded-xl p-8 max-w-2xl max-h-[80vh] overflow-y-auto border-2"
-            style={{ borderColor: selectedPeriod.color }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">{selectedPeriod.name}</h3>
-            <p className="text-lg mb-4" style={{ color: selectedPeriod.color }}>
-              {selectedPeriod.yearStart} - {selectedPeriod.yearEnd}
-            </p>
-            <p className="text-gray-300 mb-6">{selectedPeriod.description}</p>
-            
-            {selectedPeriod.keyEvents && (
-              <div>
-                <h4 className="text-xl font-bold text-white mb-4">Eventos Importantes:</h4>
-                <div className="space-y-4">
-                  {selectedPeriod.keyEvents.map((event, idx) => (
-                    <div key={idx} className="bg-black/50 p-4 rounded-lg">
-                      <div className="flex items-center mb-2">
-                        <span className={`${getEventColor(event.type)} px-2 py-1 rounded text-white text-sm mr-2`}>
-                          {event.year}
-                        </span>
-                        <h5 className="font-bold text-white">{event.title}</h5>
-                      </div>
-                      <p className="text-gray-300 text-sm">{event.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-            <button 
-              onClick={() => setSelectedPeriod(null)}
-              className="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
+      <div className="w-full px-4 py-8">
+      {activeTab === 'timeline' && (
+        <div className="space-y-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            Línea Temporal de la Democracia Boliviana
+          </h2>
 
-      {/* Modal para evento seleccionado */}
-      {selectedEvent && (
-        <div 
-          className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedEvent(null)}
-        >
-          <div 
-            className="bg-gray-900 rounded-xl p-8 max-w-2xl max-h-[80vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">{selectedEvent.title}</h3>
-            <p className={`${getEventColor(selectedEvent.type)} inline-block px-3 py-1 rounded-full text-white mb-4`}>
-              {getEventIcon(selectedEvent.type)} {selectedEvent.year} {selectedEvent.month || ''}
-            </p>
-            <p className="text-gray-300 mb-6">{selectedEvent.description}</p>
-            
-            {selectedEvent.media && (
-              <div className="space-y-4">
-                {selectedEvent.media.video && (
-                  <div className="bg-black/50 p-4 rounded-lg">
-                    <p className="text-blue-400 mb-2">🎥 Video disponible</p>
-                    <p className="text-gray-400 text-sm">Próximamente: {selectedEvent.media.video}</p>
+          <div className="relative py-40">
+            {/* Líneas de tiempo */}
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 transform -translate-y-1/2 z-10 md:block hidden" />
+            <div className="absolute left-3 top-0 h-full w-1 bg-gradient-to-b from-blue-400 via-purple-400 to-green-400 z-10 md:hidden block" />
+
+            {/* Contenedor de eventos */}
+            <div className="flex md:flex-row flex-col md:justify-between items-start md:items-center relative z-20 px-4 md:px-20 lg:px-32 xl:px-40 w-full gap-24 md:gap-8 lg:gap-12">
+              {boliviaHistory.periods.map((period, index) => {
+                const isEven = index % 2 === 0;
+                const isFirst = index === 0;
+                const isLast = index === boliviaHistory.periods.length - 1;
+                const arrowPosition = isFirst ? 'left' : isLast ? 'right' : 'center';
+
+                return (
+                  <div key={period.id} className="flex md:flex-col flex-row items-start md:items-center relative group w-full md:w-auto">
+
+                    {/* MOBILE LAYOUT */}
+                    <div className="md:hidden flex items-start gap-6 w-full relative">
+                      <AnimatedCircle period={period} className="-ml-4 mt-1 flex-shrink-0" />
+
+                      <div className="flex-1 pt-0">
+                        <PeriodBasicContent period={period} />
+                      </div>
+
+                      {/* inform. móvil */}
+                      <div
+                        className="absolute left-12 top-1/2 transform -translate-y-1/2
+                      w-80 sm:w-[550px] bg-gray-900 backdrop-blur-sm rounded-xl p-4 sm:p-6 border-2 shadow-2xl
+                      opacity-0 scale-95 pointer-events-none
+                      group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto
+                      transition-all duration-300 ease-in-out z-50 max-h-80 overflow-y-auto"
+                        style={{ borderColor: period.color }}
+                      > 
+                        <PeriodDetailContent period={period} getEventColor={getEventColor} />
+                      </div>
+                    </div>
+
+                    {/* DESKTOP LAYOUT */}
+                    <div className="hidden md:flex md:flex-col md:items-center relative group w-full md:w-auto">
+                      {/* Contenido básico */}
+                      <div className={`absolute w-64 lg:w-72 xl:w-80 text-center z-30
+                      ${isEven ? 'bottom-full mb-6' : 'top-full mt-6'}
+                      group-hover:scale-105 transition-all duration-300 ease-in-out
+                      opacity-90 group-hover:opacity-100`}
+                      >
+                        <PeriodBasicContent period={period} />
+                      </div>
+
+                      <AnimatedCircle period={period} />
+
+                      {/* inform. desktop */}
+                      <div
+                        className={`absolute ${isEven ? 'bottom-full mb-4' : 'top-full mt-4'} 
+                      ${isFirst ? 'left-0' : isLast ? 'right-0' : 'left-1/2 transform -translate-x-1/2'}
+                      w-80 xl:w-96 bg-gray-900/95 backdrop-blur-sm rounded-xl p-6 border-2 shadow-2xl
+                      opacity-0 scale-95 pointer-events-none
+                      group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto
+                      transition-all duration-300 ease-in-out z-50`}
+                        style={{ borderColor: period.color }}
+                      >
+                        
+                        <PeriodDetailContent period={period} getEventColor={getEventColor} />
+                      </div>
+                    </div>
                   </div>
-                )}
-                {selectedEvent.media.image && (
-                  <div className="bg-black/50 p-4 rounded-lg">
-                    <p className="text-green-400 mb-2">📷 Imagen disponible</p>
-                    <p className="text-gray-400 text-sm">Próximamente: {selectedEvent.media.image}</p>
-                  </div>
-                )}
-                {selectedEvent.media.gallery && (
-                  <div className="bg-black/50 p-4 rounded-lg">
-                    <p className="text-purple-400 mb-2">🖼️ Galería disponible</p>
-                    <p className="text-gray-400 text-sm">{selectedEvent.media.gallery.length} imágenes</p>
-                  </div>
-                )}
-              </div>
-            )}
-            
-            <button 
-              onClick={() => setSelectedEvent(null)}
-              className="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors"
-            >
-              Cerrar
-            </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
+    </div>
+  
+      
     </div>
   );
 }
