@@ -32,12 +32,14 @@ export const politicalTree = {
         name: 'Eduardo Del Castillo',
         role: 'Candidato Presidencial',
         image: '/Fondos/Candidatos1x1/DelCastillo.png',
+        gender: 'male',
         bio: 'Abogado y político, ex Ministro de Gobierno de Bolivia (2020-2025). Fue designado candidato presidencial del MAS por el Pacto de Unidad para las elecciones de 2025.',
         vicepresident: {
           id: 'vpres1',
           name: 'Milán Berna',
           role: 'Candidato Vicepresidencial',
           image: '/Fondos/Candidatos1x1/MilanBerna.png',
+          gender: 'male',
           bio: 'Dirigente de la Confederación Sindical Única de Trabajadores Campesinos de Bolivia (CSUTCB). Fue designado candidato a la vicepresidencia por el Pacto de Unidad junto a Eduardo Del Castillo el 16 de mayo de 2025.'
         }
       },
@@ -48,6 +50,7 @@ export const politicalTree = {
           role: 'Candidato a Senador',
           region: 'Chuquisaca, Potosí',
           image: '/Fondos/Candidatos1x1/PedroVargas.png',
+          gender: 'male',
           bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante con experiencia en las regiones de Chuquisaca y Potosí.'
         },
         {
@@ -56,6 +59,7 @@ export const politicalTree = {
           role: 'Candidato a Senador',
           region: 'La Paz',
           image: '/Fondos/Candidatos1x1/FelixAjpi.png',
+          gender: 'male',
           bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de La Paz con enfoque en derechos indígenas.'
         },
         {
@@ -64,6 +68,7 @@ export const politicalTree = {
           role: 'Candidata a Senadora',
           region: 'Tarija',
           image: '/Fondos/Candidatos1x1/GladysAlarcon.png',
+          gender: 'female',
           bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Tarija con trayectoria en movimientos sociales.'
         },
         {
@@ -72,6 +77,7 @@ export const politicalTree = {
           role: 'Candidata a Senadora',
           region: 'Cochabamba',
           image: '/Fondos/Candidatos1x1/PatriciaArce.png',
+          gender: 'female',
           bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Ex-alcaldesa de Vinto, conocida por su resistencia durante la crisis política de 2019.'
         },
         {
@@ -80,6 +86,7 @@ export const politicalTree = {
           role: 'Candidata a Senadora',
           region: 'Potosí',
           image: '/Fondos/Candidatos1x1/AnaCastillo.png',
+          gender: 'female',
           bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Potosí con enfoque en desarrollo regional.'
         },
         {
@@ -88,6 +95,7 @@ export const politicalTree = {
           role: 'Candidato a Senador',
           region: 'Cochabamba',
           image: '/Fondos/Candidatos1x1/LeonardoLoza.png',
+          gender: 'male',
           bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Dirigente cocalero del trópico de Cochabamba, cercano a Evo Morales.'
         },
         {
@@ -96,6 +104,7 @@ export const politicalTree = {
           role: 'Candidato a Senador',
           region: 'Cochabamba',
           image: '/Fondos/Candidatos1x1/Rodrigo.png',
+          gender: 'male',
           bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Joven líder sindical cocalero que ganó notoriedad durante la crisis política de 2019.'
         }
       ],
@@ -106,6 +115,7 @@ export const politicalTree = {
           role: 'Candidato a Diputado - Presidencia de la Cámara',
           region: 'La Paz',
           image: '/Fondos/Candidatos1x1/OmarYujra.png',
+          gender: 'male',
           bio: 'Presidente de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP con experiencia legislativa.'
         },
         {
@@ -114,6 +124,7 @@ export const politicalTree = {
           role: 'Candidata a Diputada - Primera Vicepresidencia',
           region: 'Cochabamba',
           image: '/Fondos/Candidatos1x1/DeisyChoque.png',
+          gender: 'female',
           bio: 'Primera Vicepresidenta de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
         },
         {
@@ -122,6 +133,7 @@ export const politicalTree = {
           role: 'Candidato a Diputado - Primera Secretaría',
           region: 'Santa Cruz',
           image: '/Fondos/Candidatos1x1/DelforBurgos.png',
+          gender: 'male',
           bio: 'Primer Secretario de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
         },
         {
@@ -130,6 +142,7 @@ export const politicalTree = {
           role: 'Candidato a Diputado Uninominal',
           region: 'Potosí - C-37',
           image: '/Fondos/Candidatos1x1/AbadFarfan.png',
+          gender: 'male',
           bio: 'Diputado Uninominal del MAS-IPSP en el periodo 2020-2025. Representante de la circunscripción 37 de Potosí.'
         },
         {
@@ -138,6 +151,7 @@ export const politicalTree = {
           role: 'Candidato a Diputado Plurinominal',
           region: 'Potosí',
           image: '/Fondos/Candidatos1x1/AbelardoColque.png',
+          gender: 'male',
           bio: 'Diputado Plurinominal del MAS-IPSP en el periodo 2020-2025. Representante del bloque renovador.'
         }
       ]

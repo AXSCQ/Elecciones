@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { politicalTree } from '../../data/politicalTree.js';
 
 const EnhancedPoliticalTree = () => {
@@ -6,12 +6,81 @@ const EnhancedPoliticalTree = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const treeContainerRef = useRef(null);
+  const treeContentRef = useRef(null);
+  const [isPanning, setIsPanning] = useState(false);
+  const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
+  const [startPanPosition, setStartPanPosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const parties = Object.keys(politicalTree).filter(key => !politicalTree[key].parent);
 
+  // Zoom con wheel mouse
+  const handleWheelZoom = (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -0.1 : 0.1;
+      setZoomLevel(prev => {
+        const newZoom = prev + delta;
+        return Math.min(Math.max(newZoom, 0.5), 2);
+      });
+    }
+  };
+
+  // Funciones para el desplazamiento con clic sostenido (panning)
+  const handleMouseDown = (e) => {
+    // Solo activar el panning con el botón izquierdo del mouse (e.button === 0)
+    if (e.button === 0) {
+      setIsPanning(true);
+      setStartPanPosition({ x: e.clientX - panPosition.x, y: e.clientY - panPosition.y });
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+    
+    if (isPanning) {
+      const newX = e.clientX - startPanPosition.x;
+      const newY = e.clientY - startPanPosition.y;
+      setPanPosition({ x: newX, y: newY });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
+  };
+
+  useEffect(() => {
+    const treeContainer = treeContainerRef.current;
+    if (treeContainer) {
+      // Manejador de zoom
+      treeContainer.addEventListener('wheel', handleWheelZoom, { passive: false });
+      
+      // Manejadores de panning
+      treeContainer.addEventListener('mousedown', handleMouseDown);
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
+      
+      return () => {
+        treeContainer.removeEventListener('wheel', handleWheelZoom);
+        treeContainer.removeEventListener('mousedown', handleMouseDown);
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mouseup', handleMouseUp);
+      };
+    }
+  }, [panPosition, isPanning]);
+
+  // Resetear la posición de pan cuando cambia el partido
+  useEffect(() => {
+    setPanPosition({ x: 0, y: 0 });
+  }, [selectedParty]);
+
   const zoomIn = () => setZoomLevel(prev => Math.min(prev + 0.2, 2));
   const zoomOut = () => setZoomLevel(prev => Math.max(prev - 0.2, 0.5));
-  const resetZoom = () => setZoomLevel(1);
+  const resetZoom = () => {
+    setZoomLevel(1);
+    setPanPosition({ x: 0, y: 0 });
+  };
 
   const openCandidateModal = (candidate) => {
     setSelectedCandidate(candidate);
@@ -36,13 +105,26 @@ const EnhancedPoliticalTree = () => {
         onClick={() => openCandidateModal(candidate)}
       >
         <div className={`${level === 0 ? 'w-20 h-20' : level === 1 ? 'w-16 h-16' : 'w-12 h-12'} mx-auto rounded-full overflow-hidden border-4 ${isVice ? 'border-purple-400/70' : 'border-blue-400/70'} shadow-lg mb-3 bg-blue-800/50`}>
+          {/* Versión original - descomentar cuando se tengan todas las imágenes 
           <img 
             src={candidate.image} 
             alt={candidate.name} 
             className="object-cover w-full h-full"
             onError={(e) => {
-              e.target.src = '/Fondos/Candidatos1x1/placeholder-profile.jpg';
+              // Usar silueta según género
+              const isFemale = candidate.gender === 'female';
+              e.target.src = isFemale 
+                ? '/PartidosP/SiluetaM.png' 
+                : '/PartidosP/SiluetaH.png';
             }}
+          />
+          */}
+          
+          {/* Versión temporal con siluetas */}
+          <img 
+            src="/PartidosP/SiluetaH.png" 
+            alt={candidate.name} 
+            className="object-cover w-full h-full"
           />
         </div>
         <h3 className={`${textSize} font-bold text-white mb-1`}>{candidate.name}</h3>
@@ -192,8 +274,11 @@ const EnhancedPoliticalTree = () => {
         </div>
       </div>
 
-      {/* Controles de Zoom */}
-      <div className="flex justify-center mb-6">
+      {/* Controles de Zoom con instrucciones */}
+      <div className="flex justify-between mb-6 items-center">
+        <div className="text-white text-sm bg-blue-900/50 rounded-lg px-4 py-2">
+          <strong>Tips:</strong> Usa Ctrl + rueda del mouse para hacer zoom. Mantén presionado el clic izquierdo para desplazarte.
+        </div>
         <div className="bg-black/50 rounded-xl p-2 flex gap-2 border border-blue-400/30">
           <button
             onClick={zoomOut}
@@ -219,11 +304,18 @@ const EnhancedPoliticalTree = () => {
         </div>
       </div>
 
-      {/* Árbol Político */}
-      <div className="bg-black/40 rounded-2xl p-8 border border-blue-400/30 overflow-auto">
+      {/* Árbol Político con ref para controlar zoom y pan */}
+      <div 
+        ref={treeContainerRef} 
+        className="bg-black/40 rounded-2xl p-8 border border-blue-400/30 overflow-auto relative"
+        style={{ maxHeight: '80vh', cursor: isPanning ? 'grabbing' : 'grab' }}>
         <div 
-          className="transition-transform duration-300"
-          style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'top center' }}
+          ref={treeContentRef}
+          className="transition-all duration-100"
+          style={{ 
+            transform: `scale(${zoomLevel}) translate(${panPosition.x/zoomLevel}px, ${panPosition.y/zoomLevel}px)`, 
+            transformOrigin: 'center'
+          }}
         >
           {selectedPartyData && (
             <div className="min-h-[600px]">
@@ -261,13 +353,26 @@ const EnhancedPoliticalTree = () => {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400/70 shadow-lg bg-blue-800/50">
+                  {/* Versión original - descomentar cuando se tengan todas las imágenes 
                   <img 
                     src={selectedCandidate.image} 
                     alt={selectedCandidate.name} 
                     className="object-cover w-full h-full"
                     onError={(e) => {
-                      e.target.src = '/Fondos/Candidatos1x1/placeholder-profile.jpg';
+                      // Usar silueta según género
+                      const isFemale = selectedCandidate.gender === 'female';
+                      e.target.src = isFemale 
+                        ? '/PartidosP/SiluetaM.png' 
+                        : '/PartidosP/SiluetaH.png';
                     }}
+                  />
+                  */}
+                  
+                  {/* Versión temporal con siluetas */}
+                  <img 
+                    src="/PartidosP/SiluetaH.png" 
+                    alt={selectedCandidate.name} 
+                    className="object-cover w-full h-full"
                   />
                 </div>
               </div>
