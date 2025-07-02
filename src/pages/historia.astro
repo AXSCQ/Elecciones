@@ -15,12 +15,12 @@ import HistoryTimeline from '../components/react/HistoryTimeline.jsx';
         <p class="text-xl text-blue-200 text-center mb-12 max-w-3xl mx-auto">
           Un recorrido por la democracia boliviana desde 1982 hasta nuestros días
         </p>
-        
+
         <!-- Componente de línea temporal interactiva -->
         <HistoryTimeline client:load />
-        
+
         <!-- Sección de estadísticas -->
-        <section class="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-5 gap-4">
+        <section class="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-6 gap-4">
           <div class="bg-black/70 rounded-xl p-6 text-center border border-blue-500/30 hover:border-blue-400 transition-all">
             <div class="text-4xl font-bold text-blue-400 mb-2">43</div>
             <div class="text-white">Años de Democracia</div>
@@ -41,49 +41,70 @@ import HistoryTimeline from '../components/react/HistoryTimeline.jsx';
             <div class="text-4xl font-bold text-red-400 mb-2">5</div>
             <div class="text-white">Conflictos Mayores</div>
           </div>
+          <div class="bg-black/70 rounded-xl p-6 text-center border border-cyan-500/30 hover:border-cyan-400 transition-all">
+            <div class="text-4xl font-bold text-cyan-400 mb-2">2020</div>
+            <div class="text-white">Elecciones 2020</div>
+          </div>
         </section>
-        
+
         <!-- Sección de recursos adicionales -->
         <section class="max-w-4xl mx-auto mt-16">
           <h2 class="text-3xl font-bold text-white text-center mb-8">Recursos y Documentación</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Biblioteca Digital -->
             <div class="bg-black/70 rounded-xl p-6 border border-blue-500/30 hover:border-blue-400 transition-all hover:shadow-xl hover:shadow-blue-500/20">
               <h3 class="text-xl font-bold text-blue-400 mb-3 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
                 </svg>
                 Biblioteca Digital
               </h3>
-              <p class="text-gray-300 mb-4">Accede a documentos históricos, constituciones y leyes electorales.</p>
-              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+              <p class="text-gray-300 mb-4">Acceso a documentos históricos, constituciones y leyes electorales.</p>
+              <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors w-full inline-block text-center">
                 Explorar
-              </button>
+              </a>
             </div>
-            
+
+            <!-- Videoteca -->
             <div class="bg-black/70 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400 transition-all hover:shadow-xl hover:shadow-purple-500/20">
               <h3 class="text-xl font-bold text-purple-400 mb-3 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-6.518-3.759A1 1 0 007 8.118v7.764a1 1 0 001.234.97l6.518-1.952A1 1 0 0015 13.003V12a1 1 0 00-.248-.832z" />
                 </svg>
                 Videoteca
               </h3>
               <p class="text-gray-300 mb-4">Videos históricos de momentos clave de la democracia boliviana.</p>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+              <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors w-full inline-block text-center">
                 Ver Videos
-              </button>
+              </a>
             </div>
-            
+
+            <!-- Estadísticas -->
             <div class="bg-black/70 rounded-xl p-6 border border-green-500/30 hover:border-green-400 transition-all hover:shadow-xl hover:shadow-green-500/20">
               <h3 class="text-xl font-bold text-green-400 mb-3 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h4V7H5v10h4z" />
                 </svg>
                 Estadísticas
               </h3>
               <p class="text-gray-300 mb-4">Datos y análisis de todas las elecciones democráticas.</p>
-              <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors w-full">
+              <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors w-full inline-block text-center">
                 Ver Datos
-              </button>
+              </a>
+            </div>
+
+            <!-- Elecciones 2020 -->
+            <div class="bg-black/70 rounded-xl p-6 border border-cyan-500/30 hover:border-cyan-400 transition-all hover:shadow-xl hover:shadow-cyan-500/20">
+              <h3 class="text-xl font-bold text-cyan-400 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                </svg>
+                Elecciones 2020
+              </h3>
+              <p class="text-gray-300 mb-4">Información detallada sobre las elecciones presidenciales de 2020.</p>
+              <a href="/elecciones2020" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg transition-colors w-full inline-block text-center">
+                Ver Más
+              </a>
             </div>
           </div>
         </section>
