@@ -116,6 +116,20 @@ const EnhancedPartyGrid = () => {
       },
       ideologia: "Izquierda, Populismo",
       fundacion: "2023"
+    },
+    {
+      id: "ngp",
+      nombre: "Nueva Generación Patriótica",
+      sigla: "NGP",
+      color: "#7f8c8d", // Gris patriótico (neutral-conservador)
+      logo: "/PartidosP/NuevaGeneraciónPatriótica/ngp.png",
+      candidato: {
+        nombre: "Por confirmar",
+        imagen: "/PartidosP/NuevaGeneraciónPatriótica/Definir.png",
+        cargo: "Candidato Presidencial"
+      },
+      ideologia: "Derecha, Nacionalismo",
+      fundacion: "2024"
     }
   ];
 
