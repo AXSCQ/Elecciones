@@ -186,7 +186,22 @@ const ElectoralBallot = () => {
                     <h3 className="font-bold text-blue-400 mb-2">Información Personal</h3>
                     <p className="text-gray-300"><strong>Edad:</strong> {selectedCandidate.age} años</p>
                     <p className="text-gray-300"><strong>Profesión:</strong> {selectedCandidate.profession}</p>
-                    <p className="text-gray-300"><strong>Educación:</strong> {selectedCandidate.education}</p>
+                    <p className="text-gray-300">
+                      <strong>Educación:</strong>{" "}
+                      {typeof selectedCandidate.education === "string" ? (
+                        selectedCandidate.education
+                      ) : (
+                        <>
+                          {selectedCandidate.education.primary}, {selectedCandidate.education.secondary}, {selectedCandidate.education.university}
+                          {selectedCandidate.education.degrees?.length > 0 && (
+                            <>. Grados: {selectedCandidate.education.degrees.join(", ")}</>
+                          )}
+                          {selectedCandidate.education.specializations?.length > 0 && (
+                            <>. Especializaciones: {selectedCandidate.education.specializations.join(", ")}</>
+                          )}
+                        </>
+                      )}
+                    </p>
                     {selectedCandidate.region && (
                       <p className="text-gray-300"><strong>Región:</strong> {selectedCandidate.region.toUpperCase()}</p>
                     )}

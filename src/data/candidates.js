@@ -2,7 +2,7 @@
 export const candidates = [
   {
     id: "1",
-    name: "Carlos Eduardo Del Castillo Del Carpio",
+    name: "Eduardo Del Castillo Del Carpio",
     image: "/PartidosP/MAS/Eduardo Del Castillo.png",
     party: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
     partyShort: "MAS-IPSP",
@@ -46,7 +46,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Milán Berna",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg",
+      image: "/Fondos/Candidatos1x1/Milan.jpg",
       bio: "Líder campesino y dirigente de la Confederación Sindical Única de Trabajadores Campesinos de Bolivia (CSUTCB). Fue designado candidato a la vicepresidencia por el Pacto de Unidad junto a Eduardo Del Castillo el 16 de mayo de 2025. Se desempeñó como presidente del Presidium en el X Congreso del MAS-IPSP.",
       profession: "Dirigente de la CSUTCB",
       age: 45,
@@ -99,19 +99,21 @@ export const candidates = [
     party: "Unidad",
     partyShort: "UN",
     partyColor: "#1bbc9d",
-    age: 64,
+    age: 66,
+    birthDate:"4 de diciembre de 1958",
+    birthPlace:"La Paz, Bolivia",
     education: "Economía, Universidad de Chicago",
     profession: "Empresario y Economista",
     region: "lp", // La Paz
     role: "Candidato Presidencial",
-    bio: "Samuel Doria Medina es un empresario y político boliviano, fundador del partido Unidad Nacional. Como empresario, construyó uno de los grupos económicos más importantes de Bolivia. En política, ha sido candidato presidencial en varias ocasiones, posicionándose como una alternativa de centro-derecha.",
+    bio: "Samuel Doria Medina es un empresario y político boliviano reconocido por ser fundador del partido Frente de Unidad Nacional (UN). Como empresario, lideró la Sociedad Boliviana de Cemento (SOBOCE), uno de los grupos económicos más grandes y sólidos del país, desde 1987 hasta 2014. En el ámbito político, ha sido candidato presidencial en múltiples elecciones (1997, 2005, 2009 y 2014), consolidándose como una figura destacada de la centro-derecha boliviana y una alternativa política importante en el país.",
     socialMedia: {
       twitter: "https://twitter.com/SDoriaMedina",
       facebook: "https://facebook.com/SamuelDoriaMedinaOficial"
     },
     vicepresident: {
       name: "José Luis Lupo",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/Unidad/Jose Luis Lupo.png",
+      image: "/Fondos/Candidatos1x1/Jose.jpg", // Imagen temporal: "/PartidosP/Unidad/Jose Luis Lupo.png",
       bio: "Economista con experiencia en organismos internacionales y desarrollo económico.",
       profession: "Economista",
       age: 58
@@ -127,7 +129,19 @@ export const candidates = [
       "Reforma tributaria para simplificar impuestos",
       "Fortalecimiento de la seguridad ciudadana",
       "Modernización de la infraestructura productiva"
-    ]
+    ],
+    controversies: [
+      "Conflictos de interés SOBOCE (2000–2014)",
+      "Denuncias por financiamiento irregular (2009, 2014)",
+      "Oposición fuerte a Evo Morales (2006–2019)",
+      "Apoyo a protestas y renuncia de Evo Morales (noviembre 2019)"
+    ],
+    achievements: [
+      "Presidente y accionista de SOBOCE (1987–2014)",
+      "Fundador del Frente de Unidad Nacional (12 dic 2003)",
+      "Candidato presidencial (1997, 2005, 2009, 2014)",
+      "Militante del MIR y ministro (1991–1993)"
+    ],
   },
   {
     id: "3",
@@ -136,7 +150,9 @@ export const candidates = [
     party: "Libre",
     partyShort: "LIBRE",
     partyColor: "#ffa500",
-    age: 62,
+    age: 66,
+    birthDate:"5 de mayo de 1960",
+    birthPlace:"Cochabamba, Bolivia",
     education: "Ingeniería Industrial, Texas A&M University; MBA, St. Edward's University",
     profession: "Ingeniero y Consultor Internacional",
     region: "cb", // Cochabamba
@@ -149,7 +165,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Juan Pablo Velasco",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/FRILibre/Juan Pablo Velasco.png",
+      image: "/Fondos/Candidatos1x1/JuanV.jpg", // Imagen temporal: "/PartidosP/FRILibre/Juan Pablo Velasco.png",
       bio: "Político y profesional con experiencia en gestión pública.",
       profession: "Abogado",
       age: 45
@@ -186,7 +202,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Juan Carlos Medrano",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/APBSúmate/Juan Carlos Medrano.png",
+      image: "/Fondos/Candidatos1x1/JuanM.jpg", // Imagen temporal: "/PartidosP/APBSúmate/Juan Carlos Medrano.png",
       bio: "Político y profesional con experiencia en gestión pública regional.",
       profession: "Abogado",
       age: 52
@@ -223,7 +239,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Mariana Prado",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/Alianza Popular/Mariana Prado.png",
+      image: "/Fondos/Candidatos1x1/Mariana.jpg", // Imagen temporal: "/PartidosP/Alianza Popular/Mariana Prado.png",
       bio: "Profesional con experiencia en desarrollo económico y políticas públicas.",
       profession: "Economista",
       age: 42
@@ -245,6 +261,7 @@ export const candidates = [
     id: "6",
     name: "Fidel Tapia Zambrana",
     image: "/PartidosP/NuevaGeneraciónPatriótica/Fidel Tapia.png",
+    image: "/PartidosP/NuevaGeneraciónPatriótica/Definir.png",
     party: "Nueva Generación Patriótica",
     partyShort: "NGP",
     partyColor: "#9b59b6",
@@ -259,7 +276,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Edgar Uriona Veizaga",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/NuevaGeneraciónPatriótica/Edgar Uriona.png",
+      image: "/Fondos/Candidatos1x1/Edgar.jpg", // Imagen temporal: "/PartidosP/NuevaGeneraciónPatriótica/Edgar Uriona.png",
       bio: "Profesional con experiencia en gestión pública y desarrollo social.",
       profession: "Administrador",
       age: 46
@@ -295,7 +312,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Edmán Lara",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/PartidoDemócrataCristiano/Edman Lara.png",
+      image: "/Fondos/Candidatos1x1/Edman.jpg", // Imagen temporal: "/PartidosP/PartidoDemócrataCristiano/Edman Lara.png",
       bio: "Profesional con experiencia en gestión pública y desarrollo comunitario.",
       profession: "Ingeniero",
       age: 50
@@ -331,7 +348,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Jorge Richter",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/Morena/Jorge Richter.png",
+      image: "/Fondos/Candidatos1x1/Jorge.jpg", // Imagen temporal: "/PartidosP/Morena/Jorge Richter.png",
       bio: "Analista político y profesional con experiencia en comunicación gubernamental.",
       profession: "Analista Político",
       age: 52
@@ -367,7 +384,7 @@ export const candidates = [
     },
     vicepresident: {
       name: "Por definir",
-      image: "/Fondos/Candidatos1x1/placeholder-profile.jpg", // Imagen temporal: "/PartidosP/FuerzadelPueblo/placeholder.png",
+      image: "/Fondos/Candidatos1x1/Definir.jpg", // Imagen temporal: "/PartidosP/FuerzadelPueblo/placeholder.png",
       bio: "Candidato(a) a vicepresidente aún por definir.",
       profession: "Por definir",
       age: 0
