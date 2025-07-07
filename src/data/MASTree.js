@@ -1,346 +1,244 @@
-// Datos completos para el árbol político del MAS - Elecciones Bolivia 2025
-
-export const MASTree = {
-  // Información principal del partido
+export const mas = {
   id: 'mas',
-  name: 'Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos',
+  name: 'Movimiento Al Socialismo - Instrumento Político por la Soberanía de los Pueblos',
   shortName: 'MAS-IPSP',
-  color: '#3045b5', // Azul cobalto
-  foundation: '30 de julio de 1987', // Fecha de reconocimiento legal
-  ideology: 'Plurinacionalismo, populismo de izquierda, antiimperialismo, antineoliberalismo',
-  officialColors: 'Azul cobalto, negro y blanco',
+  color: '#0066CC', // Azul representativo
+  foundation: '1995',
+  ideology: 'Socialismo del siglo XXI, antiimperialismo, indigenismo',
+  officialColors: 'Azul y blanco',
   historicalLeaders: [
     {
-      name: 'David Áñez Pedraza',
-      role: 'Presidente vitalicio desde la fundación',
-      image: '/Fondos/Candidatos1x1/DavidAnez.png' // Necesitarás crear esta imagen
-    },
-    {
-      name: 'Evo Morales',
-      role: 'Presidente del partido de 1997 a 2024',
-      image: '/Fondos/Candidatos1x1/EvoMorales.png' // Necesitarás crear esta imagen
-    },
-    {
-      name: 'Grover García',
-      role: 'Presidente desde mayo de 2024',
-      image: '/Fondos/Candidatos1x1/GroverGarcia.png' // Necesitarás crear esta imagen
+      name: 'Evo Morales Ayma',
+      role: 'Fundador y líder histórico',
+      image: '/Fondos/Candidatos1x1/EvoMorales.png' // Imagen necesaria
     }
   ],
-  
-  // Candidatos para las elecciones 2025
   candidates: {
     president: {
       id: 'pres1',
-      name: 'Eduardo Del Castillo',
+      name: 'CARLOS EDUARDO DEL CASTILLO DEL CARPIO',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/DelCastillo.png', // Necesitarás crear esta imagen
-      bio: 'Abogado y político, ex Ministro de Gobierno de Bolivia (2020-2025). Fue designado candidato presidencial del MAS por el Pacto de Unidad para las elecciones de 2025.',
+      image: '/Fondos/Candidatos1x1/CarlosDelCastillo.png',
+      bio: 'Abogado y político con experiencia en gestión pública, especializado en políticas sociales y desarrollo económico.',
       vicepresident: {
         id: 'vpres1',
-        name: 'Milán Berna',
-        role: 'Candidato Vicepresidencial',
-        image: '/Fondos/Candidatos1x1/MilanBerna.png', // Necesitarás crear esta imagen
-        bio: 'Dirigente de la Confederación Sindical Única de Trabajadores Campesinos de Bolivia (CSUTCB). Fue designado candidato a la vicepresidencia por el Pacto de Unidad junto a Eduardo Del Castillo el 16 de mayo de 2025.'
+        name: 'ESTEBAN MILAN BERNA RAMOS',
+        role: 'Candidato a Vicepresidente',
+        image: '/Fondos/Candidatos1x1/EstebanBerna.png',
+        bio: 'Profesional con amplia trayectoria en administración pública y políticas de desarrollo social.'
       }
     },
-    
-    // Senadores
     senators: [
       {
         id: 'sen1',
-        name: 'Pedro Benjamín Vargas Fernández',
+        name: 'LUIS ALBERTO ARCE CATACORA',
         role: 'Candidato a Senador',
-        region: 'Chuquisaca, Potosí',
-        image: '/Fondos/Candidatos1x1/PedroVargas.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante con experiencia en las regiones de Chuquisaca y Potosí.'
+        region: 'La Paz',
+        image: '/Fondos/Candidatos1x1/LuisArce.png',
+        bio: 'Economista con amplia experiencia en política económica y gestión fiscal del Estado.'
       },
       {
         id: 'sen2',
-        name: 'Felix Ajpi Ajpi',
+        name: 'ESTEBAN ALAVI CANAVIRI',
         role: 'Candidato a Senador',
-        region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/FelixAjpi.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de La Paz con enfoque en derechos indígenas.'
+        region: 'Santa Cruz',
+        image: '/Fondos/Candidatos1x1/EstebanAlavi.png',
+        bio: 'Líder político con experiencia en gestión regional y políticas de desarrollo.'
       },
       {
         id: 'sen3',
-        name: 'Gladys Valentina Alarcón Farfán',
-        role: 'Candidata a Senadora',
-        region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/GladysAlarcon.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Tarija con trayectoria en movimientos sociales.'
+        name: 'ALEX GUSTAVO CUELLAR VILDOSO',
+        role: 'Candidato a Senador',
+        region: 'Chuquisaca',
+        image: '/Fondos/Candidatos1x1/AlexCuellar.png',
+        bio: 'Profesional con trayectoria en administración pública y políticas sociales.'
       },
       {
         id: 'sen4',
-        name: 'María Patricia Arce Guzmán',
+        name: 'KATHIUSKA GUZMAN ORELLANA',
         role: 'Candidata a Senadora',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/PatriciaArce.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Ex-alcaldesa de Vinto, conocida por su resistencia durante la crisis política de 2019.'
+        region: 'Beni',
+        image: '/Fondos/Candidatos1x1/KathiuskaGuzman.png',
+        bio: 'Líder femenina con experiencia en políticas de desarrollo regional.'
       },
       {
         id: 'sen5',
-        name: 'Ana María Castillo Negrette',
+        name: 'DIANA ROCIO ROSALES MAMANI',
         role: 'Candidata a Senadora',
-        region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/AnaCastillo.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Potosí con enfoque en desarrollo regional.'
+        region: 'Oruro',
+        image: '/Fondos/Candidatos1x1/DianaRosales.png',
+        bio: 'Joven política comprometida con los derechos de las mujeres y el desarrollo social.'
       },
       {
         id: 'sen6',
-        name: 'Soledad Flores Velásquez',
-        role: 'Candidata a Senadora',
-        region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/SoledadFlores.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Santa Cruz con trayectoria en movimientos campesinos.'
+        name: 'HERBER QUISPE JURADO',
+        role: 'Candidato a Senador',
+        region: 'Tarija',
+        image: '/Fondos/Candidatos1x1/HerberQuispe.png',
+        bio: 'Profesional con experiencia en gestión pública y políticas regionales.'
       },
       {
         id: 'sen7',
-        name: 'Luis Adolfo Flores Roberts',
-        role: 'Candidato a Senador',
+        name: 'EVA LUZ HUMEREZ ALVEZ',
+        role: 'Candidata a Senadora',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/LuisFlores.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de Pando con enfoque en desarrollo amazónico.'
+        image: '/Fondos/Candidatos1x1/EvaHumerez.png',
+        bio: 'Líder regional comprometida con el desarrollo de las comunidades rurales.'
       },
       {
         id: 'sen8',
-        name: 'Ruben Gutierrez Carrizo',
+        name: 'EDILBERTO CHAMBI MONTAÑO',
         role: 'Candidato a Senador',
-        region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/RubenGutierrez.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de Oruro con trayectoria en movimientos mineros.'
+        region: 'Potosí',
+        image: '/Fondos/Candidatos1x1/EdilbertoChambi.png',
+        bio: 'Dirigente social con experiencia en políticas mineras y desarrollo comunitario.'
       },
       {
         id: 'sen9',
-        name: 'Eva Luz Humerez Alvez',
-        role: 'Candidata a Senadora',
-        region: 'Pando',
-        image: '/Fondos/Candidatos1x1/EvaHumerez.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de Pando con enfoque en derechos de las mujeres.'
+        name: 'JHONNY VILLARROEL GUTIERREZ',
+        role: 'Candidato a Senador',
+        region: 'Cochabamba',
+        image: '/Fondos/Candidatos1x1/JhonnyVillarroel.png',
+        bio: 'Joven líder político con formación en administración pública.'
       },
       {
         id: 'sen10',
-        name: 'Leonardo Loza',
-        role: 'Candidato a Senador',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/LeonardoLoza.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Dirigente cocalero del trópico de Cochabamba, cercano a Evo Morales.'
-      },
-      {
-        id: 'sen11',
-        name: 'Hilarión Mamani Navarro',
-        role: 'Candidato a Senador',
-        region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/HilarionMamani.png', // Necesitarás crear esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Representante de Potosí con trayectoria en movimientos indígenas.'
-      },
-      {
-        id: 'sen12',
-        name: 'Andrónico Rodríguez Ledezma',
-        role: 'Candidato a Senador',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/Rodrigo.png', // Ya existe esta imagen
-        bio: 'Senador del MAS-IPSP en el periodo 2020-2025. Joven líder sindical cocalero que ganó notoriedad durante la crisis política de 2019.'
-      },
-      {
-        id: 'sen13',
-        name: 'Virginia Velasco Condori',
+        name: 'GETRUDEZ VALDA LUNA',
         role: 'Candidata a Senadora',
-        region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/VirginiaVelasco.png', // Necesitarás crear esta imagen
-        bio: 'Senadora del MAS-IPSP en el periodo 2020-2025. Representante de La Paz con experiencia legislativa.'
+        region: 'Chuquisaca',
+        image: '/Fondos/Candidatos1x1/GetrudezValda.png',
+        bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
       }
     ],
-    
-    // Diputados
     deputies: [
       {
         id: 'dep1',
-        name: 'Omar Al Yabhat Yujra Santos',
-        role: 'Candidato a Diputado - Presidencia de la Cámara',
+        name: 'HINOSENCIO ADALID CARBAJAL MIRANDA',
+        role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/OmarYujra.png', // Necesitarás crear esta imagen
-        bio: 'Presidente de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP con experiencia legislativa.'
+        image: '/Fondos/Candidatos1x1/HinosencioCarbajal.png',
+        bio: 'Profesional con experiencia en gestión legislativa y políticas públicas.'
       },
       {
         id: 'dep2',
-        name: 'Deisy Judith Choque Arnez',
-        role: 'Candidata a Diputada - Primera Vicepresidencia',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/DeisyChoque.png', // Necesitarás crear esta imagen
-        bio: 'Primera Vicepresidenta de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
+        name: 'FELIPA YALILY MONTENEGRO MONTAÑO',
+        role: 'Candidata a Diputada',
+        region: 'Santa Cruz',
+        image: '/Fondos/Candidatos1x1/FelipaMontenegro.png',
+        bio: 'Líder femenina comprometida con los derechos de las mujeres y el desarrollo social.'
       },
       {
         id: 'dep3',
-        name: 'Delfor Germán Burgos Aguirre',
-        role: 'Candidato a Diputado - Primera Secretaría',
-        region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/DelforBurgos.png', // Necesitarás crear esta imagen
-        bio: 'Primer Secretario de la Cámara de Diputados en el periodo 2020-2025. Representante del MAS-IPSP.'
+        name: 'HUGO CASILLA FRANCO',
+        role: 'Candidato a Diputado',
+        region: 'Cochabamba',
+        image: '/Fondos/Candidatos1x1/HugoCasilla.png',
+        bio: 'Profesional con trayectoria en administración pública y políticas económicas.'
       },
       {
         id: 'dep4',
-        name: 'Abad Farfán Mamani',
-        role: 'Candidato a Diputado Uninominal',
-        region: 'Potosí - C-37',
-        image: '/Fondos/Candidatos1x1/AbadFarfan.png', // Necesitarás crear esta imagen
-        bio: 'Diputado Uninominal del MAS-IPSP en el periodo 2020-2025. Representante de la circunscripción 37 de Potosí.'
+        name: 'DANIEL FERNANDO FLORES POMA',
+        role: 'Candidato a Diputado',
+        region: 'Oruro',
+        image: '/Fondos/Candidatos1x1/DanielFlores.png',
+        bio: 'Líder con experiencia en políticas regionales y desarrollo comunitario.'
       },
       {
         id: 'dep5',
-        name: 'Abelardo Colque Vicente',
-        role: 'Candidato a Diputado Plurinominal',
+        name: 'GREGORIO VILLCA SOCOMPI',
+        role: 'Candidato a Diputado',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/AbelardoColque.png', // Necesitarás crear esta imagen
-        bio: 'Diputado Plurinominal del MAS-IPSP en el periodo 2020-2025. Representante del bloque renovador.'
+        image: '/Fondos/Candidatos1x1/GregorioVillca.png',
+        bio: 'Dirigente social con experiencia en políticas mineras y desarrollo rural.'
       },
       {
         id: 'dep6',
-        name: 'Adán Palacios Puma',
-        role: 'Candidato a Diputado Uninominal',
-        region: 'Chuquisaca - C-5',
-        image: '/Fondos/Candidatos1x1/AdanPalacios.png', // Necesitarás crear esta imagen
-        bio: 'Diputado Uninominal del MAS-IPSP en el periodo 2020-2025. Representante de la circunscripción 5 de Chuquisaca.'
+        name: 'EFRAIN PERALES ORTEGA',
+        role: 'Candidato a Diputado',
+        region: 'Tarija',
+        image: '/Fondos/Candidatos1x1/EfrainPerales.png',
+        bio: 'Profesional joven con formación en políticas públicas y desarrollo regional.'
+      },
+      {
+        id: 'dep7',
+        name: 'NEIBA SELVI SUPA ORTIZ',
+        role: 'Candidata a Diputada',
+        region: 'Beni',
+        image: '/Fondos/Candidatos1x1/NeibaSupa.png',
+        bio: 'Líder femenina comprometida con el desarrollo de las comunidades amazónicas.'
+      },
+      {
+        id: 'dep8',
+        name: 'KIEFERTH VINIQUE CHAVEZ',
+        role: 'Candidato a Diputado',
+        region: 'Pando',
+        image: '/Fondos/Candidatos1x1/KieferthChavez.png',
+        bio: 'Profesional con experiencia en políticas ambientales y desarrollo sostenible.'
+      },
+      {
+        id: 'dep9',
+        name: 'MIRIAM MARTINEZ MICHAGA',
+        role: 'Candidata a Diputada',
+        region: 'Oruro',
+        image: '/Fondos/Candidatos1x1/MiriamMartinez.png',
+        bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
+      },
+      {
+        id: 'dep10',
+        name: 'SHIRLEY GISELA JUANES ARONI',
+        role: 'Candidata a Diputada',
+        region: 'Potosí',
+        image: '/Fondos/Candidatos1x1/ShirleyJuanes.png',
+        bio: 'Profesional comprometida con los derechos de las mujeres y el desarrollo social.'
       }
     ]
   },
-  
-  // Bloques internos del partido
   internalBlocks: [
     {
-      id: 'renovador',
-      name: 'Bloque Renovador',
-      description: 'Facción que defiende la gestión de Luis Arce y busca la renovación de liderazgo dentro del partido.',
-      leader: 'Luis Arce',
-      image: '/Fondos/Candidatos1x1/LuisArce.png' // Necesitarás crear esta imagen
-    },
-    {
-      id: 'radical',
-      name: 'Bloque Radical',
-      description: 'Facción que defiende el liderazgo de Evo Morales y busca su reelección. También conocida como "Ala Evista".',
-      leader: 'Evo Morales',
-      image: '/Fondos/Candidatos1x1/EvoMorales.png' // Necesitarás crear esta imagen
-    },
-    {
-      id: 'androniquista',
-      name: 'Facción Androniquista',
-      description: 'Grupo emergente que apoya el liderazgo de Andrónico Rodríguez como figura de renovación generacional.',
-      leader: 'Andrónico Rodríguez',
-      image: '/Fondos/Candidatos1x1/Rodrigo.png' // Ya existe esta imagen
+      id: 'sector-evista',
+      name: 'Sector Evista',
+      description: 'Grupo que mantiene la línea histórica del MAS bajo el liderazgo de Evo Morales.',
+      leader: 'Evo Morales Ayma',
+      image: '/Fondos/Candidatos1x1/EvoMorales.png'
     }
   ],
-  
-  // Organizaciones aliadas y de base
   allies: [
     {
-      id: 'pacto-unidad',
-      name: 'Pacto de Unidad',
-      description: 'La principal alianza política y social que respalda al MAS-IPSP.',
-      image: '/Fondos/Organizaciones/PactoUnidad.png', // Necesitarás crear esta imagen
+      id: 'organizaciones-sociales',
+      name: 'Organizaciones Sociales del Pacto de Unidad',
+      description: 'Coalición de organizaciones indígenas, campesinas y sociales que respaldan al MAS-IPSP.',
+      image: '/Fondos/Organizaciones/PactoUnidad.png',
       members: [
         {
-          name: 'Confederación Sindical Única de Trabajadores Campesinos de Bolivia (CSUTCB)',
-          role: 'Organización fundadora',
-          image: '/Fondos/Organizaciones/CSUTCB.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Confederación Sindical de Comunidades Interculturales de Bolivia (CSCB)',
-          role: 'Organización fundadora',
-          image: '/Fondos/Organizaciones/CSCB.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Federación Bartolina Sisa',
-          role: 'Organización fundadora',
-          image: '/Fondos/Organizaciones/BartoliniaSisa.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Confederación Nacional de Maestros Rurales',
+          name: 'Confederación Sindical Única de Trabajadores Campesinos de Bolivia',
           role: 'Organización miembro',
-          image: '/Fondos/Organizaciones/MaestrosRurales.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Confederación Nacional de Ríos y Jubilados',
-          role: 'Organización miembro',
-          image: '/Fondos/Organizaciones/RiosJubilados.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Confederación Nacional de la Micro y Pequeña Empresa (Conamype)',
-          role: 'Organización miembro',
-          image: '/Fondos/Organizaciones/Conamype.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Federación Nacional de Cooperativas Mineras (Fencomin)',
-          role: 'Organización miembro',
-          image: '/Fondos/Organizaciones/Fencomin.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Centro Regional de Trabajadores (COR) de El Alto',
-          role: 'Organización miembro',
-          image: '/Fondos/Organizaciones/CORElAlto.png' // Necesitarás crear esta imagen
-        }
-      ]
-    },
-    {
-      id: 'apoyo-externo',
-      name: 'Organizaciones de Apoyo Externo',
-      description: 'Organizaciones que apoyan al gobierno pero no son miembros directos del MAS-IPSP.',
-      members: [
-        {
-          name: 'Central Obrera Boliviana (COB)',
-          role: 'Organización de apoyo',
-          image: '/Fondos/Organizaciones/COB.png' // Necesitarás crear esta imagen
-        },
-        {
-          name: 'Consejo Nacional de Ayllus y Markas de Qullasuyu (CONAMAQ)',
-          role: 'Organización de apoyo',
-          image: '/Fondos/Organizaciones/CONAMAQ.png' // Necesitarás crear esta imagen
+          image: '/Fondos/Organizaciones/CSUTCB.png'
         }
       ]
     }
   ],
-  
-  // Contenido multimedia
   mediaContent: {
     videos: [
-      { 
-        title: 'Presentación de Candidatos', 
-        url: '/videos/mas-presentacion.mp4', 
-        thumbnail: '/images/thumbnails/mas-video1.jpg',
-        duration: 185
-      },
-      { 
-        title: 'Historia del MAS-IPSP', 
-        url: '/videos/mas-historia.mp4', 
-        thumbnail: '/images/thumbnails/mas-video2.jpg',
+      {
+        title: 'Presentación de Candidatura MAS-IPSP 2025',
+        url: '/videos/mas-ipsp-presentacion.mp4',
+        thumbnail: '/images/thumbnails/mas-ipsp-video1.jpg',
         duration: 240
       }
     ],
     audio: [
-      { 
-        title: 'Entrevista a Eduardo Del Castillo', 
-        url: '/audio/mas-entrevista-delcastillo.mp3', 
-        duration: 320
-      },
-      { 
-        title: 'Discurso de Milán Berna', 
-        url: '/audio/mas-discurso-berna.mp3', 
-        duration: 180
+      {
+        title: 'Entrevista a Carlos del Castillo',
+        url: '/audio/mas-ipsp-entrevista-castillo.mp3',
+        duration: 350
       }
     ],
     documents: [
       {
-        title: 'Programa de Gobierno 2025-2030',
-        url: '/documents/mas-programa-gobierno.pdf',
+        title: 'Programa de Gobierno MAS-IPSP 2025-2030',
+        url: '/documents/mas-ipsp-programa-gobierno.pdf',
         pages: 45
-      },
-      {
-        title: 'Historia y Principios del MAS-IPSP',
-        url: '/documents/mas-historia-principios.pdf',
-        pages: 28
       }
     ]
   }
 };
-
-// Exportar el árbol político del MAS
-export default MASTree;
