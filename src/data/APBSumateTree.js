@@ -10,7 +10,7 @@ export const apbsumate = {
     {
       name: 'Manfred Reyes Villa',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/ManfredReyesVilla.png'
+      image: '/PartidosP/APBSúmate/ManfredReyesVilla.png'
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const apbsumate = {
       id: 'pres1',
       name: 'MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/ManfredReyesVilla.png',
+      image: '/PartidosP/APBSúmate/ManfredReyesVilla.png',
       bio: 'Político boliviano con amplia experiencia en gestión municipal y liderazgo regional.',
       vicepresident: {
         id: 'vpres1',
         name: 'JUAN CARLOS MEDRANO GONZALES',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/JuanCarlosMedrano.png',
+        image: '/PartidosP/APBSúmate/JuanCarlosMedrano.png',
         bio: 'Joven líder político con experiencia en administración pública y desarrollo regional.'
       }
     },
@@ -34,7 +34,7 @@ export const apbsumate = {
         name: 'WALTER PABLO ARIZAGA RUIZ',
         role: 'Candidato a Senador',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/WalterArizaga.png',
+        image: '/PartidosP/APBSúmate/WalterArizaga.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo regional.'
       },
       {
@@ -42,7 +42,7 @@ export const apbsumate = {
         name: 'KATHERINE ROCIO TORRES VELASQUEZ',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/KatherineTorres.png',
+        image: '/PartidosP/APBSúmate/KatherineTorres.png',
         bio: 'Joven líder comprometida con el desarrollo de políticas públicas inclusivas.'
       },
       {
@@ -50,7 +50,7 @@ export const apbsumate = {
         name: 'LUIS RAMIRO MOLLINEDO PARRADO',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/LuisMollinedo.png',
+        image: '/PartidosP/APBSúmate/LuisMollinedo.png',
         bio: 'Especialista en administración pública con enfoque en desarrollo social.'
       },
       {
@@ -58,7 +58,7 @@ export const apbsumate = {
         name: 'MARIA DEL CARMEN RENJEL ARAMAYO',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MariaRenjel.png',
+        image: '/PartidosP/APBSúmate/MariaRenjel.png',
         bio: 'Profesional con experiencia en políticas de género y desarrollo social.'
       },
       {
@@ -66,7 +66,7 @@ export const apbsumate = {
         name: 'CLAUDIA MALLON VARGAS',
         role: 'Candidata a Senadora',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/ClaudiaMallon.png',
+        image: '/PartidosP/APBSúmate/ClaudiaMallon.png',
         bio: 'Líder regional con experiencia en gestión administrativa y desarrollo económico.'
       },
       {
@@ -74,7 +74,7 @@ export const apbsumate = {
         name: 'MAURICIO RAMIRO ARTURO MUÑOZ ENCINAS',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/MauricioMunoz.png',
+        image: '/PartidosP/APBSúmate/MauricioMunoz.png',
         bio: 'Experimentado administrador público con enfoque en desarrollo regional.'
       },
       {
@@ -82,7 +82,7 @@ export const apbsumate = {
         name: 'STUARDO RIVERO RODRIGUEZ',
         role: 'Candidato a Senador',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/StuardoRivero.png',
+        image: '/PartidosP/APBSúmate/StuardoRivero.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo territorial.'
       },
       {
@@ -90,7 +90,7 @@ export const apbsumate = {
         name: 'HJOVANNA MAGALY ALARCON DURAN',
         role: 'Candidata a Senadora',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/HjovannaAlarcon.png',
+        image: '/PartidosP/APBSúmate/HjovannaAlarcon.png',
         bio: 'Líder comprometida con el desarrollo social y económico de su región.'
       },
       {
@@ -98,7 +98,7 @@ export const apbsumate = {
         name: 'GRISELDA FABIANA GUTIERREZ OSORIO',
         role: 'Candidata a Senadora',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/GriseldaGutierrez.png',
+        image: '/PartidosP/APBSúmate/GriseldaGutierrez.png',
         bio: 'Profesional con experiencia en administración pública y desarrollo regional.'
       },
       {
@@ -106,7 +106,7 @@ export const apbsumate = {
         name: 'SILVANA MUCARZEL DEMETRY',
         role: 'Candidata a Senadora',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/SilvanaMucarzel.png',
+        image: '/PartidosP/APBSúmate/SilvanaMucarzel.png',
         bio: 'Líder regional con enfoque en desarrollo económico y social.'
       }
     ],
@@ -116,7 +116,7 @@ export const apbsumate = {
         name: 'EULOGIO ANTONIO MOSCOSO DORIA MEDINA',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/EulogioMoscoso.png',
+        image: '/PartidosP/APBSúmate/EulogioMoscoso.png',
         bio: 'Joven profesional comprometido con el desarrollo regional y la participación ciudadana.'
       },
       {
@@ -124,7 +124,7 @@ export const apbsumate = {
         name: 'MARIA ESTHER GONGORA MIRANDA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MariaGongora.png',
+        image: '/PartidosP/APBSúmate/MariaGongora.png',
         bio: 'Experimentada líder con amplia trayectoria en gestión pública y desarrollo social.'
       },
       {
@@ -132,7 +132,7 @@ export const apbsumate = {
         name: 'FREDDY CAMACHO CALIZAYA',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/FreddyCamacho.png',
+        image: '/PartidosP/APBSúmate/FreddyCamacho.png',
         bio: 'Veterano político con amplia experiencia en representación parlamentaria.'
       },
       {
@@ -140,7 +140,7 @@ export const apbsumate = {
         name: 'SHARLIN ESTRELLA GONZALES BUSTAMANTE',
         role: 'Candidata a Diputada',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/SharlinGonzales.png',
+        image: '/PartidosP/APBSúmate/SharlinGonzales.png',
         bio: 'Joven líder comprometida con el desarrollo de políticas públicas inclusivas.'
       },
       {
@@ -148,7 +148,7 @@ export const apbsumate = {
         name: 'JAVIER MUNDOCORRE VILLALTA',
         role: 'Candidato a Diputado',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/JavierMundocorre.png',
+        image: '/PartidosP/APBSúmate/JavierMundocorre.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo regional.'
       },
       {
@@ -156,7 +156,7 @@ export const apbsumate = {
         name: 'FRANCISCO DANIEL LOPEZ PANTOJA',
         role: 'Candidato a Diputado',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/FranciscoLopez.png',
+        image: '/PartidosP/APBSúmate/FranciscoLopez.png',
         bio: 'Líder regional con enfoque en desarrollo económico y social.'
       },
       {
@@ -164,7 +164,7 @@ export const apbsumate = {
         name: 'DAVID ANTONIO MONTAÑO IRIARTE',
         role: 'Candidato a Diputado',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/DavidMontano.png',
+        image: '/PartidosP/APBSúmate/DavidMontano.png',
         bio: 'Joven profesional con experiencia en administración pública y desarrollo territorial.'
       },
       {
@@ -172,7 +172,7 @@ export const apbsumate = {
         name: 'GUSTAVO ALEJANDRO MUÑOZ NAJAR CASTEDO',
         role: 'Candidato a Diputado',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/GustavoMunoz.png',
+        image: '/PartidosP/APBSúmate/GustavoMunoz.png',
         bio: 'Líder regional comprometido con el desarrollo de la región amazónica.'
       },
       {
@@ -180,7 +180,7 @@ export const apbsumate = {
         name: 'ALIOLI ANDRES ALI OLIVERA',
         role: 'Candidato a Diputado',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/AlioliOlivera.png',
+        image: '/PartidosP/APBSúmate/AlioliOlivera.png',
         bio: 'Joven líder con enfoque en desarrollo territorial y participación ciudadana.'
       },
       {
@@ -188,7 +188,7 @@ export const apbsumate = {
         name: 'WILLY ARCIENEGA LIMACHI',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/WillyArcienega.png',
+        image: '/PartidosP/APBSúmate/WillyArcienega.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo comunitario.'
       }
     ]
@@ -199,7 +199,7 @@ export const apbsumate = {
       name: 'Movimiento por la Autonomía',
       description: 'Grupo que impulsa la descentralización y autonomía regional dentro del partido.',
       leader: 'Manfred Reyes Villa',
-      image: '/Fondos/Candidatos1x1/ManfredReyesVilla.png'
+      image: '/PartidosP/APBSúmate/ManfredReyesVilla.png'
     }
   ],
   allies: [

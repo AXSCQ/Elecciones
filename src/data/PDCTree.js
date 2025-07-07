@@ -10,7 +10,7 @@ export const pdc = {
     {
       name: 'Rodrigo Paz Pereira',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/RodrigoPazPereira.png'
+      image: '/PartidosP/PartidoDemócrataCristiano/RodrigoPazPereira.png'
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const pdc = {
       id: 'pres1',
       name: 'RODRIGO PAZ PEREIRA',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/RodrigoPazPereira.png',
+      image: '/PartidosP/PartidoDemócrataCristiano/Rodrigo Paz Pereira.png',
       bio: 'Líder demócrata cristiano con experiencia en gestión pública y compromiso con los valores democráticos.',
       vicepresident: {
         id: 'vpres1',
         name: 'EDMAND LARA MONTAÑO',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/EdmandLaraMontano.png',
+        image:'/PartidosP/PartidoDemócrataCristiano/EdmandLaraMontano.png',
         bio: 'Profesional comprometido con el desarrollo social y la democracia participativa.'
       }
     },
@@ -34,7 +34,7 @@ export const pdc = {
         name: 'NICANOR GONZALO COCHI CONDORI',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/NicanorCochi.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/NicanorCochi.png',
         bio: 'Representante con enfoque en desarrollo regional y justicia social.'
       },
       {
@@ -42,7 +42,7 @@ export const pdc = {
         name: 'PAULINO ESTANISLAO BLANCO CONDORI',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/PaulinoBlanco.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/PaulinoBlanco.png',
         bio: 'Líder comprometido con la participación ciudadana y el desarrollo comunitario.'
       },
       {
@@ -50,7 +50,7 @@ export const pdc = {
         name: 'ERICKA CARLA CORNEJO FLORES',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/ErickaCornejo.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/ErickaCornejo.png',
         bio: 'Joven líder con visión renovadora y compromiso con los derechos de la mujer.'
       },
       {
@@ -58,7 +58,7 @@ export const pdc = {
         name: 'MARIA ANTONIETA ALCON SANCHEZ',
         role: 'Candidata a Senadora',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/MariaAlcon.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/MariaAlcon.png',
         bio: 'Experimentada dirigente con trayectoria en gestión pública y desarrollo social.'
       },
       {
@@ -66,7 +66,7 @@ export const pdc = {
         name: 'FILEMON JORGE RIOS GIL',
         role: 'Candidato a Senador',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/FilemonRios.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/FilemonRios.png',
         bio: 'Veterano político con amplia experiencia en representación legislativa.'
       },
       {
@@ -74,7 +74,7 @@ export const pdc = {
         name: 'BERTHA NURMY GUTIERREZ MENESES',
         role: 'Candidata a Senadora',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/BerthaGutierrez.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/BerthaGutierrez.png',
         bio: 'Profesional comprometida con el desarrollo minero y los derechos laborales.'
       },
       {
@@ -82,7 +82,7 @@ export const pdc = {
         name: 'JUSTINO ALFONZO ROMAN HURTADO',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/JustinoRoman.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/JustinoRoman.png',
         bio: 'Líder regional con experiencia en desarrollo económico y empresarial.'
       }
     ],
@@ -92,7 +92,7 @@ export const pdc = {
         name: 'ROBERTO JULIO CASTRO SALAZAR',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/RobertoCastro.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/RobertoCastro.png',
         bio: 'Representante comprometido con el desarrollo regional y la educación.'
       },
       {
@@ -100,7 +100,7 @@ export const pdc = {
         name: 'SANDRA ARMINDA RIVERO MALDONADO',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/SandraRivero.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/SandraRivero.png',
         bio: 'Líder femenina con experiencia en políticas sociales y derechos humanos.'
       },
       {
@@ -108,7 +108,7 @@ export const pdc = {
         name: 'OSCAR ALEJANDRO GARCIA HOYOS',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/OscarGarcia.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/OscarGarcia.png',
         bio: 'Profesional joven con visión innovadora para el desarrollo legislativo.'
       },
       {
@@ -116,7 +116,7 @@ export const pdc = {
         name: 'FIORELA BENITA QUISPE CHAMBI',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/FiorelaQuispe.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/FiorelaQuispe.png',
         bio: 'Activista social comprometida con los derechos de las mujeres indígenas.'
       },
       {
@@ -124,7 +124,7 @@ export const pdc = {
         name: 'JOSE LUIS SALAS TORREZ',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JoseSalas.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/JoseSalas.png',
         bio: 'Veterano político con experiencia en gestión pública y desarrollo social.'
       },
       {
@@ -132,7 +132,7 @@ export const pdc = {
         name: 'MARTHA YOHANA CORTEZ TICONA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MarthaCortez.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/MarthaCortez.png',
         bio: 'Líder comunitaria con enfoque en participación ciudadana y desarrollo local.'
       },
       {
@@ -140,7 +140,7 @@ export const pdc = {
         name: 'JHONNY MARCELO GUAYGUA QUELALI',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JhonnyGuaygua.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/JhonnyGuaygua.png',
         bio: 'Representante con experiencia en gestión municipal y desarrollo urbano.'
       },
       {
@@ -148,7 +148,7 @@ export const pdc = {
         name: 'EDGAR MANOLO ROJAS PAZ',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/EdgarRojas.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/EdgarRojas.png',
         bio: 'Joven profesional comprometido con la innovación y el desarrollo tecnológico.'
       },
       {
@@ -156,7 +156,7 @@ export const pdc = {
         name: 'DIONICIA MAXIMA CHURA TICONA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/DioniciaChura.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/DioniciaChura.png',
         bio: 'Líder indígena con experiencia en defensa de derechos territoriales.'
       },
       {
@@ -164,7 +164,7 @@ export const pdc = {
         name: 'LUZ DANIELA VELASCO',
         role: 'Candidata a Diputada',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/LuzVelasco.png',
+        image: '/PartidosP/PartidoDemócrataCristiano/LuzVelasco.png',
         bio: 'Profesional con experiencia en desarrollo económico y políticas públicas.'
       }
     ]
@@ -175,7 +175,7 @@ export const pdc = {
       name: 'Movimiento Democracia Cristiana',
       description: 'Grupo que impulsa los valores cristianos y la justicia social dentro del partido.',
       leader: 'Rodrigo Paz Pereira',
-      image: '/Fondos/Candidatos1x1/RodrigoPazPereira.png'
+      image: '/PartidosP/PartidoDemócrataCristiano/RodrigoPazPereira.png'
     }
   ],
   allies: [

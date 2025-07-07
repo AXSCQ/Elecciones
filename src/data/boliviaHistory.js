@@ -43,7 +43,7 @@ export const boliviaHistory = {
       yearEnd: 2005,
       color: "#10B981",
       description: "Período de reformas económicas neoliberales y privatizaciones.",
-      videoUrl: "/videos/ejemplo_video.mp4",
+      videoUrl: "/videos/parte2_bolivia.mp4",
       descriptionVideo: "Implementación de políticas neoliberales bajo el gobierno de Víctor Paz Estenssoro.",  
       presidents: [
         { name: "Víctor Paz Estenssoro", period: "1985-1989", party: "MNR" },
@@ -111,7 +111,7 @@ export const boliviaHistory = {
       description: "Transformación del Estado con la llegada de Evo Morales y el MAS al poder.",
       president: "Evo Morales Ayma",
       party: "MAS-IPSP",
-      videoUrl: "/videos/ejemplo_video.mp4",
+      videoUrl: "/videos/parte3_bolivia.mp4",
       descriptionVideo: "Descripción del video de ejemplo.",
       keyEvents: [
         {
@@ -170,7 +170,7 @@ export const boliviaHistory = {
       description: "Gobierno interino tras la renuncia de Evo Morales.",
       president: "Jeanine Áñez",
       party: "Demócratas",
-      videoUrl: "/videos/ejemplo_video.mp4",
+      videoUrl: "/videos/parte4_bolivia.mp4",
       descriptionVideo: "Jeanine Áñez asume la presidencia interina tras la crisis electoral de 2019.", 
       keyEvents: [
         {
@@ -201,7 +201,7 @@ export const boliviaHistory = {
       description: "El MAS retorna al poder con Luis Arce como presidente.",
       president: "Luis Arce Catacora",
       party: "MAS-IPSP",
-      videoUrl: "/videos/ejemplo_video.mp4",
+      videoUrl: "/videos/parte5_bolivia.mp4",
       videoDescription: "Luis Arce asume la presidencia en 2020 tras las elecciones.",
       keyEvents: [
         {

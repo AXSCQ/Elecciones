@@ -10,7 +10,7 @@ export const morena = {
     {
       name: 'Monica Eva Copa Murga',
       role: 'Candidata Presidencial',
-      image: '/Fondos/Candidatos1x1/MonicaCopa.png' // Imagen necesaria
+      image: '/PartidosP/Morena/MonicaCopa.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const morena = {
       id: 'pres1',
       name: 'MONICA EVA COPA MURGA',
       role: 'Candidata Presidencial',
-      image: '/Fondos/Candidatos1x1/MonicaCopa.png',
+      image: '/PartidosP/Morena/Eva Copa Murga.png',
       bio: 'Líder política con experiencia en gestión pública y defensa de derechos ciudadanos.',
       vicepresident: {
         id: 'vpres1',
         name: 'JORGE GUILLERMO RICHTER RAMIREZ',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/JorgeRichter.png',
+        image: '/PartidosP/Morena/JorgeRichter.png',
         bio: 'Profesional con amplia experiencia en administración y gestión pública.'
       }
     },
@@ -33,80 +33,80 @@ export const morena = {
         id: 'sen1',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/Senador1.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador1.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen2',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/Senador2.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador2.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen3',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/Senador3.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador3.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen4',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/Senador4.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador4.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen5',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/Senador5.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador5.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen6',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/Senador6.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador6.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen7',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/Senador7.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador7.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen8',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Beni',
-        image: '/Fondos/Candidatos1x1/Senador8.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador8.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen9',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Pando',
-        image: '/Fondos/Candidatos1x1/Senador9.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador9.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'sen10',
         name: 'Candidato por definir',
         role: 'Candidato a Senador',
-        region: 'Nacional',
-        image: '/Fondos/Candidatos1x1/Senador10.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Senador10.png',
         bio: 'Perfil por completar'
       }
     ],
@@ -116,7 +116,7 @@ export const morena = {
         name: 'YERKO ANTONIO ILIJIC CROSA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/YerkoIlijic.png',
+        image: '/PartidosP/Morena/YerkoIlijic.png',
         bio: 'Diputado titular por circunscripción plurinominal de La Paz.'
       },
       {
@@ -124,7 +124,7 @@ export const morena = {
         name: 'LIZ HAYDEE NINA SOSSA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/LizNina.png',
+        image: '/PartidosP/Morena/LizNina.png',
         bio: 'Diputada suplente por circunscripción plurinominal de La Paz.'
       },
       {
@@ -132,7 +132,7 @@ export const morena = {
         name: 'ZUELY BETTY ALEGRIA MENESES',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/ZuelyAlegria.png',
+        image: '/PartidosP/Morena/ZuelyAlegria.png',
         bio: 'Diputada suplente por circunscripción plurinominal de La Paz.'
       },
       {
@@ -140,7 +140,7 @@ export const morena = {
         name: 'ELOY CHOQUE MAMANI',
         role: 'Candidato a Diputado',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/EloyChoque.png',
+        image: '/PartidosP/Morena/EloyChoque.png',
         bio: 'Diputado titular por circunscripción plurinominal de Oruro.'
       },
       {
@@ -148,47 +148,47 @@ export const morena = {
         name: 'EDDY HENRRY CABRERA CARLO',
         role: 'Candidato a Diputado',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/EddyCabrera.png',
+        image: '/PartidosP/Morena/EddyCabrera.png',
         bio: 'Diputado titular por circunscripción plurinominal de Santa Cruz.'
       },
       {
         id: 'dep6',
         name: 'Candidato por definir',
         role: 'Candidato a Diputado',
-        region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/Diputado6.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Diputado6.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'dep7',
         name: 'Candidato por definir',
         role: 'Candidato a Diputado',
-        region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/Diputado7.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Diputado7.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'dep8',
         name: 'Candidato por definir',
         role: 'Candidato a Diputado',
-        region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/Diputado8.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Diputado8.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'dep9',
         name: 'Candidato por definir',
         role: 'Candidato a Diputado',
-        region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/Diputado9.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Diputado9.png',
         bio: 'Perfil por completar'
       },
       {
         id: 'dep10',
         name: 'Candidato por definir',
         role: 'Candidato a Diputado',
-        region: 'Beni',
-        image: '/Fondos/Candidatos1x1/Diputado10.png',
+        region: 'por definir',
+        image: '/PartidosP/Morena/Diputado10.png',
         bio: 'Perfil por completar'
       }
     ]
@@ -199,7 +199,7 @@ export const morena = {
       name: 'Movimiento por la Renovación',
       description: 'Grupo que impulsa la renovación política y generacional dentro del partido.',
       leader: 'Monica Eva Copa Murga',
-      image: '/Fondos/Candidatos1x1/MonicaCopa.png'
+      image: '/PartidosP/Morena/MonicaCopa.png'
     }
   ],
   allies: [

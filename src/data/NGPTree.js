@@ -10,7 +10,7 @@ export const ngp = {
     {
       name: 'Fidel Tapia Zambrana',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/FidelTapia.png' // Imagen necesaria
+      image: '/PartidosP/NuevaGeneraciónPatriótica/FidelTapia.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const ngp = {
       id: 'pres1',
       name: 'FIDEL TAPIA ZAMBRANA',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/FidelTapia.png',
+      image: '/PartidosP/NuevaGeneraciónPatriótica/FidelTapia.png',
       bio: 'Líder político con experiencia en gestión pública y desarrollo nacional.',
       vicepresident: {
         id: 'vpres1',
         name: 'EDGAR URIONA VEIZAGA',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/EdgarUriona.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/EdgarUriona.png',
         bio: 'Experimentado en administración pública y políticas de desarrollo.'
       }
     },
@@ -34,7 +34,7 @@ export const ngp = {
         name: 'EVA ROMERO TELLEZ',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/EvaRomero.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/EvaRomero.png',
         bio: 'Líder con experiencia en representación departamental y políticas sociales.'
       },
       {
@@ -42,7 +42,7 @@ export const ngp = {
         name: 'SERGIO EDUARDO YANATELLI OCAMPO',
         role: 'Candidato a Senador',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/SergioYanatelli.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/SergioYanatelli.png',
         bio: 'Profesional joven con enfoque en modernización del Estado.'
       },
       {
@@ -50,7 +50,7 @@ export const ngp = {
         name: 'BENIGNA IRMA ACNE VARGAS',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/BenignaAcne.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/BenignaAcne.png',
         bio: 'Activista social con experiencia en derechos de las mujeres.'
       },
       {
@@ -58,7 +58,7 @@ export const ngp = {
         name: 'GABRIELA ALEJANDRA ARCE CHAVEZ',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/GabrielaArce.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/GabrielaArce.png',
         bio: 'Joven líder con enfoque en participación ciudadana y nuevas generaciones.'
       },
       {
@@ -66,7 +66,7 @@ export const ngp = {
         name: 'EGBERTO WILMER LLANQUE MITA',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/EgbertoLlanque.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/EgbertoLlanque.png',
         bio: 'Experimentado en gestión pública y desarrollo regional.'
       },
       {
@@ -74,7 +74,7 @@ export const ngp = {
         name: 'MARIO MARISCAL RODRIGUEZ',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/MarioMariscal.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/MarioMariscal.png',
         bio: 'Profesional con experiencia en desarrollo económico regional.'
       },
       {
@@ -82,7 +82,7 @@ export const ngp = {
         name: 'LUIS FERNANDO LEMA MOLINA',
         role: 'Candidato a Senador',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/LuisLema.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/LuisLema.png',
         bio: 'Líder regional con enfoque en desarrollo sostenible.'
       },
       {
@@ -90,7 +90,7 @@ export const ngp = {
         name: 'AMANDA PRIETO QUIROGA',
         role: 'Candidata a Senadora',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/AmandaPrieto.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/AmandaPrieto.png',
         bio: 'Profesional con experiencia en políticas públicas y gestión social.'
       },
       {
@@ -98,7 +98,7 @@ export const ngp = {
         name: 'EIDY MARQUEZ SANGUINO',
         role: 'Candidata a Senadora',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/EidyMarquez.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/EidyMarquez.png',
         bio: 'Líder con experiencia en desarrollo empresarial y políticas económicas.'
       },
       {
@@ -106,7 +106,7 @@ export const ngp = {
         name: 'MAURICIO RODRIGUEZ ROCA',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/MauricioRodriguez.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/MauricioRodriguez.png',
         bio: 'Profesional con enfoque en modernización y desarrollo tecnológico.'
       }
     ],
@@ -116,7 +116,7 @@ export const ngp = {
         name: 'RUSLAN ORLANDO FERNANDEZ REYNAGA',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/RuslanFernandez.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/RuslanFernandez.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo local.'
       },
       {
@@ -124,7 +124,7 @@ export const ngp = {
         name: 'FRANCO LUCAS ALCOBA MAMANI',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/FrancoAlcoba.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/FrancoAlcoba.png',
         bio: 'Joven líder con enfoque en políticas de juventud y educación.'
       },
       {
@@ -132,7 +132,7 @@ export const ngp = {
         name: 'ROSARIO AREQUIPA REINA',
         role: 'Candidata a Diputada',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/RosarioArequipa.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/RosarioArequipa.png',
         bio: 'Defensora de derechos de las mujeres y políticas sociales.'
       },
       {
@@ -140,7 +140,7 @@ export const ngp = {
         name: 'MARIA LORENA TAPIA NINA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MariaTapia.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/MariaTapia.png',
         bio: 'Profesional con experiencia en desarrollo comunitario y participación ciudadana.'
       },
       {
@@ -148,7 +148,7 @@ export const ngp = {
         name: 'JOSE HUMBERTO BALDIVIA UNZAGA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JoseBaldivia.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/JoseBaldivia.png',
         bio: 'Experimentado en gestión pública y políticas de desarrollo.'
       },
       {
@@ -156,7 +156,7 @@ export const ngp = {
         name: 'VIRGINIA AJHUACHO LIMA',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/VirginiaAjhuacho.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/VirginiaAjhuacho.png',
         bio: 'Líder con amplia experiencia en representación popular y derechos sociales.'
       },
       {
@@ -164,7 +164,7 @@ export const ngp = {
         name: 'ROGER URSINO IRRAZABAL CHAVEZ',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/RogerIrrazabal.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/RogerIrrazabal.png',
         bio: 'Profesional con experiencia en gestión administrativa y desarrollo regional.'
       },
       {
@@ -172,7 +172,7 @@ export const ngp = {
         name: 'YENNY NADYA CLADERA SAENZ',
         role: 'Candidata a Diputada',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/YennyCladera.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/YennyCladera.png',
         bio: 'Líder con experiencia en políticas públicas y desarrollo social.'
       },
       {
@@ -180,7 +180,7 @@ export const ngp = {
         name: 'ALVARO NOEL GARATE GUTIERREZ',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/AlvaroGarate.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/AlvaroGarate.png',
         bio: 'Profesional joven con enfoque en desarrollo económico y modernización.'
       },
       {
@@ -188,7 +188,7 @@ export const ngp = {
         name: 'KADWIN JIMENA GARCIA TITO',
         role: 'Candidata a Diputada',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/KadwinGarcia.png',
+        image: '/PartidosP/NuevaGeneraciónPatriótica/KadwinGarcia.png',
         bio: 'Profesional con experiencia en políticas de género y desarrollo social.'
       }
     ]
@@ -199,7 +199,7 @@ export const ngp = {
       name: 'Movimiento por la Renovación',
       description: 'Grupo que impulsa la modernización y renovación política dentro del partido.',
       leader: 'Fidel Tapia Zambrana',
-      image: '/Fondos/Candidatos1x1/FidelTapia.png'
+      image: '/PartidosP/NuevaGeneraciónPatriótica/FidelTapia.png'
     }
   ],
   allies: [

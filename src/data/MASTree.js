@@ -10,7 +10,7 @@ export const mas = {
     {
       name: 'Evo Morales Ayma',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/EvoMorales.png' // Imagen necesaria
+      image: '/PartidosP/MAS/EvoMorales.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const mas = {
       id: 'pres1',
       name: 'CARLOS EDUARDO DEL CASTILLO DEL CARPIO',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/CarlosDelCastillo.png',
+      image: '/PartidosP/MAS/Eduardo Del Castillo.png',
       bio: 'Abogado y político con experiencia en gestión pública, especializado en políticas sociales y desarrollo económico.',
       vicepresident: {
         id: 'vpres1',
         name: 'ESTEBAN MILAN BERNA RAMOS',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/EstebanBerna.png',
+        image: '/PartidosP/MAS/EstebanBerna.png',
         bio: 'Profesional con amplia trayectoria en administración pública y políticas de desarrollo social.'
       }
     },
@@ -34,7 +34,7 @@ export const mas = {
         name: 'LUIS ALBERTO ARCE CATACORA',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/LuisArce.png',
+        image: '/PartidosP/MAS/LuisArce.png',
         bio: 'Economista con amplia experiencia en política económica y gestión fiscal del Estado.'
       },
       {
@@ -42,7 +42,7 @@ export const mas = {
         name: 'ESTEBAN ALAVI CANAVIRI',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/EstebanAlavi.png',
+        image: '/PartidosP/MAS/EstebanAlavi.png',
         bio: 'Líder político con experiencia en gestión regional y políticas de desarrollo.'
       },
       {
@@ -50,7 +50,7 @@ export const mas = {
         name: 'ALEX GUSTAVO CUELLAR VILDOSO',
         role: 'Candidato a Senador',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/AlexCuellar.png',
+        image: '/PartidosP/MAS/AlexCuellar.png',
         bio: 'Profesional con trayectoria en administración pública y políticas sociales.'
       },
       {
@@ -58,7 +58,7 @@ export const mas = {
         name: 'KATHIUSKA GUZMAN ORELLANA',
         role: 'Candidata a Senadora',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/KathiuskaGuzman.png',
+        image: '/PartidosP/MAS/KathiuskaGuzman.png',
         bio: 'Líder femenina con experiencia en políticas de desarrollo regional.'
       },
       {
@@ -66,7 +66,7 @@ export const mas = {
         name: 'DIANA ROCIO ROSALES MAMANI',
         role: 'Candidata a Senadora',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/DianaRosales.png',
+        image: '/PartidosP/MAS/DianaRosales.png',
         bio: 'Joven política comprometida con los derechos de las mujeres y el desarrollo social.'
       },
       {
@@ -74,7 +74,7 @@ export const mas = {
         name: 'HERBER QUISPE JURADO',
         role: 'Candidato a Senador',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/HerberQuispe.png',
+        image: '/PartidosP/MAS/HerberQuispe.png',
         bio: 'Profesional con experiencia en gestión pública y políticas regionales.'
       },
       {
@@ -82,7 +82,7 @@ export const mas = {
         name: 'EVA LUZ HUMEREZ ALVEZ',
         role: 'Candidata a Senadora',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/EvaHumerez.png',
+        image: '/PartidosP/MAS/EvaHumerez.png',
         bio: 'Líder regional comprometida con el desarrollo de las comunidades rurales.'
       },
       {
@@ -90,7 +90,7 @@ export const mas = {
         name: 'EDILBERTO CHAMBI MONTAÑO',
         role: 'Candidato a Senador',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/EdilbertoChambi.png',
+        image: '/PartidosP/MAS/EdilbertoChambi.png',
         bio: 'Dirigente social con experiencia en políticas mineras y desarrollo comunitario.'
       },
       {
@@ -98,7 +98,7 @@ export const mas = {
         name: 'JHONNY VILLARROEL GUTIERREZ',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/JhonnyVillarroel.png',
+        image: '/PartidosP/MAS/JhonnyVillarroel.png',
         bio: 'Joven líder político con formación en administración pública.'
       },
       {
@@ -106,7 +106,7 @@ export const mas = {
         name: 'GETRUDEZ VALDA LUNA',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/GetrudezValda.png',
+        image: '/PartidosP/MAS/GetrudezValda.png',
         bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
       }
     ],
@@ -116,7 +116,7 @@ export const mas = {
         name: 'HINOSENCIO ADALID CARBAJAL MIRANDA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/HinosencioCarbajal.png',
+        image: '/PartidosP/MAS/HinosencioCarbajal.png',
         bio: 'Profesional con experiencia en gestión legislativa y políticas públicas.'
       },
       {
@@ -124,7 +124,7 @@ export const mas = {
         name: 'FELIPA YALILY MONTENEGRO MONTAÑO',
         role: 'Candidata a Diputada',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/FelipaMontenegro.png',
+        image: '/PartidosP/MAS/FelipaMontenegro.png',
         bio: 'Líder femenina comprometida con los derechos de las mujeres y el desarrollo social.'
       },
       {
@@ -132,7 +132,7 @@ export const mas = {
         name: 'HUGO CASILLA FRANCO',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/HugoCasilla.png',
+        image: '/PartidosP/MAS/HugoCasilla.png',
         bio: 'Profesional con trayectoria en administración pública y políticas económicas.'
       },
       {
@@ -140,7 +140,7 @@ export const mas = {
         name: 'DANIEL FERNANDO FLORES POMA',
         role: 'Candidato a Diputado',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/DanielFlores.png',
+        image: '/PartidosP/MAS/DanielFlores.png',
         bio: 'Líder con experiencia en políticas regionales y desarrollo comunitario.'
       },
       {
@@ -148,7 +148,7 @@ export const mas = {
         name: 'GREGORIO VILLCA SOCOMPI',
         role: 'Candidato a Diputado',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/GregorioVillca.png',
+        image: '/PartidosP/MAS/GregorioVillca.png',
         bio: 'Dirigente social con experiencia en políticas mineras y desarrollo rural.'
       },
       {
@@ -156,7 +156,7 @@ export const mas = {
         name: 'EFRAIN PERALES ORTEGA',
         role: 'Candidato a Diputado',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/EfrainPerales.png',
+        image: '/PartidosP/MAS/EfrainPerales.png',
         bio: 'Profesional joven con formación en políticas públicas y desarrollo regional.'
       },
       {
@@ -164,7 +164,7 @@ export const mas = {
         name: 'NEIBA SELVI SUPA ORTIZ',
         role: 'Candidata a Diputada',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/NeibaSupa.png',
+        image: '/PartidosP/MAS/NeibaSupa.png',
         bio: 'Líder femenina comprometida con el desarrollo de las comunidades amazónicas.'
       },
       {
@@ -172,7 +172,7 @@ export const mas = {
         name: 'KIEFERTH VINIQUE CHAVEZ',
         role: 'Candidato a Diputado',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/KieferthChavez.png',
+        image: '/PartidosP/MAS/KieferthChavez.png',
         bio: 'Profesional con experiencia en políticas ambientales y desarrollo sostenible.'
       },
       {
@@ -180,7 +180,7 @@ export const mas = {
         name: 'MIRIAM MARTINEZ MICHAGA',
         role: 'Candidata a Diputada',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/MiriamMartinez.png',
+        image: '/PartidosP/MAS/MiriamMartinez.png',
         bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
       },
       {
@@ -188,7 +188,7 @@ export const mas = {
         name: 'SHIRLEY GISELA JUANES ARONI',
         role: 'Candidata a Diputada',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/ShirleyJuanes.png',
+        image: '/PartidosP/MAS/ShirleyJuanes.png',
         bio: 'Profesional comprometida con los derechos de las mujeres y el desarrollo social.'
       }
     ]
@@ -199,7 +199,7 @@ export const mas = {
       name: 'Sector Evista',
       description: 'Grupo que mantiene la línea histórica del MAS bajo el liderazgo de Evo Morales.',
       leader: 'Evo Morales Ayma',
-      image: '/Fondos/Candidatos1x1/EvoMorales.png'
+      image: '/PartidosP/MAS/EvoMorales.png'
     }
   ],
   allies: [

@@ -10,7 +10,7 @@ export const fuerzapueblo = {
     {
       name: 'Max Jhonny Fernandez Saucedo',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/MaxFernandezSaucedo.png'
+      image: '/PartidosP/FuerzadelPueblo/MaxFernandezSaucedo.png'
     }
   ],
   
@@ -19,13 +19,13 @@ export const fuerzapueblo = {
       id: 'pres1',
       name: 'MAX JHONNY FERNANDEZ SAUCEDO',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/FERNANDEZSAUCEDO.png',
+      image: '/PartidosP/FuerzadelPueblo/Jhonny Fernández.png',
       bio: 'Especialista en administración pública con amplia experiencia en gestión local y desarrollo urbano.',
       vicepresident: {
         id: 'vpres1',
         name: ' ',
         role: '',
-        image: '',
+        image: '/PartidosP/SiluetaH.png',
         bio: ''
       }
     },
@@ -35,7 +35,7 @@ export const fuerzapueblo = {
         name: 'MARIA ROSA MORALES PACO',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MariaMorales.png',
+        image: '/PartidosP/FuerzadelPueblo/MariaMorales.png',
         bio: 'Activista social e impulsora de iniciativas comunitarias, con enfoque en educación intercultural y derechos de las mujeres indígenas'
       },
       {
@@ -43,7 +43,7 @@ export const fuerzapueblo = {
         name: 'VANIA JOELMA GUZMAN CAMACHO',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/VaniaGuzman.png',
+        image: '/PartidosP/FuerzadelPueblo/VaniaGuzman.png',
         bio: 'Profesional comprometida con el desarrollo social y la participación política de las mujeres.'
       },
       {
@@ -51,7 +51,7 @@ export const fuerzapueblo = {
         name: 'RUBEN DEYBID TARQUI FERNANDEZ',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/RubenTarqui.png',
+        image: '/PartidosP/FuerzadelPueblo/RubenTarqui.png',
         bio: 'Joven líder político con enfoque en modernización del Estado y tecnología.'
       },
       {
@@ -59,7 +59,7 @@ export const fuerzapueblo = {
         name: 'EDWIN MARIO RODRIGUEZ ESPEJO',
         role: 'Candidato a Senador',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/EdwinRodriguez.png',
+        image: '/PartidosP/FuerzadelPueblo/EdwinRodriguez.png',
         bio: 'Especialista en desarrollo minero y políticas públicas regionales.'
       },
       {
@@ -67,7 +67,7 @@ export const fuerzapueblo = {
         name: 'PAOLA ANDREA FERNANDEZ REA',
         role: 'Candidata a Senadora',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/PaolaFernandez.png',
+        image: '/PartidosP/FuerzadelPueblo/PaolaFernandez.png',
         bio: 'Profesional en gestión pública con experiencia en desarrollo económico regional.'
       },
       {
@@ -75,7 +75,7 @@ export const fuerzapueblo = {
         name: 'JOSE ALEJANDRO FARAH EGUEZ',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/JoseFarah.png',
+        image: '/PartidosP/FuerzadelPueblo/JoseFarah.png',
         bio: 'Empresario y político con amplia experiencia en gestión administrativa.'
       },
       {
@@ -83,7 +83,7 @@ export const fuerzapueblo = {
         name: 'DENNY GUZMAN CAMPERO',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/DennyGuzman.png',
+        image: '/PartidosP/FuerzadelPueblo/DennyGuzman.png',
         bio: 'Líder con experiencia en desarrollo económico y social.'
       },
       {
@@ -91,7 +91,7 @@ export const fuerzapueblo = {
         name: 'LISBETH JUANITA CESPEDES CHIRINO',
         role: 'Candidata a Senadora',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/LisbethCespedes.png',
+        image: '/PartidosP/FuerzadelPueblo/LisbethCespedes.png',
         bio: 'Defensora de los derechos de las mujeres y políticas de inclusión social.'
       },
       {
@@ -99,7 +99,7 @@ export const fuerzapueblo = {
         name: 'IVANNIA JUSTINIANO SHIMOKAWA',
         role: 'Candidata a Senadora',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/IvanniaJustiniano.png',
+        image: '/PartidosP/FuerzadelPueblo/IvanniaJustiniano.png',
         bio: 'Líder regional comprometida con el desarrollo sostenible de la Amazonía.'
       },
       {
@@ -107,7 +107,7 @@ export const fuerzapueblo = {
         name: 'ABDUL SILVA FARAH',
         role: 'Candidato a Senador',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/AbdulSilva.png',
+        image: '/PartidosP/FuerzadelPueblo/AbdulSilva.png',
         bio: 'Especialista en desarrollo regional y políticas ambientales.'
       }
     ],
@@ -117,7 +117,7 @@ export const fuerzapueblo = {
         name: 'JHENNY MABEL CHOQUE ATORA',
         role: 'Candidata a Diputada',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/JhennyChoque.png',
+        image: '/PartidosP/FuerzadelPueblo/JhennyChoque.png',
         bio: 'Defensora de políticas sociales y participación ciudadana.'
       },
       {
@@ -125,7 +125,7 @@ export const fuerzapueblo = {
         name: 'MARVIN FRAZI GUTIERREZ CARRASCO',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MarvinGutierrez.png',
+        image: '/PartidosP/FuerzadelPueblo/MarvinGutierrez.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo social.'
       },
       {
@@ -133,7 +133,7 @@ export const fuerzapueblo = {
         name: 'PAULINO QUISPE LUQUE',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/PaulinoQuispe.png',
+        image: '/PartidosP/FuerzadelPueblo/PaulinoQuispe.png',
         bio: 'Líder comunitario con enfoque en desarrollo rural y agricultura.'
       },
       {
@@ -141,7 +141,7 @@ export const fuerzapueblo = {
         name: 'MARISOL CALLISAYA QUISPE',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MarisolCallisaya.png',
+        image: '/PartidosP/FuerzadelPueblo/MarisolCallisaya.png',
         bio: 'Joven política comprometida con la educación y el desarrollo juvenil.'
       },
       {
@@ -149,7 +149,7 @@ export const fuerzapueblo = {
         name: 'JUAN FERNANDO SAAVEDRA RIVERO',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JuanSaavedra.png',
+        image: '/PartidosP/FuerzadelPueblo/JuanSaavedra.png',
         bio: 'Especialista en políticas públicas y gestión administrativa.'
       },
       {
@@ -157,7 +157,7 @@ export const fuerzapueblo = {
         name: 'PEDRO MAMANI YUJRA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/PedroMamani.png',
+        image: '/PartidosP/FuerzadelPueblo/PedroMamani.png',
         bio: 'Dirigente sindical y defensor de los derechos laborales.'
       },
       {
@@ -165,7 +165,7 @@ export const fuerzapueblo = {
         name: 'OLGA CAMA MAMANI',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/OlgaCama.png',
+        image: '/PartidosP/FuerzadelPueblo/OlgaCama.png',
         bio: 'Activista social con enfoque en derechos de las mujeres rurales.'
       },
       {
@@ -173,7 +173,7 @@ export const fuerzapueblo = {
         name: 'MIGUEL ANGEL ROCHA CONDORI',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MiguelRocha.png',
+        image: '/PartidosP/FuerzadelPueblo/MiguelRocha.png',
         bio: 'Joven líder con visión de modernización del Estado.'
       },
       {
@@ -181,7 +181,7 @@ export const fuerzapueblo = {
         name: 'ROSA ANGELA VARGAS LAYME',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/RosaVargas.png',
+        image: '/PartidosP/FuerzadelPueblo/RosaVargas.png',
         bio: 'Profesional comprometida con el desarrollo social y la equidad de género.'
       },
       {
@@ -189,7 +189,7 @@ export const fuerzapueblo = {
         name: 'LUCIANO NEGRETE AGUIRRE',
         role: 'Candidato a Diputado',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/LucianoNegrete.png',
+        image: '/PartidosP/FuerzadelPueblo/LucianoNegrete.png',
         bio: 'Especialista en desarrollo económico y políticas regionales.'
       }
     ]
@@ -200,7 +200,7 @@ export const fuerzapueblo = {
       name: 'Movimiento por la Transparencia',
       description: 'Grupo que impulsa la lucha contra la corrupción dentro del partido.',
       leader: 'Max Jhonny Fernandez Saucedo',
-      image: '/Fondos/Candidatos1x1/MaxFernandezSaucedo.png'
+      image: '/PartidosP/FuerzadelPueblo/MaxFernandezSaucedo.png'
     }
   ],
   allies: [

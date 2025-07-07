@@ -77,22 +77,26 @@ export default function HistoryTimeline() {
 
       {/* Columna derecha: Video */}
       {period.videoUrl && (
-        <div className="flex-1 lg:w-1/2 flex flex-col justify-center">
+        <div className="flex-1 lg:w-1/2 flex flex-col justify-center max-w-full overflow-hidden">
           <h4 className="text-lg font-bold text-white mb-3 flex items-center">
             <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: period.color }}></span>
             Video Histórico
           </h4>
-          <div className="relative w-full bg-black/40 rounded-lg overflow-hidden">
-            <video
-              src={period.videoUrl}
-              title={`Video sobre ${period.name}`}
-              className="w-full h-auto rounded-lg"
-              controls
-              preload="metadata"
-              autoPlay
-              muted={true}
-            >
-            </video>
+          {/* Contenedor del video con aspect ratio fijo */}
+          <div className="relative w-full bg-black/40 rounded-lg overflow-hidden max-w-full">
+            {/* Wrapper con aspect ratio 16:9 */}
+            <div className="relative w-full pb-[50%] h-0">
+              <video
+                src={period.videoUrl}
+                title={`Video sobre ${period.name}`}
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                controls
+                preload="metadata"
+                autoPlay
+                muted={true}
+              >
+              </video>
+            </div>
           </div>
           {period.videoDescription && (
             <p className="text-gray-400 text-xs mt-2 italic">{period.videoDescription}</p>

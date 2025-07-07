@@ -10,7 +10,7 @@ export const alianzapopular = {
     {
       name: 'Andronico Rodriguez Ledezma',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/AndronicoRodriguez.png' // Imagen necesaria
+      image: '/PartidosP/Alianza Popular/Andrónico Rodríguez.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const alianzapopular = {
       id: 'pres1',
       name: 'ANDRONICO RODRIGUEZ LEDEZMA',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/AndronicoRodriguez.png',
+      image: '/PartidosP/Alianza Popular/Andrónico Rodríguez.png',
       bio: 'Líder sindical y político boliviano, dirigente cocalero con amplia experiencia en movimientos sociales y defensa de los derechos laborales.',
       vicepresident: {
         id: 'vpres1',
         name: 'MARIANA PRADO NOYA',
         role: 'Candidata a Vicepresidenta',
-        image: '/Fondos/Candidatos1x1/MarianaPrado.png',
+        image: '/PartidosP/Alianza Popular/MarianaPrado.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo social, comprometida con la equidad de género y políticas inclusivas.'
       }
     },
@@ -34,7 +34,7 @@ export const alianzapopular = {
         name: 'HUMBERTO CLAROS ZEBALLOS',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/HumbertoClaros.png',
+        image: '/PartidosP/Alianza Popular/HumbertoClaros.png',
         bio: 'Político y gestor público con experiencia en desarrollo regional y políticas sociales en Cochabamba.'
       },
       {
@@ -42,7 +42,7 @@ export const alianzapopular = {
         name: 'LUCY SARA ESCOBAR VELASCO',
         role: 'Candidata a Senadora',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/LucyEscobar.png',
+        image: '/PartidosP/Alianza Popular/LucyEscobar.png',
         bio: 'Profesional comprometida con el desarrollo social y la participación ciudadana en políticas públicas.'
       },
       {
@@ -50,7 +50,7 @@ export const alianzapopular = {
         name: 'MAXIMO RODRIGUEZ APAZA',
         role: 'Candidato a Senador',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/MaximoRodriguez.png',
+        image: '/PartidosP/Alianza Popular/MaximoRodriguez.png',
         bio: 'Líder comunitario con enfoque en desarrollo minero y derechos de las comunidades rurales.'
       },
       {
@@ -58,7 +58,7 @@ export const alianzapopular = {
         name: 'ELENA JUDITH AGUILAR FLORES',
         role: 'Candidata a Senadora',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/ElenaAguilar.png',
+        image: '/PartidosP/Alianza Popular/ElenaAguilar.png',
         bio: 'Activista social con experiencia en defensa de derechos de las mujeres y desarrollo comunitario.'
       },
       {
@@ -66,7 +66,7 @@ export const alianzapopular = {
         name: 'LUIS COLQUE LUNASCO',
         role: 'Candidato a Senador',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/LuisColque.png',
+        image: '/PartidosP/Alianza Popular/LuisColque.png',
         bio: 'Dirigente sindical con experiencia en organización comunitaria y desarrollo local.'
       },
       {
@@ -74,7 +74,7 @@ export const alianzapopular = {
         name: 'MIGUEL ANGEL REJAS VARGAS',
         role: 'Candidato a Senador',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/MiguelRejas.png',
+        image: '/PartidosP/Alianza Popular/MiguelRejas.png',
         bio: 'Joven líder político con visión moderna sobre desarrollo económico y social.'
       },
       {
@@ -82,7 +82,7 @@ export const alianzapopular = {
         name: 'ABEL GUZMAN MURGUIA',
         role: 'Candidato a Senador',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/AbelGuzman.png',
+        image: '/PartidosP/Alianza Popular/AbelGuzman.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo regional.'
       },
       {
@@ -90,7 +90,7 @@ export const alianzapopular = {
         name: 'JESSICA ANNE JORDAN BURTON',
         role: 'Candidata a Senadora',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/JessicaJordan.png',
+        image: '/PartidosP/Alianza Popular/JessicaJordan.png',
         bio: 'Profesional con experiencia en desarrollo amazónico y políticas ambientales.'
       },
       {
@@ -98,7 +98,7 @@ export const alianzapopular = {
         name: 'MISDRAEL MAMANI ARENAS',
         role: 'Candidato a Senador',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/MisdraelMamani.png',
+        image: '/PartidosP/Alianza Popular/MisdraelMamani.png',
         bio: 'Líder comunitario comprometido con el desarrollo de la región amazónica.'
       },
       {
@@ -106,7 +106,7 @@ export const alianzapopular = {
         name: 'ERMENEGILDO LLAVERA CHUSGO',
         role: 'Candidato a Senador',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/ErmenegildoLlavera.png',
+        image: '/PartidosP/Alianza Popular/ErmenegildoLlavera.png',
         bio: 'Dirigente regional con experiencia en desarrollo fronterizo y políticas de integración.'
       }
     ],
@@ -116,7 +116,7 @@ export const alianzapopular = {
         name: 'JUAN CARLOS POMA TAPIA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JuanCarlosPoma.png',
+        image: '/PartidosP/Alianza Popular/JuanCarlosPoma.png',
         bio: 'Profesional comprometido con el desarrollo urbano y políticas sociales en La Paz.'
       },
       {
@@ -124,7 +124,7 @@ export const alianzapopular = {
         name: 'SANDRA HINOJOSA NUÑEZ',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/SandraHinojosa.png',
+        image: '/PartidosP/Alianza Popular/SandraHinojosa.png',
         bio: 'Activista social con enfoque en derechos de las mujeres y desarrollo comunitario.'
       },
       {
@@ -132,7 +132,7 @@ export const alianzapopular = {
         name: 'MARTIN DANIEL IRUSTA FLORES',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/MartinIrusta.png',
+        image: '/PartidosP/Alianza Popular/MartinIrusta.png',
         bio: 'Joven profesional con experiencia en políticas públicas y desarrollo social.'
       },
       {
@@ -140,7 +140,7 @@ export const alianzapopular = {
         name: 'EDGAR PERCY BAUTISTA MAMANI',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/EdgarBautista.png',
+        image: '/PartidosP/Alianza Popular/EdgarBautista.png',
         bio: 'Líder comunitario con experiencia en organización sindical y desarrollo local.'
       },
       {
@@ -148,7 +148,7 @@ export const alianzapopular = {
         name: 'RENE RICARDO CHACON ROSALES',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/ReneChacon.png',
+        image: '/PartidosP/Alianza Popular/ReneChacon.png',
         bio: 'Profesional con amplia experiencia en gestión pública y desarrollo regional.'
       },
       {
@@ -156,7 +156,7 @@ export const alianzapopular = {
         name: 'ABDON CHOQUEMISA POMACAHUA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/AbdonChoquemisa.png',
+        image: '/PartidosP/Alianza Popular/AbdonChoquemisa.png',
         bio: 'Dirigente comunitario comprometido con el desarrollo rural y políticas indigenistas.'
       },
       {
@@ -164,7 +164,7 @@ export const alianzapopular = {
         name: 'WILDOR ERICK MORALES TORREZ',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/WildorMorales.png',
+        image: '/PartidosP/Alianza Popular/WildorMorales.png',
         bio: 'Profesional con experiencia en desarrollo económico y políticas sociales.'
       },
       {
@@ -172,7 +172,7 @@ export const alianzapopular = {
         name: 'VLADIMIR SANEZ CAMACHO',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/VladimirSanez.png',
+        image: '/PartidosP/Alianza Popular/VladimirSanez.png',
         bio: 'Joven líder con visión innovadora sobre desarrollo tecnológico y social.'
       },
       {
@@ -180,7 +180,7 @@ export const alianzapopular = {
         name: 'AIDE ALVAREZ HINOJOSA',
         role: 'Candidata a Diputada',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/AideAlvarez.png',
+        image: '/PartidosP/Alianza Popular/AideAlvarez.png',
         bio: 'Profesional con experiencia en políticas de género y desarrollo social.'
       },
       {
@@ -188,7 +188,7 @@ export const alianzapopular = {
         name: 'LUIS WEIMAR SUZAÑO PLAZA',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/LuisSuzano.png',
+        image: '/PartidosP/Alianza Popular/LuisSuzano.png',
         bio: 'Joven profesional comprometido con el desarrollo juvenil y políticas educativas.'
       }
     ]
@@ -199,7 +199,7 @@ export const alianzapopular = {
       name: 'Movimiento Sindical',
       description: 'Bloque que representa los intereses de los trabajadores y organizaciones sindicales.',
       leader: 'Andronico Rodriguez Ledezma',
-      image: '/Fondos/Candidatos1x1/AndronicoRodriguez.png'
+      image: '/PartidosP/Alianza Popular/AndronicoRodriguez.png'
     }
   ],
   allies: [

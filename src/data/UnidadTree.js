@@ -10,7 +10,7 @@ export const alianzaunidad = {
     {
       name: 'Samuel Doria Medina',
       role: 'Fundador y líder histórico',
-      image: '/Fondos/Candidatos1x1/SamuelDoriaMedina.png' // Imagen necesaria
+      image: '/PartidosP/Unidad/SamuelDoriaMedina.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const alianzaunidad = {
       id: 'pres1',
       name: 'SAMUEL JORGE DORIA MEDINA AUZA',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/SamuelDoriaMedina.png',
+      image: '/PartidosP/Unidad/Samuel Doria Medina.png',
       bio: 'Empresario y político con experiencia en administración pública y desarrollo económico del país.',
       vicepresident: {
         id: 'vpres1',
         name: 'JOSE LUIS LUPO FLORES',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/JoseLuisLupo.png',
+        image: '/PartidosP/Unidad/Jose Luis Lupo.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo institucional.'
       }
     },
@@ -34,7 +34,7 @@ export const alianzaunidad = {
         name: 'Juan Felipe Carvajal Padilla',
         role: 'Candidato a Senador',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/JuanCarvajal.png',
+        image: '/PartidosP/Unidad/JuanCarvajal.png',
         bio: 'Político con experiencia en representación departamental y gestión legislativa.'
       },
       {
@@ -42,7 +42,7 @@ export const alianzaunidad = {
         name: 'Delia Arancibia Yucra',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/DeliaArancibia.png',
+        image: '/PartidosP/Unidad/DeliaArancibia.png',
         bio: 'Líder social con enfoque en políticas de género y desarrollo comunitario.'
       },
       {
@@ -50,7 +50,7 @@ export const alianzaunidad = {
         name: 'Carmen Soledad Chapeton Tancara',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/CarmenChapeton.png',
+        image: '/PartidosP/Unidad/CarmenChapeton.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo social.'
       },
       {
@@ -58,7 +58,7 @@ export const alianzaunidad = {
         name: 'Roberto Javier Moscoso Valderrama',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/RobertoMoscoso.png',
+        image: '/PartidosP/Unidad/RobertoMoscoso.png',
         bio: 'Político con trayectoria en administración pública y desarrollo regional.'
       },
       {
@@ -66,7 +66,7 @@ export const alianzaunidad = {
         name: 'Toribia Lero Quispe',
         role: 'Candidata a Senadora',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/ToribiaLero.png',
+        image: '/PartidosP/Unidad/ToribiaLero.png',
         bio: 'Líder comunitaria con enfoque en desarrollo rural y participación ciudadana.'
       },
       {
@@ -74,7 +74,7 @@ export const alianzaunidad = {
         name: 'Nilda Fernandez Calle',
         role: 'Candidata a Senadora',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/NildaFernandez.png',
+        image: '/PartidosP/Unidad/NildaFernandez.png',
         bio: 'Profesional con experiencia en gestión regional y desarrollo social.'
       },
       {
@@ -82,7 +82,7 @@ export const alianzaunidad = {
         name: 'Cesar Mentasti Padilla',
         role: 'Candidato a Senador',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/CesarMentasti.png',
+        image: '/PartidosP/Unidad/CesarMentasti.png',
         bio: 'Político con experiencia en desarrollo económico y gestión departamental.'
       },
       {
@@ -90,7 +90,7 @@ export const alianzaunidad = {
         name: 'Rosa Tatiana Añez Carrasco',
         role: 'Candidata a Senadora',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/RosaAñez.png',
+        image: '/PartidosP/Unidad/RosaAñez.png',
         bio: 'Profesional con trayectoria en administración pública y desarrollo regional.'
       },
       {
@@ -98,7 +98,7 @@ export const alianzaunidad = {
         name: 'Jose Roca Haensel',
         role: 'Candidato a Senador',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/JoseRoca.png',
+        image: '/PartidosP/Unidad/JoseRoca.png',
         bio: 'Líder regional con experiencia en desarrollo amazónico y gestión territorial.'
       },
       {
@@ -106,7 +106,7 @@ export const alianzaunidad = {
         name: 'Eliana Rina Acosta Quispe',
         role: 'Candidata a Senadora',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/ElianaAcosta.png',
+        image: '/PartidosP/Unidad/ElianaAcosta.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo fronterizo.'
       }
     ],
@@ -116,7 +116,7 @@ export const alianzaunidad = {
         name: 'Maria Elena Vildozo Eyzaguirre',
         role: 'Candidata a Diputada',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/MariaVildozo.png',
+        image: '/PartidosP/Unidad/MariaVildozo.png',
         bio: 'Profesional con experiencia en políticas públicas y desarrollo social.'
       },
       {
@@ -124,7 +124,7 @@ export const alianzaunidad = {
         name: 'Cecilia Isabel Requena Zarate',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/CeciliaRequena.png',
+        image: '/PartidosP/Unidad/CeciliaRequena.png',
         bio: 'Líder política con trayectoria en representación ciudadana y gestión legislativa.'
       },
       {
@@ -132,7 +132,7 @@ export const alianzaunidad = {
         name: 'Luis Fernando Laredo Arellano',
         role: 'Candidato a Diputado',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/LuisLaredo.png',
+        image: '/PartidosP/Unidad/LuisLaredo.png',
         bio: 'Profesional con experiencia en desarrollo económico y gestión pública.'
       },
       {
@@ -140,7 +140,7 @@ export const alianzaunidad = {
         name: 'Alejandro Boris Medina Campuzano',
         role: 'Candidato a Diputado',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/AlejandroMedina.png',
+        image: '/PartidosP/Unidad/AlejandroMedina.png',
         bio: 'Político con experiencia en administración pública y desarrollo regional.'
       },
       {
@@ -148,7 +148,7 @@ export const alianzaunidad = {
         name: 'Azucena Alejandra Fuertes Mamani',
         role: 'Candidata a Diputada',
         region: 'Potosí',
-        image: '/Fondos/Candidatos1x1/AzucenaFuertes.png',
+        image: '/PartidosP/Unidad/AzucenaFuertes.png',
         bio: 'Líder comunitaria con enfoque en desarrollo minero y políticas sociales.'
       },
       {
@@ -156,7 +156,7 @@ export const alianzaunidad = {
         name: 'Karina Patricia Liebers Caceres',
         role: 'Candidata a Diputada',
         region: 'Tarija',
-        image: '/Fondos/Candidatos1x1/KarinaLiebers.png',
+        image: '/PartidosP/Unidad/KarinaLiebers.png',
         bio: 'Profesional con experiencia en gestión pública y desarrollo hidrocarburífero.'
       },
       {
@@ -164,7 +164,7 @@ export const alianzaunidad = {
         name: 'Maria Khaline Moreno Cardenas',
         role: 'Candidata a Diputada',
         region: 'Santa Cruz',
-        image: '/Fondos/Candidatos1x1/MariaMoreno.png',
+        image: '/PartidosP/Unidad/MariaMoreno.png',
         bio: 'Joven líder con enfoque en innovación y desarrollo tecnológico.'
       },
       {
@@ -172,7 +172,7 @@ export const alianzaunidad = {
         name: 'Yessica Prisila Dantes Escalante',
         role: 'Candidata a Diputada',
         region: 'Beni',
-        image: '/Fondos/Candidatos1x1/YessicaDantes.png',
+        image: '/PartidosP/Unidad/YessicaDantes.png',
         bio: 'Profesional con experiencia en desarrollo amazónico y gestión territorial.'
       },
       {
@@ -180,7 +180,7 @@ export const alianzaunidad = {
         name: 'Romel Mercado Zabala',
         role: 'Candidato a Diputado',
         region: 'Pando',
-        image: '/Fondos/Candidatos1x1/RomelMercado.png',
+        image: '/PartidosP/Unidad/RomelMercado.png',
         bio: 'Líder regional con experiencia en desarrollo fronterizo y gestión pública.'
       },
       {
@@ -188,7 +188,7 @@ export const alianzaunidad = {
         name: 'Andrea Bruna Barrientos Sahonero',
         role: 'Candidata a Diputada',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/AndreaBarrientos.png',
+        image: '/PartidosP/Unidad/AndreaBarrientos.png',
         bio: 'Profesional joven con enfoque en políticas de desarrollo y participación ciudadana.'
       }
     ]
@@ -199,7 +199,7 @@ export const alianzaunidad = {
       name: 'Movimiento Unidad Nacional',
       description: 'Grupo que impulsa la unidad nacional y el desarrollo económico dentro del partido.',
       leader: 'Samuel Doria Medina',
-      image: '/Fondos/Candidatos1x1/SamuelDoriaMedina.png'
+      image: '/PartidosP/Unidad/SamuelDoriaMedina.png'
     }
   ],
   allies: [

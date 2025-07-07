@@ -10,7 +10,7 @@ export const libre = {
     {
       name: 'Jorge Fernando Tuto Quiroga Ramírez',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/JorgeQuiroga.png' // Imagen necesaria
+      image: '/PartidosP/FRILibre/Jorge Quiroga Ramírez.png' // Imagen necesaria
     }
   ],
   candidates: {
@@ -18,13 +18,13 @@ export const libre = {
       id: 'pres1',
       name: 'JORGE FERNANDO TUTO QUIROGA RAMIREZ',
       role: 'Candidato Presidencial',
-      image: '/Fondos/Candidatos1x1/JorgeQuiroga.png',
+      image: '/PartidosP/FRILibre/Jorge Quiroga Ramírez.png',
       bio: 'Ex-presidente de Bolivia, economista con amplia experiencia en administración pública y gestión gubernamental.',
       vicepresident: {
         id: 'vpres1',
         name: 'JUAN PABLO VELASCO DALENCE',
         role: 'Candidato a Vicepresidente',
-        image: '/Fondos/Candidatos1x1/JuanVelasco.png',
+        image: '/PartidosP/FRILibre/JuanVelasco.png',
         bio: 'Profesional joven con experiencia en gestión pública y desarrollo económico.'
       }
     },
@@ -34,7 +34,7 @@ export const libre = {
         name: 'TOMASA YARHUI JACOME',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/TomasaYarhui.png',
+        image: '/PartidosP/FRILibre/TomasaYarhui.png',
         bio: 'Líder social con experiencia en representación comunitaria y desarrollo regional.'
       },
       {
@@ -42,7 +42,7 @@ export const libre = {
         name: 'JOSE MANUEL ORMACHEA MENDIETA',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JoseOrmachea.png',
+        image: '/PartidosP/FRILibre/JoseOrmachea.png',
         bio: 'Profesional con experiencia en administración pública y desarrollo urbano.'
       },
       {
@@ -50,7 +50,7 @@ export const libre = {
         name: 'EVELIN PATRICIA COSSIO MARQUEZ',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/EvelinCossio.png',
+        image: '/PartidosP/FRILibre/EvelinCossio.png',
         bio: 'Especialista en políticas públicas y gestión gubernamental.'
       },
       {
@@ -58,7 +58,7 @@ export const libre = {
         name: 'GUIDO MONTAN GONZALES',
         role: 'Candidato a Senador',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/GuidoMontan.png',
+        image: '/PartidosP/FRILibre/GuidoMontan.png',
         bio: 'Veterano político con amplia experiencia en representación legislativa.'
       },
       {
@@ -66,7 +66,7 @@ export const libre = {
         name: 'MODESTA ROXANA RAMIREZ VALDA',
         role: 'Candidata a Senadora',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/ModestaBRamirez.png',
+        image: '/PartidosP/FRILibre/ModestaBRamirez.png',
         bio: 'Activista social con enfoque en derechos de las mujeres y desarrollo comunitario.'
       },
       {
@@ -74,7 +74,7 @@ export const libre = {
         name: 'WANDA XIMENA MEDRANO HERVAS',
         role: 'Candidata a Senadora',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/WandaMedrano.png',
+        image: '/PartidosP/FRILibre/WandaMedrano.png',
         bio: 'Profesional con experiencia en gestión regional y desarrollo económico.'
       },
       {
@@ -82,7 +82,7 @@ export const libre = {
         name: 'JUAN ROBERTH FLORES ENCINAS',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/JuanFlores.png',
+        image: '/PartidosP/FRILibre/JuanFlores.png',
         bio: 'Especialista en administración pública con enfoque en desarrollo regional.'
       },
       {
@@ -90,7 +90,7 @@ export const libre = {
         name: 'EMILIANA AYALA ARCIENEGA',
         role: 'Candidata a Senadora',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/EmilianaAyala.png',
+        image: '/PartidosP/FRILibre/EmilianaAyala.png',
         bio: 'Líder comunitaria con experiencia en gestión social y desarrollo local.'
       },
       {
@@ -98,7 +98,7 @@ export const libre = {
         name: 'GABRIEL ZAMBRANA COSSIO',
         role: 'Candidato a Senador',
         region: 'Cochabamba',
-        image: '/Fondos/Candidatos1x1/GabrielZambrana.png',
+        image: '/PartidosP/FRILibre/GabrielZambrana.png',
         bio: 'Profesional joven con experiencia en administración y gestión pública.'
       },
       {
@@ -106,7 +106,7 @@ export const libre = {
         name: 'JOSE SANCHEZ AGUILAR',
         role: 'Candidato a Senador',
         region: 'Oruro',
-        image: '/Fondos/Candidatos1x1/JoseSanchez.png',
+        image: '/PartidosP/FRILibre/JoseSanchez.png',
         bio: 'Veterano político con amplia experiencia en representación regional.'
       }
     ],
@@ -116,7 +116,7 @@ export const libre = {
         name: 'WILLIAM MARCELO SOLIS VALENCIA',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/WilliamSolis.png',
+        image: '/PartidosP/FRILibre/WilliamSolis.png',
         bio: 'Profesional con experiencia en administración pública y desarrollo regional.'
       },
       {
@@ -124,7 +124,7 @@ export const libre = {
         name: 'HERNANY JOSUE PORCEL VALDA',
         role: 'Candidato a Diputado',
         region: 'Chuquisaca',
-        image: '/Fondos/Candidatos1x1/HernanyPorcel.png',
+        image: '/PartidosP/FRILibre/HernanyPorcel.png',
         bio: 'Joven profesional con enfoque en políticas públicas y desarrollo social.'
       },
       {
@@ -132,7 +132,7 @@ export const libre = {
         name: 'SERGIO LUIS VASQUEZ JORDAN',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/SergioVasquez.png',
+        image: '/PartidosP/FRILibre/SergioVasquez.png',
         bio: 'Especialista en gestión pública con experiencia en administración local.'
       },
       {
@@ -140,7 +140,7 @@ export const libre = {
         name: 'SUSANA CAROLA CAMPOS ELIO',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/SusanaCampos.png',
+        image: '/PartidosP/FRILibre/SusanaCampos.png',
         bio: 'Profesional con amplia experiencia en administración y gestión gubernamental.'
       },
       {
@@ -148,7 +148,7 @@ export const libre = {
         name: 'LUZMILA AURORA PATIÑO MORALES',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/LuzmilaPatiño.png',
+        image: '/PartidosP/FRILibre/LuzmilaPatiño.png',
         bio: 'Especialista en políticas sociales y desarrollo comunitario.'
       },
       {
@@ -156,7 +156,7 @@ export const libre = {
         name: 'ALICIA AVALOS CONDORI',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/AliciaAvalos.png',
+        image: '/PartidosP/FRILibre/AliciaAvalos.png',
         bio: 'Líder comunitaria con experiencia en gestión social y desarrollo local.'
       },
       {
@@ -164,7 +164,7 @@ export const libre = {
         name: 'JULIO CHAMBI YUJRA',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/JulioChambi.png',
+        image: '/PartidosP/FRILibre/JulioChambi.png',
         bio: 'Veterano político con amplia experiencia en representación legislativa.'
       },
       {
@@ -172,7 +172,7 @@ export const libre = {
         name: 'LUZ CLARITA QUISBERT MAMANI',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/LuzQuisbert.png',
+        image: '/PartidosP/FRILibre/LuzQuisbert.png',
         bio: 'Joven líder con enfoque en participación ciudadana y desarrollo social.'
       },
       {
@@ -180,7 +180,7 @@ export const libre = {
         name: 'AARON FELIPE SALGUEIRO DIPS',
         role: 'Candidato a Diputado',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/AaronSalgueiro.png',
+        image: '/PartidosP/FRILibre/AaronSalgueiro.png',
         bio: 'Joven profesional con experiencia en gestión pública y desarrollo comunitario.'
       },
       {
@@ -188,7 +188,7 @@ export const libre = {
         name: 'GALIA BOLIVIA ALBA BELTRAN',
         role: 'Candidata a Diputada',
         region: 'La Paz',
-        image: '/Fondos/Candidatos1x1/GaliaAlba.png',
+        image: '/PartidosP/FRILibre/GaliaAlba.png',
         bio: 'Profesional joven con enfoque en políticas públicas y gestión social.'
       }
     ]
@@ -199,7 +199,7 @@ export const libre = {
       name: 'Movimiento Democrático',
       description: 'Grupo que impulsa la democracia y la participación ciudadana dentro del partido.',
       leader: 'Jorge Fernando Tuto Quiroga Ramírez',
-      image: '/Fondos/Candidatos1x1/JorgeQuiroga.png'
+      image: '/PartidosP/FRILibre/JorgeQuiroga.png'
     }
   ],
   allies: [
