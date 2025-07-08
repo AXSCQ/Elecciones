@@ -42,7 +42,7 @@ export const mas = {
         name: 'ESTEBAN ALAVI CANAVIRI',
         role: 'Candidato a Senador',
         region: 'Santa Cruz',
-        image: '/PartidosP/MAS/EstebanAlavi.png',
+        image: '/PartidosP/SiluetaH.png',
         bio: 'Líder político con experiencia en gestión regional y políticas de desarrollo.'
       },
       {
@@ -106,7 +106,7 @@ export const mas = {
         name: 'GETRUDEZ VALDA LUNA',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/PartidosP/MAS/GetrudezValda.png',
+        image: 'public/PartidosP/SiluetaM.png',
         bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
       }
     ],
@@ -188,7 +188,7 @@ export const mas = {
         name: 'SHIRLEY GISELA JUANES ARONI',
         role: 'Candidata a Diputada',
         region: 'Potosí',
-        image: '/PartidosP/MAS/ShirleyJuanes.png',
+        image: '/PartidosP/SiluetaM.png',
         bio: 'Profesional comprometida con los derechos de las mujeres y el desarrollo social.'
       }
     ]

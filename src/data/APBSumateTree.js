@@ -42,7 +42,8 @@ export const apbsumate = {
         name: 'KATHERINE ROCIO TORRES VELASQUEZ',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: '/PartidosP/APBSúmate/KatherineTorres.png',
+        gender: 'female',
+        image: '/PartidosP/SiluetaH.png',
         bio: 'Joven líder comprometida con el desarrollo de políticas públicas inclusivas.'
       },
       {
