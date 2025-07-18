@@ -6,6 +6,10 @@ interface Props {
 
 const { title = "Elecciones Bolivia 2025" } = Astro.props;
 
+// Importar componentes
+import Header from '../components/react/Header';
+import Footer from '../components/react/Footer';
+
 // Importar estilos globales
 import '../styles/global.css';
 import '../styles/animations.css';
@@ -31,9 +35,11 @@ import '../styles/animations.css';
 		</style>
 	</head>
 	<body style="width: 100%; height: 100%; overflow-x: hidden; margin: 0; padding: 0; max-width: 100vw;">
-		<div class="container" style="width: 100%; min-height: 100vh; overflow-x: hidden; margin: 0; padding: 0; max-width: 100vw;">
+		<Header client:load />
+		<div class="container" style="width: 100%; min-height: 100vh; overflow-x: hidden; margin: 0; padding; padding-left: 0; padding-right: 0; padding-bottom: 0; max-width: 100vw;">
 			<slot />
 		</div>
+		<Footer client:load />
 	</body>
 </html>
 

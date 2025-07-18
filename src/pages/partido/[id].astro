@@ -3,7 +3,6 @@ import { parties, getPartyById } from '../../data/parties.js';
 import { candidates } from '../../data/candidates.js';
 import Layout from '../../layouts/Layout.astro';
 import Timeline from '../../components/react/Timeline';
-import Header from '../../components/react/Header.jsx';
 
 // Esta función es requerida para rutas dinámicas en Astro
 export async function getStaticPaths() {
@@ -21,7 +20,6 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
 ---
 
 <Layout title={`${party.name} - Partido Político | Elecciones Bolivia 2025`}>
-  <Header />
   <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 py-16 px-4">
     <div class="container mx-auto">
       <div class="bg-black/40 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-xl mb-8">

@@ -56,7 +56,7 @@ const EnhancedCarousel = () => {
       {/* Carrusel Principal */}
       <div className="relative overflow-hidden rounded-xl md:rounded-3xl shadow-2xl bg-black/20 backdrop-blur-sm border border-white/10">
         {/* Candidato Principal */}
-        <div className="relative h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center">
+        <div className="relative h-[380px] sm:h-[460px] md:h-[550px] flex items-center justify-center">
           <div className="absolute inset-0">
             <img 
               src={candidates[currentIndex].image} 
@@ -114,7 +114,7 @@ const EnhancedCarousel = () => {
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center md:items-start">
                 <a
                   href="/arbol-politico"
-                  className="w-full sm:w-auto text-center px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="w-full sm:w-auto text-center px-4 sm:px-6 py-2 sm:py-3 bg-transparent hover:bg-black/40 text-white rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg border border-white/50"
                 >
                   Ver Árbol Político
                 </a>
@@ -143,7 +143,7 @@ const EnhancedCarousel = () => {
         {/* Controles de navegación */}
         <button
           onClick={goToPrevious}
-          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 shadow-lg border-2 border-white z-20"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 shadow-lg border border-white/50 z-20"
         >
           <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

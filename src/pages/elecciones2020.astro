@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/react/Header.jsx';
 import EleccionesTimeline from '../components/react/EleccionesTimeline.jsx';
 ---
 
 <Layout title="Historia Política - Elecciones Bolivia 2025">
-  <Header client:load />
 
   <!-- Banner con fondo gris degradado y bandera -->
   <section class="relative min-h-[40vh] bg-gradient-to-br from-gray-100 via-gray-700 to-gray-800 text-white flex items-center justify-center">
@@ -85,7 +83,7 @@ import EleccionesTimeline from '../components/react/EleccionesTimeline.jsx';
         description: 'El gobierno transitorio convocó nuevas elecciones para restaurar la democracia.'
       }
     ].map((card, index) => (
-      <div key={index} class="group perspective flex flex-col items-center">
+      <div data-key={index} class="group perspective flex flex-col items-center">
         <h3 class="mb-3 text-lg font-semibold text-yellow-400 text-center">{card.title}</h3>
         <div class="relative w-full h-64 rounded-xl overflow-hidden transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 border-2 border-yellow-500 shadow-lg hover:shadow-yellow-400/70">
           {/* Cara frontal */}

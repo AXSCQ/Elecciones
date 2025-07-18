@@ -1,16 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/react/Header.jsx';
 import { candidates } from '../data/candidates.js';
 import EnhancedCarousel from '../components/react/EnhancedCarousel.jsx';
 import SimpleCountdownTimer from '../components/react/SimpleCountdownTimer.jsx';
 ---
 
 <Layout title="Elecciones Bolivia 2025 - Inicio">
-  <Header client:load />
-  
   <!-- Hero Section con animación de entrada -->
-  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+  <section class="relative min-h-[100vh] flex items-center justify-center overflow-hidden py-24 px-4">
     <div class="absolute inset-0 z-0 bg-gradient-to-b from-blue-900/40 to-black/70"></div>
     
     <div class="container mx-auto relative z-10">

@@ -2,7 +2,6 @@
 import { candidates } from '../../data/candidates.js';
 import { parties, getPartyByShortName } from '../../data/parties.js';
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/react/Header.jsx';
 import Timeline from '../../components/react/Timeline';
 import MediaPlayer from '../../components/react/MediaPlayer.jsx';
 
@@ -60,7 +59,6 @@ const mediaContent = {
 ---
 
 <Layout title={`Perfil de ${candidate.name} - Elecciones Bolivia 2025`}>
-  <Header client:load />
   <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
     <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
       <main class="max-w-5xl mx-auto">

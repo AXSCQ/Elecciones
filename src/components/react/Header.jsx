@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navLinks = [
   { name: 'Inicio', href: '/' },
@@ -13,14 +12,35 @@ const navLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Efecto para detectar el scroll y cambiar la apariencia del header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    // Agregar el event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Limpiar el event listener cuando el componente se desmonte
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur bg-black/60 shadow-lg">
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-black/60 backdrop-blur'}`}>
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo/Nombre */}
-        <div className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:brightness-110">
           <span className="text-2xl">🇧🇴</span>
-          <span className="font-extrabold text-xl text-white tracking-wide drop-shadow-lg select-none">Bolivia 2025</span>
-        </div>
+          <span className="font-extrabold text-xl text-white tracking-wide drop-shadow-lg">Bolivia <span className="text-yellow-400">2025</span></span>
+        </a>
         {/* Desktop nav */}
         <ul className="hidden md:flex gap-6 ml-8">
           {navLinks.map(link => (
@@ -32,10 +52,7 @@ const Header = () => {
             </li>
           ))}
         </ul>
-        {/* Modo oscuro (placeholder) */}
-        <button className="ml-6 text-yellow-300 hover:text-white transition-colors text-2xl" title="Modo oscuro (próximamente)">
-          <span role="img" aria-label="Modo oscuro">🌙</span>
-        </button>
+        {/* Espacio para futuros elementos del header */}
         {/* Mobile menu button */}
         <button
           className="md:hidden ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
