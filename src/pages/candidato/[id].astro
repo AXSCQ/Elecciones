@@ -59,7 +59,7 @@ const mediaContent = {
 
 <Layout title={`Perfil de ${candidate.name} - Elecciones Bolivia 2025`}>
   <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
-    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm py-16 px-4">
+    <div class="min-h-screen backdrop-blur-sm py-16 px-4" style={`background: linear-gradient(to bottom, ${candidate.partyColor}30, ${candidate.partyColor}40)`}>
       <main class="max-w-5xl mx-auto">
         <!-- Encabezado del perfil -->
         <div class="bg-black/70 rounded-2xl shadow-xl p-8 border border-blue-500/30 transform transition-all hover:shadow-blue-500/20 hover:shadow-2xl mb-8">
