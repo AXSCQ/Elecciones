@@ -3,7 +3,6 @@ import { candidates } from '../../data/candidates.js';
 import { parties, getPartyByShortName } from '../../data/parties.js';
 import Layout from '../../layouts/Layout.astro';
 import Timeline from '../../components/react/Timeline';
-import MediaPlayer from '../../components/react/MediaPlayer.jsx';
 
 // Función requerida para rutas dinámicas en Astro
 export function getStaticPaths() {
@@ -145,12 +144,12 @@ const mediaContent = {
                     </div>
                   )}
                   
-                  {(candidate.education.primary || candidate.education.secondary) && (
+                  {((candidate.education as any)?.primary || (candidate.education as any)?.secondary) && (
                     <div>
                       <h3 class="text-lg font-semibold text-blue-300 mb-2">Educación Básica</h3>
                       <ul class="list-disc list-inside space-y-1 text-gray-200">
-                        {candidate.education.secondary && <li><span class="text-blue-200 font-medium">Secundaria:</span> {candidate.education.secondary}</li>}
-                        {candidate.education.primary && <li><span class="text-blue-200 font-medium">Primaria:</span> {candidate.education.primary}</li>}
+                        {(candidate.education as any)?.secondary && <li><span class="text-blue-200 font-medium">Secundaria:</span> {(candidate.education as any).secondary}</li>}
+                        {(candidate.education as any)?.primary && <li><span class="text-blue-200 font-medium">Primaria:</span> {(candidate.education as any).primary}</li>}
                       </ul>
                     </div>
                   )}
@@ -235,48 +234,45 @@ const mediaContent = {
                 Videos de Campaña y Trayectoria
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="aspect-video bg-black/80 rounded-xl overflow-hidden border border-blue-700/30 relative group hover:shadow-blue-500/20 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300">
-                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 bg-black/60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                {(candidate as any).videos && (candidate as any).videos.length > 0 ? (
+                  (candidate as any).videos.map((video: any, index: number) => (
+                    <a 
+                      href={video.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="aspect-video bg-black/80 rounded-xl overflow-hidden border border-blue-700/30 relative group hover:shadow-blue-500/20 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div class="absolute inset-0 flex items-center justify-center text-blue-300 bg-black/60 group-hover:opacity-70 transition-opacity duration-300 z-10">
+                        <div class="flex flex-col items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div class="bg-red-600/80 text-white px-3 py-1 rounded-md text-sm flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                            Ver en YouTube
+                          </div>
+                        </div>
+                      </div>
+                      <div class="absolute top-2 right-2 bg-black/80 text-blue-200 text-xs px-2 py-1 rounded-md border border-blue-600/30 z-20">{video.duration}</div>
+                      <div class="absolute bottom-2 left-2 bg-black/80 text-white text-sm px-3 py-1 rounded-md border border-blue-600/30 z-20">{video.category}</div>
+                      <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent h-1/2 z-10"></div>
+                      <div class="absolute bottom-10 left-2 right-2 text-white text-sm px-2 z-20 font-medium">{video.title}</div>
+                      <img 
+                        src={video.thumbnail || candidate.image} 
+                        alt={video.title} 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                      />
+                    </a>
+                  ))
+                ) : (
+                  <div class="col-span-2 text-center py-8">
+                    <p class="text-gray-400">Más videos próximamente... Puedes agregar más contenido multimedia aquí.</p>
                   </div>
-                  <div class="absolute top-2 right-2 bg-black/80 text-blue-200 text-xs px-2 py-1 rounded-md border border-blue-600/30 z-20">01:23</div>
-                  <div class="absolute bottom-2 left-2 bg-black/80 text-white text-sm px-3 py-1 rounded-md border border-blue-600/30 z-20">Discurso Principal</div>
-                  <img src={candidate.image} alt="Video de campaña" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <div class="aspect-video bg-black/80 rounded-xl overflow-hidden border border-blue-700/30 relative group hover:shadow-blue-500/20 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300">
-                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 bg-black/60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div class="absolute top-2 right-2 bg-black/80 text-blue-200 text-xs px-2 py-1 rounded-md border border-blue-600/30 z-20">02:45</div>
-                  <div class="absolute bottom-2 left-2 bg-black/80 text-white text-sm px-3 py-1 rounded-md border border-blue-600/30 z-20">Entrevista Reciente</div>
-                  <img src={candidate.image} alt="Video de campaña" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <div class="aspect-video bg-black/80 rounded-xl overflow-hidden border border-blue-700/30 relative group hover:shadow-blue-500/20 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300">
-                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 bg-black/60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div class="absolute top-2 right-2 bg-black/80 text-blue-200 text-xs px-2 py-1 rounded-md border border-blue-600/30 z-20">03:10</div>
-                  <div class="absolute bottom-2 left-2 bg-black/80 text-white text-sm px-3 py-1 rounded-md border border-blue-600/30 z-20">Propuestas Clave</div>
-                  <img src={candidate.image} alt="Video de campaña" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
-                <div class="aspect-video bg-black/80 rounded-xl overflow-hidden border border-blue-700/30 relative group hover:shadow-blue-500/20 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300">
-                  <div class="absolute inset-0 flex items-center justify-center text-blue-300 bg-black/60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div class="absolute top-2 right-2 bg-black/80 text-blue-200 text-xs px-2 py-1 rounded-md border border-blue-600/30 z-20">01:58</div>
-                  <div class="absolute bottom-2 left-2 bg-black/80 text-white text-sm px-3 py-1 rounded-md border border-blue-600/30 z-20">Historia Política</div>
-                  <img src={candidate.image} alt="Video de campaña" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                </div>
+                )}
               </div>
-              <p class="text-gray-400 text-center mt-4">Más videos próximamente... Puedes agregar más contenido multimedia aquí.</p>
             </section>
 
             <!-- Noticias -->
@@ -484,3 +480,4 @@ const mediaContent = {
     border-radius: 6px;
   }
 </style>
+

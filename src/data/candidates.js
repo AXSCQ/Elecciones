@@ -1,4 +1,5 @@
 // Datos de candidatos para las elecciones de Bolivia 2025
+import { samuel } from './samuel.js';
 export const candidates = [
   {
     id: "1",
@@ -92,57 +93,7 @@ export const candidates = [
       ]
     }
   },
-  {
-    id: "2",
-    name: "Samuel Doria Medina",
-    image: "/PartidosP/Unidad/Samuel Doria Medina.png",
-    party: "Unidad",
-    partyShort: "UN",
-    partyColor: "#1bbc9d",
-    age: 66,
-    birthDate:"4 de diciembre de 1958",
-    birthPlace:"La Paz, Bolivia",
-    education: "Economía, Universidad de Chicago",
-    profession: "Empresario y Economista",
-    region: "lp", // La Paz
-    role: "Candidato Presidencial",
-    bio: "Samuel Doria Medina es un empresario y político boliviano reconocido por ser fundador del partido Frente de Unidad Nacional (UN). Como empresario, lideró la Sociedad Boliviana de Cemento (SOBOCE), uno de los grupos económicos más grandes y sólidos del país, desde 1987 hasta 2014. En el ámbito político, ha sido candidato presidencial en múltiples elecciones (1997, 2005, 2009 y 2014), consolidándose como una figura destacada de la centro-derecha boliviana y una alternativa política importante en el país.",
-    socialMedia: {
-      twitter: "https://twitter.com/SDoriaMedina",
-      facebook: "https://facebook.com/SamuelDoriaMedinaOficial"
-    },
-    vicepresident: {
-      name: "José Luis Lupo",
-      image: "/Fondos/Candidatos1x1/Jose.jpg", // Imagen temporal: "/PartidosP/Unidad/Jose Luis Lupo.png",
-      bio: "Economista con experiencia en organismos internacionales y desarrollo económico.",
-      profession: "Economista",
-      age: 58
-    },
-    timeline: [
-      { year: 1991, event: "Ministro de Planeamiento durante el gobierno de Jaime Paz Zamora" },
-      { year: 2003, event: "Funda el partido Unidad Nacional" },
-      { year: 2014, event: "Alianza con el Movimiento Demócrata Social" },
-      { year: 2024, event: "Candidato presidencial por Unidad" }
-    ],
-    proposals: [
-      "Creación de un millón de empleos formales",
-      "Reforma tributaria para simplificar impuestos",
-      "Fortalecimiento de la seguridad ciudadana",
-      "Modernización de la infraestructura productiva"
-    ],
-    controversies: [
-      "Conflictos de interés SOBOCE (2000–2014)",
-      "Denuncias por financiamiento irregular (2009, 2014)",
-      "Oposición fuerte a Evo Morales (2006–2019)",
-      "Apoyo a protestas y renuncia de Evo Morales (noviembre 2019)"
-    ],
-    achievements: [
-      "Presidente y accionista de SOBOCE (1987–2014)",
-      "Fundador del Frente de Unidad Nacional (12 dic 2003)",
-      "Candidato presidencial (1997, 2005, 2009, 2014)",
-      "Militante del MIR y ministro (1991–1993)"
-    ],
-  },
+  samuel,
   {
     id: "3",
     name: "Jorge Quiroga Ramírez",

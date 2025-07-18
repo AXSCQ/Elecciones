@@ -10,7 +10,7 @@ const EnhancedCarousel = () => {
     switch(candidateId) {
       case "1": // Eduardo Del Castillo
         return "object-center"; // Centrado
-      case "2": // Samuel Doria Medina
+      case "samuel": // Samuel Doria Medina (actualizado de "2" a "samuel")
         return "object-center"; // Arriba
       case "3": // Tuto Quiroga
         return "object-center-bottom"; // Abajo para mostrar más la cara
