@@ -66,22 +66,37 @@ export const parties = [
     id: "unidad",
     name: "Unidad Nacional",
     shortName: "UN",
-    logo: "/images/parties/un.png", // Placeholder - actualizar con imagen real
-    color: "#1bbc9d",
-    founded: "2003",
-    ideology: ["Centro-derecha", "Liberalismo económico", "Conservadurismo social"],
-    description: "Unidad Nacional es un partido político boliviano fundado en 2003 por el empresario Samuel Doria Medina. Representa una visión de centro-derecha con énfasis en el desarrollo económico, la inversión privada y la modernización del estado. Ha participado en varias elecciones presidenciales y ha formado parte de diversas coaliciones opositoras al MAS.",
+    logo: "/images/parties/un.png",
+    color: "#ffcc00",
+    founded: "12 de diciembre de 2003",
+    ideology: ["Social Demócrata", "Emprendimiento", "Libertad", "Justicia", "Solidaridad", "Desarrollo Sostenible"],
+    description: "El Frente de Unidad Nacional (UN) es un partido político boliviano fundado el 12 de diciembre de 2003 por Samuel Doria Medina, quien previamente fue militante del Movimiento de Izquierda Revolucionaria (MIR). Se identifica como un proyecto Social Demócrata que busca una economía robusta basada en el emprendimiento popular, diseñada para evitar el extractivismo y promover la movilidad social de los sectores más pobres e indígenas.",
     keyFigures: [
-      { name: "Samuel Doria Medina", role: "Fundador y líder" }
+      { name: "Samuel Doria Medina", role: "Fundador y líder principal" },
+      { name: "José Luis Lupo", role: "Candidato a vicepresidente 2025" }
     ],
     currentCandidates: [4], // IDs de candidatos afiliados
     history: [
-      { year: "2003", event: "Fundación del partido" },
-      { year: "2005", event: "Primera participación en elecciones presidenciales" },
-      { year: "2014", event: "Alianza con el Movimiento Demócrata Social" },
-      { year: "2020", event: "Apoyo a la candidatura de Jeanine Áñez" }
+      { year: "2003", event: "Fundación del partido por Samuel Doria Medina tras su salida del MIR" },
+      { year: "2005", event: "Primera participación electoral con Samuel Doria Medina como candidato presidencial (7.81% de votos)" },
+      { year: "2009", event: "Segunda participación electoral presidencial (5.65% de votos)" },
+      { year: "2014", event: "Alianza Unidad Demócrata (UD) con el MDS, obteniendo el 24% de los votos" },
+      { year: "2016", event: "Samuel Doria Medina enfrenta procesos judiciales en el caso FOCAS" },
+      { year: "2020", event: "Doria Medina se postula como vicepresidente junto a Jeanine Áñez, pero la fórmula se retira" },
+      { year: "2024", event: "Formación del 'Bloque de Unidad' con otras fuerzas opositoras" },
+      { year: "2025", event: "Samuel Doria Medina es designado candidato presidencial de la alianza 'Unidad'" }
     ],
-    alliances: ["Alianza UNIDAD", "Bolivia Dice No"]
+    alliances: ["Unidad Demócrata (2014)", "Alianza Unidad (2025)"],
+    finances: {
+      budget2023: "Bs 347,637.48",
+      expenses2023: "Bs 243,516.74"
+    },
+    structure: {
+      headquarters: "Av. Sánchez Lima Nº 2482, Sopocachi, La Paz",
+      regions: 20,
+      leadership: "Estructura descentralizada con Congreso Nacional, Comité Político Nacional y Dirección Nacional"
+    },
+    audioPath: "/PartidosP/Unidad/UnidadNacional.mp3"
   },
   {
     id: 5,

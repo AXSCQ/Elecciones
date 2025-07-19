@@ -20,7 +20,11 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
 ---
 
 <Layout title={`${party.name} - Partido Político | Elecciones Bolivia 2025`}>
-  <main class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 py-16 px-4">
+  <main class="min-h-screen py-16 px-4 relative">
+    <div class="absolute inset-0 z-0">
+      <img src="/Fondos/Partidos.png" alt="Fondo Partidos" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10">
     <div class="container mx-auto">
       <div class="bg-black/40 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-xl mb-8">
         <!-- Hero section con logo y datos básicos -->
@@ -71,6 +75,23 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
         )}
       </div>
       
+      <!-- Reproductor de Audio -->
+      {party.id === "unidad" && (
+        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+          <h2 class="text-2xl font-bold mb-4 text-white">Podcast Informativo</h2>
+          <div class="mb-4">
+            <p class="text-gray-300 mb-4">Escucha nuestro podcast informativo sobre el Frente de Unidad Nacional y su trayectoria política.</p>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <audio controls class="w-full" preload="metadata">
+                <source src="/PartidosP/Unidad/UnidadNacional.mp3" type="audio/mpeg" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+              <p class="text-xs text-gray-400 mt-2 italic">* Contenido generado con IA con fines informativos</p>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <!-- Figuras destacadas -->
       <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
         <h2 class="text-2xl font-bold mb-6 text-white">Figuras destacadas</h2>
@@ -92,6 +113,55 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
         )}
       </div>
       
+      <!-- Alianzas Políticas (Solo para Unidad Nacional) -->
+      {party.id === "unidad" && (
+        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-white">Alianzas Políticas</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Alianza Unidad 2025</h3>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="px-3 py-1 text-white text-sm rounded-full bg-yellow-500/70">Unidad Nacional (UN)</span>
+                <span class="px-3 py-1 text-white text-sm rounded-full bg-purple-600/70">Creemos</span>
+              </div>
+              <p class="text-gray-300">Alianza formal registrada ante el TSE el 18 de abril de 2025, con Samuel Doria Medina como candidato presidencial y José Luis Lupo como vicepresidente.</p>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Apoyo Externo</h3>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                <li>Cambio 25</li>
+                <li>Alianza Social Patriótica (ASP)</li>
+                <li>Movimiento sin Miedo (MSM)</li>
+                <li>Alianza por Bolivia Unida y Solidaria (Al-Bus)</li>
+                <li>Jóvenes Kataristas</li>
+                <li>Facción del MNR</li>
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Alianzas Históricas</h3>
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-bold text-white">Unidad Demócrata (2014)</h4>
+                  <p class="text-gray-300">Alianza con el Movimiento Demócrata Social (MDS) de Rubén Costas. Obtuvo el 24% de los votos, posicionándose como segunda fuerza política.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Juntos (2020)</h4>
+                  <p class="text-gray-300">Samuel Doria Medina fue candidato a vicepresidente junto a Jeanine Áñez, aunque la fórmula se retiró antes de las elecciones.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Alianzas Internacionales</h3>
+              <p class="text-gray-300">El Frente de Unidad Nacional está integrado en la Internacional Socialista. Samuel Doria Medina es Vicepresidente de la Internacional Socialista para América Latina y el Caribe desde abril de 2023.</p>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <!-- Candidatos actuales -->
       {partyMembers && partyMembers.length > 0 && (
         <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
@@ -101,36 +171,20 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
             {partyMembers.map(candidate => (
               <a 
                 href={`/candidato/${candidate.id}`}
-                class="bg-black/50 p-4 rounded-lg flex items-center gap-4 hover:bg-black/70 transition-colors"
+                class="bg-black/30 rounded-xl overflow-hidden border border-white/10 transition-transform hover:scale-105"
               >
-                <img 
-                  src={candidate.image} 
-                  alt={candidate.name} 
-                  class="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h4 class="font-bold text-white">{candidate.name}</h4>
-                  <p class="text-gray-300 text-sm">{candidate.profession}</p>
+                <div class="relative h-48 overflow-hidden">
+                  <img 
+                    src={candidate.image || '/images/placeholder-candidate.jpg'} 
+                    alt={candidate.name}
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                    <h3 class="text-white font-bold text-xl">{candidate.name}</h3>
+                    <p class="text-gray-300">{candidate.profession || 'Candidato'}</p>
+                  </div>
                 </div>
               </a>
-            ))}
-          </div>
-        </div>
-      )}
-      
-      <!-- Alianzas -->
-      {party.alliances && party.alliances.length > 0 && (
-        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
-          <h2 class="text-2xl font-bold mb-6 text-white">Alianzas y pactos</h2>
-          
-          <div class="flex flex-wrap gap-3">
-            {party.alliances.map(alliance => (
-              <div 
-                class="px-4 py-2 rounded-lg"
-                style={`background-color: ${party.color}30; border: 1px solid ${party.color}`}
-              >
-                <span class="text-white">{alliance}</span>
-              </div>
             ))}
           </div>
         </div>
@@ -149,6 +203,7 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
           Ver todos los candidatos →
         </a>
       </div>
+    </div>
     </div>
   </main>
 </Layout>
