@@ -1,3 +1,5 @@
+import { libre } from './libre.js';
+
 export const parties = [
   {
     id: "mas",
@@ -43,25 +45,7 @@ export const parties = [
     ],
     alliances: ["Frente Revolucionario de Izquierda", "Sol.bo"]
   },
-  {
-    id: "frilibre",
-    name: "LIBRE 21",
-    shortName: "LIBRE",
-    logo: "/images/parties/libre.png", // Placeholder - actualizar con imagen real
-    color: "#ffa500",
-    founded: "2020",
-    ideology: ["Centro-derecha", "Liberalismo", "Conservadurismo"],
-    description: "LIBRE 21 es una alianza política boliviana formada para las elecciones de 2020. Liderada por Jorge 'Tuto' Quiroga, ex-presidente de Bolivia, representa una opción de centro-derecha con énfasis en la economía de mercado, fortalecimiento institucional y oposición al MAS. Aunque no logró resultados significativos en 2020, mantiene presencia en el debate político nacional.",
-    keyFigures: [
-      { name: "Jorge Quiroga", role: "Líder y ex-presidente de Bolivia" }
-    ],
-    currentCandidates: [3], // IDs de candidatos afiliados
-    history: [
-      { year: "2020", event: "Formación de la alianza para elecciones generales" },
-      { year: "2021", event: "Reorganización tras resultados electorales" }
-    ],
-    alliances: ["Alianza Democrática"]
-  },
+  libre,
   {
     id: "unidad",
     name: "Unidad Nacional",

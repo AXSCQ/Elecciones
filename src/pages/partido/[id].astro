@@ -76,14 +76,18 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
       </div>
       
       <!-- Reproductor de Audio -->
-      {party.id === "unidad" && (
+      {(party.id === "unidad" || party.id === "frilibre") && (
         <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
           <h2 class="text-2xl font-bold mb-4 text-white">Podcast Informativo</h2>
           <div class="mb-4">
-            <p class="text-gray-300 mb-4">Escucha nuestro podcast informativo sobre el Frente de Unidad Nacional y su trayectoria política.</p>
+            <p class="text-gray-300 mb-4">
+              {party.id === "unidad" 
+                ? "Escucha nuestro podcast informativo sobre el Frente de Unidad Nacional y su trayectoria política."
+                : "Escucha nuestro podcast informativo sobre la Alianza Libre y su propuesta política para Bolivia."}
+            </p>
             <div class="bg-black/30 p-4 rounded-lg">
               <audio controls class="w-full" preload="metadata">
-                <source src="/PartidosP/Unidad/UnidadNacional.mp3" type="audio/mpeg" />
+                <source src={party.id === "unidad" ? "/PartidosP/Unidad/UnidadNacional.mp3" : party.audioPath} type="audio/mpeg" />
                 Tu navegador no soporta el elemento de audio.
               </audio>
               <p class="text-xs text-gray-400 mt-2 italic">* Contenido generado con IA con fines informativos</p>
@@ -157,6 +161,99 @@ const partyMembers = candidates.filter(c => c.partyShort === party.shortName);
             <div class="bg-black/30 p-4 rounded-lg">
               <h3 class="text-xl font-semibold text-white mb-3">Alianzas Internacionales</h3>
               <p class="text-gray-300">El Frente de Unidad Nacional está integrado en la Internacional Socialista. Samuel Doria Medina es Vicepresidente de la Internacional Socialista para América Latina y el Caribe desde abril de 2023.</p>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      <!-- Propuestas y Alianzas (Solo para Libre) -->
+      {party.id === "frilibre" && (
+        <div class="bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-white">Propuestas y Visión</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Propuestas Económicas</h3>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                {(party as any).proposals?.economic?.map((item: string) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Propuestas Institucionales</h3>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                {(party as any).proposals?.institutional?.map((item: string) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Propuestas Sociales</h3>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                {(party as any).proposals?.social?.map((item: string) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Visión de País</h3>
+              <p class="text-gray-300">{(party as any).vision}</p>
+              <h4 class="font-bold text-white mt-3">Misión</h4>
+              <p class="text-gray-300">{(party as any).mission}</p>
+            </div>
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6 text-white">Alianzas Políticas</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Alianzas Actuales</h3>
+              <div class="flex flex-wrap gap-2 mb-3">
+                {(party as any).alliances?.current?.map((alliance: {name: string, type: string}) => (
+                  <span class="px-3 py-1 text-white text-sm rounded-full" style={`background-color: ${party.color}70`}>
+                    {alliance.name}
+                  </span>
+                ))}
+              </div>
+              <h4 class="font-bold text-white mt-3">Apoyo Externo</h4>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                {(party as any).alliances?.supporting?.map((support: string) => (
+                  <li>{support}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Alianzas Históricas</h3>
+              <div class="space-y-3">
+                {(party as any).alliances?.historical?.map((alliance: {name: string, year: string, description: string}) => (
+                  <div>
+                    <h4 class="font-bold text-white">{alliance.name} ({alliance.year})</h4>
+                    <p class="text-gray-300">{alliance.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Desafíos</h3>
+              <ul class="list-disc list-inside text-gray-300 space-y-1">
+                {(party as any).challenges?.map((challenge: string) => (
+                  <li>{challenge}</li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="bg-black/30 p-4 rounded-lg">
+              <h3 class="text-xl font-semibold text-white mb-3">Presencia Territorial</h3>
+              <h4 class="font-bold text-white">Bastiones</h4>
+              <p class="text-gray-300 mb-2">{(party as any).territorialPresence?.strongholds?.join(", ")}</p>
+              <h4 class="font-bold text-white">Desafíos Territoriales</h4>
+              <p class="text-gray-300">{(party as any).territorialPresence?.challenges?.join(", ")}</p>
             </div>
           </div>
         </div>
