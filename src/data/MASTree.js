@@ -106,7 +106,7 @@ export const mas = {
         name: 'GETRUDEZ VALDA LUNA',
         role: 'Candidata a Senadora',
         region: 'Chuquisaca',
-        image: 'public/PartidosP/SiluetaM.png',
+        image: '/PartidosP/SiluetaM.png',
         bio: 'Líder femenina con experiencia en políticas sociales y desarrollo comunitario.'
       }
     ],
