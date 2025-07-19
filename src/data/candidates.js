@@ -1,5 +1,6 @@
 // Datos de candidatos para las elecciones de Bolivia 2025
 import { samuel } from './samuel.js';
+import { tuto } from './tuto.js';
 export const candidates = [
   {
     id: "1",
@@ -94,46 +95,7 @@ export const candidates = [
     }
   },
   samuel,
-  {
-    id: "3",
-    name: "Jorge Quiroga Ramírez",
-    image: "/PartidosP/FRILibre/Jorge Quiroga Ramírez.png",
-    party: "Libre",
-    partyShort: "LIBRE",
-    partyColor: "#ffa500",
-    age: 66,
-    birthDate:"5 de mayo de 1960",
-    birthPlace:"Cochabamba, Bolivia",
-    education: "Ingeniería Industrial, Texas A&M University; MBA, St. Edward's University",
-    profession: "Ingeniero y Consultor Internacional",
-    region: "cb", // Cochabamba
-    role: "Candidato Presidencial",
-    bio: "Jorge 'Tuto' Quiroga es un político y empresario boliviano que fue presidente de Bolivia entre 2001 y 2002. Con formación en Estados Unidos, ha alternado su carrera entre la política y consultorías internacionales. Es conocido por su postura crítica hacia los gobiernos del MAS y su defensa de la economía de mercado.",
-    socialMedia: {
-      twitter: "https://twitter.com/tutoquiroga",
-      facebook: "https://facebook.com/tutoquirogaoficial",
-      instagram: "https://instagram.com/tutoquiroga"
-    },
-    vicepresident: {
-      name: "Juan Pablo Velasco",
-      image: "/Fondos/Candidatos1x1/JuanV.jpg", // Imagen temporal: "/PartidosP/FRILibre/Juan Pablo Velasco.png",
-      bio: "Político y profesional con experiencia en gestión pública.",
-      profession: "Abogado",
-      age: 45
-    },
-    timeline: [
-      { year: 1997, event: "Elegido Vicepresidente de Bolivia" },
-      { year: 2001, event: "Asume la Presidencia tras la renuncia de Hugo Banzer" },
-      { year: 2005, event: "Candidato presidencial por PODEMOS" },
-      { year: 2024, event: "Candidato presidencial por Libre" }
-    ],
-    proposals: [
-      "Reforma del sistema judicial para garantizar independencia",
-      "Apertura a inversiones extranjeras en sectores estratégicos",
-      "Descentralización administrativa y fortalecimiento de autonomías",
-      "Modernización tecnológica del Estado"
-    ]
-  },
+  tuto,
   {
     id: "4",
     name: "Manfred Reyes Villa",
