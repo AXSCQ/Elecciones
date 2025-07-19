@@ -1,24 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HistoryTimeline from '../components/react/HistoryTimeline.jsx';
+import HistoryTimelineHorizontal from '../components/react/HistoryTimelineHorizontal.jsx';
 ---
 
 <Layout title="Historia Política - Elecciones Bolivia 2025">
-  <div class="min-h-screen bg-cover bg-center" style="background-image: url('/Fondos/wmremove-transformed.jpg');">
-    <div class="min-h-screen bg-gradient-to-b from-blue-900/90 to-blue-950/90 backdrop-blur-sm">
-      <main class="py-16 px-4">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-white text-center mb-4 drop-shadow-lg">
-          Historia Política de Bolivia
-        </h1>
-        <p class="text-xl text-blue-200 text-center mb-12 max-w-3xl mx-auto">
-          Un recorrido por la democracia boliviana desde 1982 hasta nuestros días
-        </p>
+  <div id="history-background" class="min-h-screen bg-cover bg-center bg-fixed transition-all duration-1000" style="background-image: url('/historia/1982-1985.png');">
+    <div class="min-h-screen bg-gradient-to-b from-blue-900/30 to-blue-950/40 backdrop-blur-[2px]">
+      <main class="py-16 px-4 md:px-8 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-center mb-4 drop-shadow-lg">
+            <span class="text-yellow-400">Bolivia</span> <span class="text-white">Decide</span> <span class="text-yellow-400">2025</span>
+          </h1>
+          <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-4 drop-shadow-lg">
+            Historia Política de Bolivia
+          </h2>
+          <p class="text-xl text-blue-100 text-center mb-12 max-w-3xl mx-auto">
+            Un recorrido por la democracia boliviana desde 1982 hasta nuestros días
+          </p>
 
-        <!-- Componente de línea temporal interactiva -->
-        <HistoryTimeline client:load />
+          <!-- Componente de línea temporal horizontal interactiva -->
+          <div class="bg-black/30 backdrop-blur-md rounded-xl border border-white/10 p-6 mb-16 shadow-xl overflow-hidden">
+            <HistoryTimelineHorizontal client:load />
+          </div>
+          
+          <!-- Barra de progreso -->
+          <div class="w-full bg-black/30 h-2 rounded-full overflow-hidden mb-8">
+            <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-green-500 h-full w-0 transition-all duration-500"></div>
+          </div>
 
-        <!-- Sección de estadísticas -->
-        <section class="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-6 gap-4">
+          <!-- Sección de estadísticas -->
+          <section class="max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           <div class="bg-black/70 rounded-xl p-6 text-center border border-blue-500/30 hover:border-blue-400 transition-all">
             <div class="text-4xl font-bold text-blue-400 mb-2">43</div>
             <div class="text-white">Años de Democracia</div>
@@ -106,7 +117,53 @@ import HistoryTimeline from '../components/react/HistoryTimeline.jsx';
             </div>
           </div>
         </section>
+        </div>
       </main>
+      
+      <!-- Navegación rápida -->
+      <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <a href="/" class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </a>
+      </div>
+      
+      <script>
+        // Extender la interfaz Window para TypeScript
+        declare global {
+          interface Window {
+            updateHistoryBackground: (index: number, progress: number) => void;
+          }
+        }
+        
+        // Script para cambiar el fondo según la sección y actualizar la barra de progreso
+        document.addEventListener('DOMContentLoaded', () => {
+          const backgrounds = [
+            '/historia/1982-1985.png',
+            '/historia/1985-2005.png',
+            '/historia/2006-2019.png',
+            '/historia/2019-2020.png'
+          ];
+          
+          // Función para actualizar el fondo y la barra de progreso
+          function updateHistoryBackground(index: number, progress: number): void {
+            const backgroundElement = document.getElementById('history-background');
+            const progressBar = document.getElementById('progress-bar');
+            
+            if (backgroundElement && progressBar) {
+              // Cambiar el fondo
+              backgroundElement.style.backgroundImage = `url('${backgrounds[index]}')`;
+              
+              // Actualizar la barra de progreso
+              progressBar.style.width = `${progress * 100}%`;
+              }
+            }
+          
+          // Exponer la función para que el componente React pueda usarla
+          window.updateHistoryBackground = updateHistoryBackground;
+        });
+      </script>
     </div>
   </div>
 </Layout>

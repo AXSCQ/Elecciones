@@ -28,22 +28,22 @@ export default function HistoryTimeline() {
     return colors[type] || 'bg-gray-500';
   };
   return (
-    <div className="w-full px-4 py-8 bg-gray-800 min-h-screen">
+    <div className="w-full px-4 py-8 bg-transparent min-h-screen">
       {/* Contenido según el tab activo */}
       {activeTab === 'timeline' && (
         <div className="space-y-12">
-          <h2 className="text-3xl font-bold text-white text-center mb-8">
-            Línea Temporal de sucesos que precedieron a las elecciones 2020  
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+            <span className="text-yellow-400">Línea Temporal</span> <span className="text-white">de sucesos que precedieron a las elecciones 2020</span>
           </h2>
 
           <div className="relative py-40">
             {/* Línea horizontal para desktop */}
-            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 transform -translate-y-1/2 z-10
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-blue-500 transform -translate-y-1/2 z-10
               md:block hidden">
             </div>
 
             {/* Línea vertical para mobile - posicionada a la izquierda */}
-            <div className="absolute left-3 top-0 h-full w-1 bg-gradient-to-b from-blue-400 via-purple-400 to-green-400 z-10
+            <div className="absolute left-3 top-0 h-full w-1 bg-gradient-to-b from-yellow-400 via-red-500 to-blue-500 z-10
               md:hidden block">
             </div>
 
@@ -60,7 +60,8 @@ export default function HistoryTimeline() {
                     <div
                       className="w-8 h-8 rounded-full border-4 border-white shadow-lg z-30 
                       cursor-pointer transform transition-all duration-300 ease-in-out
-                      group-hover:scale-125 group-hover:shadow-2xl relative flex-shrink-0 -ml-4 mt-1"
+                      group-hover:scale-125 group-hover:shadow-2xl relative flex-shrink-0 -ml-4 mt-1
+                      shadow-[0_0_10px_rgba(255,255,255,0.5)]"
                       style={{ backgroundColor: period.color }}
                     >
                       {/* Pulso */}
@@ -70,12 +71,12 @@ export default function HistoryTimeline() {
                     </div>
 
                     {/* Contenido estático a la derecha del círculo - MOBILE */}
-                    <div className="flex-1 pt-0">
-                      <h3 className="text-white font-bold text-lg mb-2 drop-shadow-lg">{period.name}</h3>
-                      <p className="text-base font-semibold mb-3 drop-shadow-md" style={{ color: period.color }}>
+                    <div className="flex-1 pt-0 bg-black/50 backdrop-blur-sm p-3 rounded-lg border border-white/10">
+                      <h3 className="text-yellow-400 font-bold text-lg mb-2 drop-shadow-lg">{period.name}</h3>
+                      <p className="text-base font-semibold mb-3 drop-shadow-md text-white">
                         {period.yearStart} - {period.yearEnd}
                       </p>
-                      <p className="text-gray-300 text-sm leading-relaxed drop-shadow-md mb-3">{period.description}</p>
+                      <p className="text-gray-200 text-sm leading-relaxed drop-shadow-md mb-3">{period.description}</p>
                       {period.president && (
                         <p className="text-blue-300 font-medium text-sm drop-shadow-md">
                           Presidente: {period.president}
@@ -86,7 +87,7 @@ export default function HistoryTimeline() {
                     {/* Info flotante EXTRA para mobile - información detallada en hover */}
                     <div
                       className="absolute left-12 top-1/2 transform -translate-y-1/2
-                      w-80 sm:w-[550px] bg-gray-900 backdrop-blur-sm rounded-xl p-4 sm:p-6 border-2 shadow-2xl
+                      w-80 sm:w-[550px] bg-black/70 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 shadow-2xl
                       opacity-0 scale-95 pointer-events-none
                       group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto
                       transition-all duration-300 ease-in-out

@@ -38,6 +38,7 @@ Desktop.ini
 *.njsproj
 *.sln
 *.sw?
+src/información/
 
 # Temporary files
 .temp
