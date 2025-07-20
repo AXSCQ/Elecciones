@@ -133,12 +133,6 @@ const ElectoralBallot = () => {
         )}
       </div>
 
-      {/* Botón para ver todos los candidatos */}
-      <div className="text-center mt-8">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-          Ver todos los candidatos
-        </button>
-      </div>
 
       {/* Modal de candidato seleccionado - Manteniendo el estilo original */}
       {selectedCandidate && (
